@@ -12,6 +12,7 @@ import {
     IconButton,
     ListItem,
     ListItemButton,
+    Link,
     Avatar,
     MenuItem,
     AppBar as MuiAppBar,
@@ -187,24 +188,28 @@ const Sidebar = () => {
                 <List>
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                         <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                }}
+                            <Link
+                                href="/abount"
                             >
-                                <ListItemIcon
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
                                     }}
                                 >
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                            </ListItemButton>
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    </ListItemIcon>
+                                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </Link>
                         </ListItem>
                     ))}
                 </List>
