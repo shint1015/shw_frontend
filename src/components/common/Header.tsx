@@ -1,5 +1,5 @@
 "use client"
-import Sidebar from "@/app/components/common/Sidebar";
+import Sidebar from "@/components/common/Sidebar";
 
 const Header = () => {
     return (

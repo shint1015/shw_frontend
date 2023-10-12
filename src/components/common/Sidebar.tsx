@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { useState } from "react";
 
 import {
     Toolbar,
@@ -13,8 +13,6 @@ import {
     ListItem,
     ListItemButton,
     Link,
-    Avatar,
-    MenuItem,
     AppBar as MuiAppBar,
     AppBarProps as MuiAppBarProps,
     Drawer as MuiDrawer,
@@ -22,8 +20,6 @@ import {
     ListItemIcon,
     useTheme,
     ListItemText,
-    Menu,
-    Tooltip,
     Theme,
     CSSObject
 } from '@mui/material';
@@ -33,10 +29,11 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import UserSettingsComponents from "@/components/common/Auth";
+import {IconComponentFromPageName} from "@/components/common/Component";
+import { pageList } from "@/config/pageList"
 
 const drawerWidth = 240;
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const openedMixin = (theme: Theme): CSSObject => ({
     width: drawerWidth,
@@ -108,14 +105,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Sidebar = () => {
-    const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-    const handleOpenUserMenu = (event: MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
     const theme = useTheme();
     const [open, setOpen] = useState(false);
 
@@ -128,9 +118,9 @@ const Sidebar = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex' }} className={`flex`}>
+        <Box sx={{ display: 'flex' }} className={`flex bg-base-200`}>
             <CssBaseline />
-            <AppBar position="fixed" open={open} className={`flex flex-row`}>
+            <AppBar position="fixed" open={open} className={`flex flex-row bg-base-1000`}>
                 <Toolbar className={`w-[60%]`}>
                     <IconButton
                         color="inherit"
@@ -145,37 +135,11 @@ const Sidebar = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Mini variant drawer
+                        Share Housework
                     </Typography>
                 </Toolbar>
-                <Box sx={{ flexGrow: 0 }} className={`w-[40%] mx-1`}>
-                    <Tooltip title="Open settings">
-                        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                        </IconButton>
-                    </Tooltip>
-                    <Menu
-                        sx={{ mt: '45px' }}
-                        id="menu-appbar"
-                        anchorEl={anchorElUser}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorElUser)}
-                        onClose={handleCloseUserMenu}
-                    >
-                        {settings.map((setting) => (
-                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                <Typography textAlign="center">{setting}</Typography>
-                            </MenuItem>
-                        ))}
-                    </Menu>
+                <Box sx={{ flexGrow: 0 }} className={`flex w-[40%] mx-3 justify-end items-center`}>
+                    <UserSettingsComponents />
                 </Box>
             </AppBar>
             <Drawer variant="permanent" open={open}>
@@ -186,37 +150,8 @@ const Sidebar = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                            <Link
-                                href="/abount"
-                            >
-                                <ListItemButton
-                                    sx={{
-                                        minHeight: 48,
-                                        justifyContent: open ? 'initial' : 'center',
-                                        px: 2.5,
-                                    }}
-                                >
-                                    <ListItemIcon
-                                        sx={{
-                                            minWidth: 0,
-                                            mr: open ? 3 : 'auto',
-                                            justifyContent: 'center',
-                                        }}
-                                    >
-                                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                    </ListItemIcon>
-                                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                                </ListItemButton>
-                            </Link>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+                    {pageList.map((page) => (
+                        <ListItem key={page.pageName} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton
                                 sx={{
                                     minHeight: 48,
@@ -231,9 +166,9 @@ const Sidebar = () => {
                                         justifyContent: 'center',
                                     }}
                                 >
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                    <IconComponentFromPageName pageName={page.icon} />
                                 </ListItemIcon>
-                                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+                                <ListItemText primary={page.pageName} sx={{ opacity: open ? 1 : 0 }} />
                             </ListItemButton>
                         </ListItem>
                     ))}
