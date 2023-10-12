@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.base_button {
+    @apply bg-base-600 text-black;
+    &:hover{
+        @apply bg-base-400
+    }
+}
