@@ -152,24 +152,26 @@ const Sidebar = () => {
                 <List>
                     {pageList.map((page) => (
                         <ListItem key={page.pageName} disablePadding sx={{ display: 'block' }}>
-                            <ListItemButton
-                                sx={{
-                                    minHeight: 48,
-                                    justifyContent: open ? 'initial' : 'center',
-                                    px: 2.5,
-                                }}
-                            >
-                                <ListItemIcon
+                            <Link href={page.pageUrl}>
+                                <ListItemButton
                                     sx={{
-                                        minWidth: 0,
-                                        mr: open ? 3 : 'auto',
-                                        justifyContent: 'center',
+                                        minHeight: 48,
+                                        justifyContent: open ? 'initial' : 'center',
+                                        px: 2.5,
                                     }}
                                 >
-                                    <IconComponentFromPageName pageName={page.icon} />
-                                </ListItemIcon>
-                                <ListItemText primary={page.pageName} sx={{ opacity: open ? 1 : 0 }} />
-                            </ListItemButton>
+                                    <ListItemIcon
+                                        sx={{
+                                            minWidth: 0,
+                                            mr: open ? 3 : 'auto',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        <IconComponentFromPageName pageName={page.icon} />
+                                    </ListItemIcon>
+                                    <ListItemText primary={page.pageName} sx={{ opacity: open ? 1 : 0 }} />
+                                </ListItemButton>
+                            </Link>
                         </ListItem>
                     ))}
                 </List>
