@@ -21,7 +21,9 @@ export default function RootLayout({
       <UserProvider>
         <body className={`${inter.className} bg-base-200`}>
         <Header />
-        {children}
+        <main className="flex min-h-screen flex-col items-center justify-between bg-base-200 pl-8">
+          {children}
+        </main>
         </body>
       </UserProvider>
     </html>
