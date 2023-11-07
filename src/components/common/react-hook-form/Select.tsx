@@ -1,14 +1,16 @@
-import {Controller} from "react-hook-form";
+import {Control, Controller} from "react-hook-form";
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+import {HouseworkFormValues} from "@/components/common/react-hook-form/type";
 
 
 type InputType = string | number
 
-const InputRHFSelect = (
+const InputRHFSelect = <T extends HouseworkFormValues>(
     values: {[key: InputType]: string},
     selectType:string,
     validateRules: {[key: string]: any},
-    labels: {id: string, label: string}
+    labels: {id: string, label: string},
+    control: Control<T>
 ) => {
     return (
         <Controller
