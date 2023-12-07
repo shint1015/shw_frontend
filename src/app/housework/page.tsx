@@ -3,6 +3,7 @@ import { SyntheticEvent, useState } from "react";
 import { Box, Card, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import DataTable from "@/components/housework/dataTable";
+import "@/styles/common.scss"
 
 
 
@@ -14,7 +15,7 @@ const Page = () => {
     };
 
     return (
-        <Card className={"w-10/12"}>
+        <Card className={"card_common"}>
             <Box sx={{ width: '100%', typography: 'body1' }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
