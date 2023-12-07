@@ -1,0 +1,25 @@
+.form_control_common {
+  @apply my-3;
+}
+
+.controller_date_common {
+  @apply w-[45%];
+}
+
+.date_area_common{
+  @apply flex justify-between flex-row;
+}
+
+.date_time_picker_common {
+  @apply w-full;
+}
+.button_area {
+    @apply flex justify-end flex-row;
+}
+
+.submit_button {
+  @apply bg-base-1000 text-black px-6 py-3;
+  &:hover{
+    @apply bg-base-600
+  }
+}

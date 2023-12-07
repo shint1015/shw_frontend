@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.title_common {
+  @apply text-2xl font-bold my-2;
+}
+.card_common {
+  @apply w-3/4 px-6 mx-auto my-4 p-4 rounded-lg shadow-lg;
+}
+
+.common_btn {
+  @apply bg-base-1000 text-white px-4 py-2;
+  &:hover {
+    @apply bg-base-600
+  }
+}
