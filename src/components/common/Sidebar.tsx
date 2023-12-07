@@ -152,7 +152,7 @@ const Sidebar = () => {
                 <List>
                     {pageList.map((page) => (
                         <ListItem key={page.pageName} disablePadding sx={{ display: 'block' }}>
-                            <Link href={page.pageUrl}>
+                            <Link href={`/${page.pageUrl}`}>
                                 <ListItemButton
                                     sx={{
                                         minHeight: 48,
