@@ -26,8 +26,8 @@ const rows = [
 ];
 
 const options = [
-    { value: 'edit', uri: '/housework/detail/:id/edit' },
-    { value: 'delete', uri: '/housework/delete/:id/delete' },
+    { value: 'edit', uri: '/housework/:id/edit' },
+    { value: 'delete', uri: '' },
 ]
 
 const DataTable = () => {

@@ -18,6 +18,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Link from "next/link";
 import HouseworkDeleteDialog from "@/components/housework/deleteDialog";
 import {TableHead} from "@mui/material";
+import {AlignType} from "@/types/type";
 
 interface TablePaginationActionsProps {
     count: number;
@@ -85,7 +86,7 @@ function TablePaginationActions(props: TablePaginationActionsProps) {
     );
 }
 
-export default function CustomPaginationActionsTable(props: {rows:{[key: string]: any}, columns: {field: string, headerName: string, width: number}[], options?: {value: string, uri: string}[]}) {
+export default function CustomPaginationActionsTable(props: {rows:{[key: string]: any}, columns: {field: string, headerName: string, width: number, align?: AlignType}[], options?: {value: string, uri: string}[]}) {
     const count = props.rows.length;
     const [page, setPage] = useState(0);
     const [perPage, setPerPage] = useState(5);
@@ -125,13 +126,12 @@ export default function CustomPaginationActionsTable(props: {rows:{[key: string]
                     <TableRow>
                         {
                             (props.columns.map((column) => (
-                                <TableCell key={column.field} style={{ width: column.width }} align="right">
+                                <TableCell key={column.field} style={{ width: column.width }} align={column.align}>
                                     {column.headerName}
                                 </TableCell>
                             )))
                         }
-                        <TableCell key={"action_btn"} className={"flex flex-row"}>
-                            Action
+                        <TableCell key={"action_btn"}>
                         </TableCell>
                     </TableRow>
                 </TableHead>
@@ -139,16 +139,16 @@ export default function CustomPaginationActionsTable(props: {rows:{[key: string]
                     {(perPage > 0
                             ? props.rows.slice(page * perPage, page * perPage + perPage)
                             : props.rows
-                    ).map((row) => (
+                    ).map((row: any) => (
                         <TableRow key={row.id}>
                             {
                                 (props.columns.map((column) => (
-                                    <TableCell key={column.field} style={{ width: column.width }} align="right">
+                                    <TableCell key={column.field} style={{ width: column.width }} align={column.align}>
                                         {row[column.field]}
                                     </TableCell>
                                 )))
                             }
-                            <TableCell key={"action_btn"} className={"flex flex-row"}>
+                            <TableCell key={"action_btn"} className={"flex flex-row justify-end"}>
                                 {
                                     (props.options?.map((option) => (
                                         (option.value === 'edit') ?
