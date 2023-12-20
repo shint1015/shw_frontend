@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Header from "@/components/common/Header";
-import "../styles/common.scss"
+import "@/styles/common.scss"
 
 const inter = Inter({ subsets: ['latin'] })
 
