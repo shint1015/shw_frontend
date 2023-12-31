@@ -1,32 +1,27 @@
 import { useState } from "react";
+import { Theme, CSSObject } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Box from '@mui/material/Box';
+import styled from '@mui/material/styles/styled';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import Link from 'next/link';
+import MuiAppBar, {AppBarProps as MuiAppBarProps} from '@mui/material/AppBar';
+import MuiDrawer from '@mui/material/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import useTheme from '@mui/material/styles/useTheme';
+import ListItemText from '@mui/material/ListItemText';
 
-import {
-    Toolbar,
-    List,
-    Box,
-    styled,
-    Typography,
-    Divider,
-    IconButton,
-    ListItem,
-    ListItemButton,
-    Link,
-    AppBar as MuiAppBar,
-    AppBarProps as MuiAppBarProps,
-    Drawer as MuiDrawer,
-    CssBaseline,
-    ListItemIcon,
-    useTheme,
-    ListItemText,
-    Theme,
-    CSSObject
-} from '@mui/material';
+
 
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import UserSettingsComponents from "@/components/common/Auth";
 import {IconComponentFromPageName} from "@/components/common/Component";
 import { pageList } from "@/config/pageList"
