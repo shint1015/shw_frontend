@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Box, Button, Card} from "@mui/material";
 import CustomPaginationActionsTable from "@/components/common/Table";
+import Link from "next/link";
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 40 },
@@ -31,14 +32,14 @@ const options = [
 ]
 
 const DataTable = () => {
-    const addHousework = () => {
-        console.log("addHousework");
-    };
-
     return (
         <div style={{ width: '100%' }}>
             <Box className={"text-right mb-4"} component='div' xs={{ p:2 }}>
-                <Button className={"common_btn"} onClick={addHousework}>家事追加</Button>
+                <Button className={"common_btn"}>
+                    <Link id={"add_housework"} href={"/housework/new"}>
+                        家事追加
+                    </Link>
+                </Button>
             </Box>
 
             <CustomPaginationActionsTable rows={rows} columns={columns} options={options}/>
