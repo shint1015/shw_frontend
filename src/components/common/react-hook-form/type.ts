@@ -1,7 +1,12 @@
 export type HouseworkFormValues = {
-    household_title: string
-    household_detail: string
-    household_worker: string
-    household_start: string
-    household_end: string
+    housework_title: string
+    housework_detail: string
+    housework_worker: string
+    housework_start: string
+    housework_end: string
+}
+
+export type HouseworkTemplateFormValues = {
+    housework_title: string
+    housework_detail: string
 }
