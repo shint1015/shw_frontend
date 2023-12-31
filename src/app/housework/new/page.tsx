@@ -10,6 +10,8 @@ import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
 
 import "@/styles/housework/detail/form.scss"
 import "@/styles/common.scss"
+import {RHFTextField} from "@/components/common/react-hook-form/TextField";
+import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 
 const Page = () => {
     const {
@@ -63,36 +65,21 @@ const Page = () => {
             <form className={"form_common"} onSubmit={handleSubmit(onSubmit)}>
                 <FormControl className={"form_control_common"} fullWidth>
                     {/*家事*/}
-                    <Controller
+                    <RHFTextField
                         name={"housework_title"}
+                        labelName={labels.housework_title.label}
                         control={control}
-                        rules={validateRules}
-                        render={({field, fieldState}) => (
-                            <TextField
-                                label={labels.housework_title.label}
-                                error={fieldState.invalid}
-                                helperText={fieldState.error?.message}
-                                {...field}
-                            />
-                        )}
+                        validateRules={validateRules}
                     />
                 </FormControl>
                 {/*詳細*/}
                 <FormControl className={"form_control_common"} fullWidth>
-                    <Controller
+                    <RHFTextarea
                         name={"housework_detail"}
                         control={control}
-                        rules={validateRules}
-                        render={({field, fieldState}) => (
-                            <TextField
-                                label={labels.housework_detail.label}
-                                error={fieldState.invalid}
-                                helperText={fieldState.error?.message}
-                                multiline
-                                rows={4}
-                                {...field}
-                            />
-                        )}
+                        validateRules={validateRules}
+                        labels={labels.housework_detail}
+                        properties={{rows: 4}}
                     />
                 </FormControl>
                 {/*作業者*/}
