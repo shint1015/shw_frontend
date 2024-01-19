@@ -12,6 +12,8 @@ import "@/styles/housework/detail/form.scss"
 import "@/styles/common.scss"
 import {RHFTextField} from "@/components/common/react-hook-form/TextField";
 import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
+import {RHFSelect} from "@/components/common/react-hook-form/Select";
+import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 
 const Page = () => {
     const {
@@ -84,83 +86,38 @@ const Page = () => {
                 </FormControl>
                 {/*作業者*/}
                 <FormControl className={"form_control_common"} fullWidth>
-                    <Controller
+                    <RHFSelect
                         name={"work_user_id"}
+                        values={work_users}
+                        validateRules={validateRules}
+                        labels={labels.work_user_id}
                         control={control}
-                        rules={validateRules}
-                        render ={({ field, fieldState }) => (
-                            <FormControl error={fieldState.invalid}>
-                                <InputLabel id={labels.work_user_id.id}>{labels.work_user_id.label}</InputLabel>
-                                <Select
-                                    labelId={labels.work_user_id.id}
-                                    {...field}>
-                                    {Object.keys(work_users).map((key) => (
-                                        <MenuItem key={key} value={key}>
-                                            {work_users[key]}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        )}
-                    >
-                    </Controller>
+                    />
                 </FormControl>
                 <FormControl className={"form_control_common date_area_common"}>
                     {/*開始日時*/}
                     <div className={"controller_date_common"}>
-                        <Controller
-                            name={"start_date"}
+                        <RHFDatetime
+                            name={'start_date'}
+                            labels={labels.start_at}
                             control={control}
-                            rules={validateRules}
-                            render={({field, fieldState}) => (
-                                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DateTimePicker
-                                        className={"date_time_picker_common"}
-                                        label={labels.start_at.label}
-                                        error={fieldState.invalid}
-                                        helperText={fieldState.error?.message}
-                                        viewRenderers={{
-                                            hours: renderTimeViewClock,
-                                            minutes: renderTimeViewClock,
-                                            seconds: renderTimeViewClock
-                                        }}
-                                        {...field}
-                                    />
-                                </LocalizationProvider>
-                            )}
+                            validateRules={validateRules}
                         />
                     </div>
                     {/*終了日時*/}
                     <div className={"controller_date_common"}>
-                        <Controller
-                            name={"end_date"}
+                        <RHFDatetime
+                            name={'end_date'}
+                            labels={labels.end_at}
                             control={control}
-                            rules={validateRules}
-                            render={({field, fieldState}) => (
-                                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DateTimePicker
-                                        className={"date_time_picker_common"}
-                                        label={labels.end_at.label}
-                                        error={fieldState.invalid}
-                                        helperText={fieldState.error?.message}
-                                        viewRenderers={{
-                                            hours: renderTimeViewClock,
-                                            minutes: renderTimeViewClock,
-                                            seconds: renderTimeViewClock
-                                        }}
-                                        {...field}
-                                    />
-                                </LocalizationProvider>
-                            )}
+                            validateRules={validateRules}
                         />
                     </div>
                 </FormControl>
                 <FormControl className={"form_control_common button_area"}>
                     <Button className={"submit_button"} type={"submit"}>送信</Button>
                 </FormControl>
-
             </form>
-
         </Card>
     )
 }
