@@ -31,7 +31,9 @@ export const RHFSelect: React.FC<InputRHFSelectProps> = ({
                     <InputLabel id={labels.id}>{labels.label}</InputLabel>
                     <Select
                         labelId={labels.id}
-                        {...field}>
+                        label={labels.label}
+                        {...field}
+                    >
                         {Object.keys(values).map((key) => (
                             <MenuItem key={key} value={key}>
                                 {values[key]}
