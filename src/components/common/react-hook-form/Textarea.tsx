@@ -8,7 +8,7 @@ interface RHFTextareaProps {
     validateRules: { [key: string]: any };
     labels: { id: string, label: string };
     properties?: {rows: number};
-    control: Control;
+    control: Control | any;
 }
 
 export const RHFTextarea: React.FC<RHFTextareaProps> = ({
@@ -29,6 +29,8 @@ export const RHFTextarea: React.FC<RHFTextareaProps> = ({
                 <TextField
                     label={labels.label}
                     multiline
+                    error={fieldState.invalid}
+                    helperText={fieldState.error?.message}
                     rows={(properties && properties.rows) ?? 4}
                     {...field}
                 />

@@ -1,25 +1,34 @@
 import {Control, Controller} from "react-hook-form";
 import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 import {HouseworkFormValues} from "@/components/common/react-hook-form/type";
+import React from "react";
 
 
 type InputType = string | number
 
-const InputRHFSelect = <T extends HouseworkFormValues>(
-    values: {[key: InputType]: string},
-    selectType:string,
-    validateRules: {[key: string]: any},
-    labels: {id: string, label: string},
-    control: Control<T>
-) => {
+interface InputRHFSelectProps {
+    name: string;
+    values: {[key: InputType]: string};
+    validateRules: {[key: string]: any};
+    labels: {id: string, label: string};
+    control: Control | any;
+}
+
+export const RHFSelect: React.FC<InputRHFSelectProps> = ({
+    name,
+    values,
+    validateRules,
+    labels,
+    control
+}) => {
     return (
         <Controller
-            name={selectType}
+            name={name}
             control={control}
             rules={validateRules}
             render ={({ field, fieldState }) => (
                 <FormControl error={fieldState.invalid}>
-                    <InputLabel id={labels.id}>{labels.labels}</InputLabel>
+                    <InputLabel id={labels.id}>{labels.label}</InputLabel>
                     <Select
                         labelId={labels.id}
                         {...field}>
@@ -31,9 +40,7 @@ const InputRHFSelect = <T extends HouseworkFormValues>(
                     </Select>
                 </FormControl>
             )}
-        >
-        </Controller>
+        />
     );
 }
-
-export default InputRHFSelect;
+export default RHFSelect;

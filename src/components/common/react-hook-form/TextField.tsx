@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 interface RHFTextFieldProps {
     name: string;
     labelName: string;
-    control: Control;
+    control: Control | any;
     validateRules: {[key: string]: any}
     defaultValue?: string;
 }
@@ -23,9 +23,11 @@ export const RHFTextField: React.FC<RHFTextFieldProps> = ({
             control={control}
             defaultValue={defaultValue}
             rules={validateRules}
-            render={({ field }) => (
+            render={({ field, fieldState }) => (
                 <TextField
                     {...field}
+                    error={fieldState.invalid}
+                    helperText={fieldState.error?.message}
                     label={labelName}
                     variant="outlined"
                     fullWidth
