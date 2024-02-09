@@ -17,6 +17,7 @@ export const RHFTextarea: React.FC<RHFTextareaProps> = ({
     validateRules,
     properties,
     control,
+    defaultValue = '',
 }) => {
     if (properties === undefined) {
     }
@@ -25,6 +26,7 @@ export const RHFTextarea: React.FC<RHFTextareaProps> = ({
             name={name}
             control={control}
             rules={validateRules}
+            defaultValue={defaultValue}
             render={({field, fieldState}) => (
                 <TextField
                     label={labels.label}

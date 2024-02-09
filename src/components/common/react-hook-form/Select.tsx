@@ -14,18 +14,20 @@ interface InputRHFSelectProps {
     control: Control | any;
 }
 
-export const RHFSelect: React.FC<InputRHFSelectProps> = ({
+const RHFSelect: React.FC<InputRHFSelectProps> = ({
     name,
     values,
     validateRules,
     labels,
-    control
+    control,
+    defaultValue = '',
 }) => {
     return (
         <Controller
             name={name}
             control={control}
             rules={validateRules}
+            defaultValue={defaultValue}
             render ={({ field, fieldState }) => (
                 <FormControl error={fieldState.invalid}>
                     <InputLabel id={labels.id}>{labels.label}</InputLabel>
