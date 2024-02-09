@@ -1,4 +1,5 @@
 export type HouseworkFormValues = {
+    housework_id: string
     housework_title: string
     housework_detail: string
     housework_worker: string
