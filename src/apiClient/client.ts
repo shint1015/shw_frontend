@@ -5,7 +5,7 @@ import { createPromiseClient, PromiseClient } from "@connectrpc/connect";
 import {credentials} from "@grpc/grpc-js";
 
 const transport = createConnectTransport({
-    baseUrl: "http://172.19.0.3:8080",
+    baseUrl: "http://172.20.0.4:8080",
     // By default, this transport uses the JSON format.
     // Set this option to true to use the binary format.
     // useBinaryFormat: false,
