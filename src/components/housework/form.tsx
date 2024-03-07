@@ -8,7 +8,7 @@ import RHFSelect from "@/components/common/react-hook-form/Select";
 
 
 const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
-    let defaultData = {}
+    let defaultData = {} as HouseworkFormValues;
     if (props.defaultData) {
         defaultData = props.defaultData;
     }

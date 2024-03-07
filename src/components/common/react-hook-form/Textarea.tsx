@@ -9,6 +9,7 @@ interface RHFTextareaProps {
     labels: { id: string, label: string };
     properties?: {rows: number};
     control: Control | any;
+    defaultValue?: string;
 }
 
 export const RHFTextarea: React.FC<RHFTextareaProps> = ({

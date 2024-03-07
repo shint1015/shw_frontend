@@ -12,6 +12,7 @@ interface InputRHFSelectProps {
     validateRules: {[key: string]: any};
     labels: {id: string, label: string};
     control: Control | any;
+    defaultValue?: InputType;
 }
 
 const RHFSelect: React.FC<InputRHFSelectProps> = ({
