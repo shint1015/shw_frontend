@@ -13,7 +13,7 @@ const POST = async (req: Request) => {
     try {
         request.fromJson(data)
         const response = await client.hello(request);
-        return NextResponse.json({ ok: false, data: response }, {status: 200});
+        return NextResponse.json({ ok: true, data: response }, {status: 200});
     }catch (e) {
         return NextResponse.json({ ok: false, error: e }, {status: 500});
     }
