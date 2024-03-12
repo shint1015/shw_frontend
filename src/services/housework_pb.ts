@@ -472,9 +472,9 @@ export class Housework extends Message<Housework> {
   familyId = protoInt64.zero;
 
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string title = 3;
    */
-  name = "";
+  title = "";
 
   /**
    * @generated from field: string detail = 4;
@@ -511,7 +511,7 @@ export class Housework extends Message<Housework> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "detail", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "status", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "workUser", kind: "message", T: UserInfo },
@@ -551,14 +551,14 @@ export class HouseworkMemo extends Message<HouseworkMemo> {
   houseworkId = protoInt64.zero;
 
   /**
-   * @generated from field: string text = 3;
+   * @generated from field: string message = 3;
    */
-  text = "";
+  message = "";
 
   /**
-   * @generated from field: shw.UserInfo draftUser = 4;
+   * @generated from field: shw.UserInfo sendFrom = 4;
    */
-  draftUser?: UserInfo;
+  sendFrom?: UserInfo;
 
   /**
    * @generated from field: int64 createdAt = 5;
@@ -580,8 +580,8 @@ export class HouseworkMemo extends Message<HouseworkMemo> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "houseworkId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "draftUser", kind: "message", T: UserInfo },
+    { no: 3, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "sendFrom", kind: "message", T: UserInfo },
     { no: 5, name: "createdAt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "updatedAt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
@@ -740,9 +740,9 @@ export class HouseworkTemplate extends Message<HouseworkTemplate> {
   familyId = protoInt64.zero;
 
   /**
-   * @generated from field: string name = 3;
+   * @generated from field: string title = 3;
    */
-  name = "";
+  title = "";
 
   /**
    * @generated from field: string detail = 4;
@@ -769,7 +769,7 @@ export class HouseworkTemplate extends Message<HouseworkTemplate> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "detail", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "createdAt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "updatedAt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
