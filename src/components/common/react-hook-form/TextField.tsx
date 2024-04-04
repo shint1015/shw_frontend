@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Controller, Control } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 
@@ -15,8 +15,10 @@ export const RHFTextField: React.FC<RHFTextFieldProps> = ({
     labelName,
     control,
     validateRules,
-    defaultValue = '',
+    defaultValue,
 }) => {
+    useEffect(() => {
+    }, [defaultValue]);
     return (
         <Controller
             name={name}

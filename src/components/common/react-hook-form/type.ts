@@ -1,10 +1,10 @@
 export type HouseworkFormValues = {
-    housework_id: string
-    housework_title: string
-    housework_detail: string
+    id: string
+    title: string
+    detail: string
     work_user_id: string
-    start_at: string
-    end_at: string
+    startedAt: string
+    endedAt: string
 }
 
 export type HouseworkTemplateFormValues = {

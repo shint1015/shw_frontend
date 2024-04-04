@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Control, Controller} from "react-hook-form";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
 
@@ -24,6 +24,7 @@ export const RHFRadio: React.FC<RHFRadioProps> = ({
             name={name}
             control={control}
             rules={validateRules}
+
             render ={({ field, fieldState }) => (
                 <FormControl error={fieldState.invalid}>
                     <FormLabel id={labels.id}>{labels.label}</FormLabel>

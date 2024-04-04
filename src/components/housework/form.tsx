@@ -5,13 +5,13 @@ import {RHFTextField} from "@/components/common/react-hook-form/TextField";
 import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 import RHFSelect from "@/components/common/react-hook-form/Select";
+import {useEffect, useState} from "react";
+import LoadingScreen from "@/components/common/Loading";
+import '@/styles/housework/detail/form.scss';
 
 
 const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
-    let defaultData = {} as HouseworkFormValues;
-    if (props.defaultData) {
-        defaultData = props.defaultData;
-    }
+    const data = props.defaultData
     const {
         // register,
         handleSubmit,
@@ -23,28 +23,28 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
     } = useForm<HouseworkFormValues>();
 
     const validateRules = {
-        housework_title: {
+        title: {
             required: '家事名を入力してください',
         },
-        housework_detail: {
+        detail: {
 
         },
         work_user_id: {
             required: '作業者を選択してください',
         },
-        start_at: {
+        startedAt: {
             required: '開始日時を入力してください',
         },
-        end_at: {
+        endedAt: {
             required: '終了日時を入力してください',
         },
     }
     const labels = {
-        housework_title: {id: "housework_title", label: "家事名"},
-        housework_detail: {id: "housework_detail", label: "詳細"},
+        title: {id: "title", label: "家事名"},
+        detail: {id: "detail", label: "詳細"},
         work_user_id: {id: "work_user_id", label: "作業者"},
-        start_at: {id: "start_at", label: "開始日時"},
-        end_at: {id: "end_at", label: "終了日時"},
+        startedAt: {id: "startedAt", label: "開始日時"},
+        endedAt: {id: "endedAt", label: "終了日時"},
     }
     const work_users = {
         1: "ユーザー1",
@@ -63,10 +63,10 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                 {/*家事*/}
                 <RHFTextField
                     name={"housework_title"}
-                    labelName={labels.housework_title.label}
+                    labelName={labels.title.label}
                     control={control}
                     validateRules={validateRules}
-                    defaultValue={defaultData.housework_title ?? ''}
+                    defaultValue={data.title}
                 />
             </FormControl>
             {/*詳細*/}
@@ -75,9 +75,9 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                     name={"housework_detail"}
                     control={control}
                     validateRules={validateRules}
-                    labels={labels.housework_detail}
+                    labels={labels.detail}
                     properties={{rows: 4}}
-                    defaultValue={defaultData.housework_detail ?? ''}
+                    defaultValue={data.detail}
                 />
             </FormControl>
             {/*作業者*/}
@@ -88,7 +88,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                     validateRules={validateRules}
                     labels={labels.work_user_id}
                     control={control}
-                    defaultValue={defaultData.work_user_id ?? ''}
+                    defaultValue={data.work_user_id ?? ''}
                 />
             </FormControl>
             <FormControl className={"form_control_common date_area_common"}>
@@ -96,20 +96,20 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                 <div className={"controller_date_common"}>
                     <RHFDatetime
                         name={'start_date'}
-                        labels={labels.start_at}
+                        labels={labels.startedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={defaultData.start_at ?? ''}
+                        defaultValue={data.startedAt ?? ''}
                     />
                 </div>
                 {/*終了日時*/}
                 <div className={"controller_date_common"}>
                     <RHFDatetime
                         name={'end_date'}
-                        labels={labels.end_at}
+                        labels={labels.endedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={defaultData.end_at ?? ''}
+                        defaultValue={data.endedAt ?? ''}
                     />
                 </div>
             </FormControl>

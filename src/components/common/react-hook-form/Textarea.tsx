@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { TextField } from '@mui/material';
 import { Controller, Control } from 'react-hook-form';
 
@@ -18,8 +18,9 @@ export const RHFTextarea: React.FC<RHFTextareaProps> = ({
     validateRules,
     properties,
     control,
-    defaultValue = '',
+    defaultValue,
 }) => {
+    useEffect(() => {}, [defaultValue]);
     if (properties === undefined) {
     }
     return (

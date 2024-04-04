@@ -108,9 +108,8 @@ export default function CustomPaginationActionsTable(props: {rows:{[key: string]
     };
 
     const handleActionButtonClick = (houseworkData: {[key: string]: any}, actionType: string) => {
-        if (actionType === 'edit') {
-            alert("edit")
-        }
+        // if (actionType === 'edit') {
+        // }
 
         if (actionType === 'delete') {
             alert("delete")

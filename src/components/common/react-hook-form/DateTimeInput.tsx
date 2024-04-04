@@ -3,7 +3,7 @@ import {LocalizationProvider} from "@mui/x-date-pickers/LocalizationProvider";
 import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DateTimePicker} from "@mui/x-date-pickers/DateTimePicker";
 import {renderTimeViewClock} from "@mui/x-date-pickers/timeViewRenderers";
-import React from "react";
+import React, {useEffect} from "react";
 import dayjs from "dayjs";
 
 
@@ -22,6 +22,9 @@ export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
     validateRules,
     defaultValue,
 }) => {
+    // useEffect(() => {
+    //     reset(defaultValue)
+    // }, [defaultValue]);
     return (
         <Controller
             name={name}

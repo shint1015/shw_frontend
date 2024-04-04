@@ -16,3 +16,19 @@
     @apply bg-base-600
   }
 }
+
+.loading {
+  @apply flex h-screen w-full items-center justify-center;
+}
+
+@keyframes fadein {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+.progressBarContainer {
+  @apply w-1/2 mx-auto;
+}
