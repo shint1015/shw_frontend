@@ -10,6 +10,10 @@
   @apply w-3/4 px-6 mx-auto my-4 p-4 rounded-lg shadow-lg;
 }
 
+.form_common {
+  @apply w-full;
+}
+
 .common_btn {
   @apply bg-base-1000 text-white px-4 py-2;
   &:hover {
