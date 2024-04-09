@@ -35,27 +35,7 @@ const doGrpcRequest = async (req: Request, method: string) => {
     }
 }
 
-const doRequest = async (req: Request, method: string) => {
-    try {
-        const response = await doGrpcRequest(req, method);
-        return NextResponse.json({ ok: true, data: response }, {status: 200});
-    } catch (e) {
-        return NextResponse.json({ ok: false, error: e }, {status: 500});
-    }
-}
-
-const GET = async (req: Request) => {
-    return doRequest(req, "GET")
-}
-const POST = async (req: Request) => {
-    return doRequest(req, "POST")
-}
-const PUT = async (req: Request) => {
-    return doRequest(req, "PUT")
-}
-const DELETE = async (req: Request) => {
-    return doRequest(req, "DELETE")
-}
+const [GET, POST, PUT, DELETE] = createRequestMethodFunc<FamilyApiResponse>(doGrpcRequest, ["GET", "POST", "PUT", "DELETE"])
 
 export {
     GET,

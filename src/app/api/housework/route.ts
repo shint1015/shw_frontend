@@ -34,7 +34,6 @@ const doGrpcRequest = async (req: Request, method: string) => {
     }
 }
 
-
 const [GET, POST, PUT, DELETE] = createRequestMethodFunc<HouseworkApiResponse>(doGrpcRequest, ['GET', 'POST', 'PUT', 'DELETE'])
 
 export {
