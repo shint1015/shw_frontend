@@ -22,15 +22,12 @@ export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
     validateRules,
     defaultValue,
 }) => {
-    // useEffect(() => {
-    //     reset(defaultValue)
-    // }, [defaultValue]);
     return (
         <Controller
             name={name}
             control={control}
             rules={validateRules}
-            {...(defaultValue && {defaultValue: dayjs(defaultValue)})}
+            {...(defaultValue && {defaultValue: dayjs.unix(defaultValue)})}
             render={({field, fieldState}) => (
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateTimePicker
