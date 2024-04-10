@@ -1,40 +1,40 @@
 import { FamilyService } from "@/services/family_connect";
 import { transport } from "@/apiClient/client";
-import { Family, FamilyRequest, FamilyResponse } from "@/services/family_pb";
+import { FamilyRole, FamilyRoleRequest, FamilyRoleResponse} from "@/services/family_pb";
 import { createPromiseClient } from "@connectrpc/connect";
-import { createParamsFromUrl, createRequestMethodFunc } from "@utils/request";
+import {createParamsFromUrl, createRequestMethodFunc} from "@utils/request";
 import { CommonResponse } from "@/services/common_pb";
 
 
 const client = createPromiseClient(FamilyService, transport)
-export type FamilyApiResponse = | { ok: true, data: FamilyResponse | CommonResponse } | { ok: false, error: Error };
+export type FamilyRoleApiResponse = { ok: true, data: FamilyRoleResponse | CommonResponse } | { ok: false, error: Error };
 
 const doGrpcRequest = async (req: Request, method: string) => {
-    const request = new FamilyRequest();
-    const family = new Family();
+    const request = new FamilyRoleRequest();
+    const familyRole = new FamilyRole();
     if (method === "GET" || method === "DELETE") {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case "GET":
                 request.fromJson(requestJson)
-                return client.getFamily(request);
+                return client.getFamilyRole(request);
             case "DELETE":
-                family.fromJson(requestJson)
-                return client.deleteFamily(family);
+                familyRole.fromJson(requestJson)
+                return client.deleteFamilyRole(familyRole);
         }
     } else if (method === "POST" || method === "PUT") {
         const data = await req.json();
-        family.fromJson(data)
+        familyRole.fromJson(data)
         switch (method) {
             case "POST":
-                return client.createFamily(family);
+                return client.createFamilyRole(familyRole);
             case "PUT":
-                return client.updateFamily(family);
+                return client.updateFamilyRole(familyRole);
         }
     }
 }
 
-const [GET, POST, PUT, DELETE] = createRequestMethodFunc<FamilyApiResponse>(doGrpcRequest, ["GET", "POST", "PUT", "DELETE"])
+const [GET, POST, PUT, DELETE] = createRequestMethodFunc<FamilyRoleApiResponse>(doGrpcRequest, ["GET", "POST", "PUT", "DELETE"])
 
 export {
     GET,
