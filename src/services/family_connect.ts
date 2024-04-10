@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddFamilyMemberRequest, Family, FamilyRequest, FamilyResponse } from "./family_pb";
+import { AddFamilyMemberRequest, Family, FamilyRequest, FamilyResponse, FamilyRole, FamilyRoleRequest, FamilyRoleResponse } from "./family_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CommonResponse } from "./common_pb";
 
@@ -55,6 +55,42 @@ export const FamilyService = {
     addFamilyMember: {
       name: "AddFamilyMember",
       I: AddFamilyMemberRequest,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.FamilyService.GetFamilyRole
+     */
+    getFamilyRole: {
+      name: "GetFamilyRole",
+      I: FamilyRequest,
+      O: FamilyRoleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.FamilyService.CreateFamilyRole
+     */
+    createFamilyRole: {
+      name: "CreateFamilyRole",
+      I: FamilyRole,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.FamilyService.UpdateFamilyRole
+     */
+    updateFamilyRole: {
+      name: "UpdateFamilyRole",
+      I: FamilyRole,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.FamilyService.DeleteFamilyRole
+     */
+    deleteFamilyRole: {
+      name: "DeleteFamilyRole",
+      I: FamilyRoleRequest,
       O: CommonResponse,
       kind: MethodKind.Unary,
     },
