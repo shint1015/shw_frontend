@@ -7,6 +7,61 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message shw.User
+ */
+export class User extends Message<User> {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id = protoInt64.zero;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name = "";
+
+  /**
+   * @generated from field: uint64 roleId = 3;
+   */
+  roleId = protoInt64.zero;
+
+  /**
+   * @generated from field: uint64 familyId = 4;
+   */
+  familyId = protoInt64.zero;
+
+  constructor(data?: PartialMessage<User>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.User";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "roleId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 4, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): User {
+    return new User().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): User {
+    return new User().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean {
+    return proto3.util.equals(User, a, b);
+  }
+}
+
+/**
  * @generated from message shw.UpdateRoleRequest
  */
 export class UpdateRoleRequest extends Message<UpdateRoleRequest> {
@@ -46,6 +101,80 @@ export class UpdateRoleRequest extends Message<UpdateRoleRequest> {
 
   static equals(a: UpdateRoleRequest | PlainMessage<UpdateRoleRequest> | undefined, b: UpdateRoleRequest | PlainMessage<UpdateRoleRequest> | undefined): boolean {
     return proto3.util.equals(UpdateRoleRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message shw.GetBelongToUserRequest
+ */
+export class GetBelongToUserRequest extends Message<GetBelongToUserRequest> {
+  /**
+   * @generated from field: uint64 familyId = 1;
+   */
+  familyId = protoInt64.zero;
+
+  constructor(data?: PartialMessage<GetBelongToUserRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.GetBelongToUserRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBelongToUserRequest {
+    return new GetBelongToUserRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBelongToUserRequest {
+    return new GetBelongToUserRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBelongToUserRequest {
+    return new GetBelongToUserRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetBelongToUserRequest | PlainMessage<GetBelongToUserRequest> | undefined, b: GetBelongToUserRequest | PlainMessage<GetBelongToUserRequest> | undefined): boolean {
+    return proto3.util.equals(GetBelongToUserRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message shw.GetBelongToUserResponse
+ */
+export class GetBelongToUserResponse extends Message<GetBelongToUserResponse> {
+  /**
+   * @generated from field: repeated shw.User users = 1;
+   */
+  users: User[] = [];
+
+  constructor(data?: PartialMessage<GetBelongToUserResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.GetBelongToUserResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "users", kind: "message", T: User, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBelongToUserResponse {
+    return new GetBelongToUserResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBelongToUserResponse {
+    return new GetBelongToUserResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBelongToUserResponse {
+    return new GetBelongToUserResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetBelongToUserResponse | PlainMessage<GetBelongToUserResponse> | undefined, b: GetBelongToUserResponse | PlainMessage<GetBelongToUserResponse> | undefined): boolean {
+    return proto3.util.equals(GetBelongToUserResponse, a, b);
   }
 }
 

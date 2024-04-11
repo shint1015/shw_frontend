@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { UpdateRoleRequest } from "./user_pb";
+import { GetBelongToUserRequest, GetBelongToUserResponse, UpdateRoleRequest } from "./user_pb";
 import { CommonResponse } from "./common_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
@@ -20,6 +20,15 @@ export const UserService = {
       name: "UpdateRole",
       I: UpdateRoleRequest,
       O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.UserService.GetBelongToUser
+     */
+    getBelongToUser: {
+      name: "GetBelongToUser",
+      I: GetBelongToUserRequest,
+      O: GetBelongToUserResponse,
       kind: MethodKind.Unary,
     },
   }
