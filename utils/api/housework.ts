@@ -1,13 +1,13 @@
-import Common from "@utils/api/common";
+import Common, {endpoint} from "@utils/api/common";
 
 class Housework extends Common {
     static async getByFamilyId(familyId: string) {
-        const res = await fetch(`http://localhost:3000/api/housework?familyId=${familyId}`);
+        const res = await fetch(`${endpoint}/housework?familyId=${familyId}`);
         return await res.json();
     }
 
     static async getHouseworkDetail(houseworkId: string) {
-        const res = await fetch(`http://localhost:3000/api/housework/detail?id=${houseworkId}`);
+        const res = await fetch(`${endpoint}/housework/detail?id=${houseworkId}`);
         return await res.json();
     }
 }
