@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse } from "./housework_pb";
+import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse, HouseworkTargetRequest } from "./housework_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CommonResponse } from "./common_pb";
 
@@ -54,7 +54,7 @@ export const HouseworkService = {
      */
     finishHousework: {
       name: "FinishHousework",
-      I: Housework,
+      I: HouseworkTargetRequest,
       O: CommonResponse,
       kind: MethodKind.Unary,
     },
@@ -63,7 +63,7 @@ export const HouseworkService = {
      */
     deleteHousework: {
       name: "DeleteHousework",
-      I: Housework,
+      I: HouseworkTargetRequest,
       O: CommonResponse,
       kind: MethodKind.Unary,
     },

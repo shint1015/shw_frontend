@@ -45,6 +45,43 @@ export class HouseworkRequest extends Message<HouseworkRequest> {
 }
 
 /**
+ * @generated from message shw.HouseworkTargetRequest
+ */
+export class HouseworkTargetRequest extends Message<HouseworkTargetRequest> {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id = protoInt64.zero;
+
+  constructor(data?: PartialMessage<HouseworkTargetRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.HouseworkTargetRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HouseworkTargetRequest {
+    return new HouseworkTargetRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HouseworkTargetRequest {
+    return new HouseworkTargetRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HouseworkTargetRequest {
+    return new HouseworkTargetRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: HouseworkTargetRequest | PlainMessage<HouseworkTargetRequest> | undefined, b: HouseworkTargetRequest | PlainMessage<HouseworkTargetRequest> | undefined): boolean {
+    return proto3.util.equals(HouseworkTargetRequest, a, b);
+  }
+}
+
+/**
  * @generated from message shw.HouseworkDetailRequest
  */
 export class HouseworkDetailRequest extends Message<HouseworkDetailRequest> {
