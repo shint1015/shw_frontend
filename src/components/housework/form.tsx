@@ -8,10 +8,12 @@ import RHFSelect from "@/components/common/react-hook-form/Select";
 import {useEffect, useState} from "react";
 import LoadingScreen from "@/components/common/Loading";
 import '@/styles/housework/detail/form.scss';
+import Family from "@utils/api/family";
 
 
 const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
     const data = props.defaultData
+    console.log('data', data)
     const {
         // register,
         handleSubmit,
@@ -21,6 +23,16 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
         setError,
         clearErrors,
     } = useForm<HouseworkFormValues>();
+
+    const [workUsers, setWorkUsers] = useState<Record<number, string>>({});
+
+    useEffect(() => {
+        (async () => {
+            const res = await Family.getBelongToUserArr('1');
+            console.log(res)
+            setWorkUsers(res);
+        })();
+    }, []);
 
     const validateRules = {
         title: {
@@ -46,11 +58,6 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
         startedAt: {id: "startedAt", label: "開始日時"},
         endedAt: {id: "endedAt", label: "終了日時"},
     }
-    const work_users = {
-        1: "ユーザー1",
-        2: "ユーザー2",
-        3: "ユーザー3",
-    }
 
     const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
         let jsonTxt = JSON.stringify(data, null, 2);
@@ -62,7 +69,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
             <FormControl className={"form_control_common"} fullWidth>
                 {/*家事*/}
                 <RHFTextField
-                    name={"housework_title"}
+                    name={"title"}
                     labelName={labels.title.label}
                     control={control}
                     validateRules={validateRules}
@@ -72,7 +79,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
             {/*詳細*/}
             <FormControl className={"form_control_common"} fullWidth>
                 <RHFTextarea
-                    name={"housework_detail"}
+                    name={"detail"}
                     control={control}
                     validateRules={validateRules}
                     labels={labels.detail}
@@ -84,11 +91,11 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
             <FormControl className={"form_control_common"} fullWidth>
                 <RHFSelect
                     name={"work_user_id"}
-                    values={work_users}
+                    values={workUsers}
                     validateRules={validateRules}
                     labels={labels.work_user_id}
                     control={control}
-                    defaultValue={data.work_user_id ?? ''}
+                    defaultValue={data.workUser.id}
                 />
             </FormControl>
             <FormControl className={"form_control_common date_area_common"}>
@@ -99,7 +106,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                         labels={labels.startedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data.startedAt ?? ''}
+                        defaultValue={data.startedAt}
                     />
                 </div>
                 {/*終了日時*/}
@@ -109,7 +116,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                         labels={labels.endedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data.endedAt ?? ''}
+                        defaultValue={data.endedAt}
                     />
                 </div>
             </FormControl>
