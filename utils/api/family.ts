@@ -15,16 +15,17 @@ class Family extends Common {
     static async getBelongToUserArr (familyId: string) {
         const data = await this.getBelongToUser(familyId);
         if (data.ok) {
-            let resArr: Record<int, string> = [];
+            let resArr: Record<number, string> = [];
             for (const user of data.data.users) {
                 resArr[user.id] = user.name;
             }
-            console.log("resArr", resArr)
             return resArr;
         } else {
             throw new Error(data.error);
         }
     }
+
+
 }
 
 export default Family;

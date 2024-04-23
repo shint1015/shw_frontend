@@ -2,7 +2,7 @@ import { transport } from '@/apiClient/client';
 import { createPromiseClient } from '@connectrpc/connect';
 import {Housework, HouseworkRequest, HouseworkResponse} from '@/services/housework_pb';
 import {HouseworkService} from '@/services/housework_connect';
-import {createParamsFromUrl, createRequestMethodFunc} from '@utils/request';
+import {createParamsFromUrl, createRequestMethodFunc, doRequest} from '@utils/request';
 import {CommonResponse} from '@/services/common_pb';
 
 const client = createPromiseClient(HouseworkService, transport)
@@ -34,11 +34,17 @@ const doGrpcRequest = async (req: Request, method: string) => {
     }
 }
 
-const [GET, POST, PUT, DELETE] = createRequestMethodFunc<HouseworkApiResponse>(doGrpcRequest, ['GET', 'POST', 'PUT', 'DELETE'])
 
-export {
-    GET,
-    POST,
-    PUT,
-    DELETE
+export const GET = async (req: Request) =>  {
+    return await doRequest(req, 'GET', doGrpcRequest)
+}
+
+export const POST = async (req: Request) =>  {
+    return await doRequest(req, 'POST', doGrpcRequest)
+}
+export const PUT = async (req: Request) =>  {
+    return await doRequest(req, 'PUT', doGrpcRequest)
+}
+export const DELETE = async (req: Request) =>  {
+    return await doRequest(req, 'DELETE', doGrpcRequest)
 }

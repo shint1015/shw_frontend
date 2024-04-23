@@ -1,10 +1,13 @@
+import {Dayjs} from "dayjs";
+
 export type HouseworkFormValues = {
     id: string
+    familyId: string
     title: string
     detail: string
-    work_user_id: string
-    startedAt: string
-    endedAt: string
+    workUser: Record<string, any>
+    startedAt: Dayjs | null
+    endedAt: Dayjs | null
 }
 
 export type HouseworkTemplateFormValues = {

@@ -4,7 +4,7 @@ import {AdapterDayjs} from "@mui/x-date-pickers/AdapterDayjs";
 import {DateTimePicker} from "@mui/x-date-pickers/DateTimePicker";
 import {renderTimeViewClock} from "@mui/x-date-pickers/timeViewRenderers";
 import React, {useEffect} from "react";
-import dayjs from "dayjs";
+import dayjs, {Dayjs} from "dayjs";
 
 
 interface RHFDatetimeProps {
@@ -12,7 +12,7 @@ interface RHFDatetimeProps {
     labels: {id: string, label: string};
     control: Control | any;
     validateRules: {[key: string]: any}
-    defaultValue?: string;
+    defaultValue?: Dayjs | null;
 }
 
 export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
@@ -27,7 +27,7 @@ export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
             name={name}
             control={control}
             rules={validateRules}
-            {...(defaultValue && {defaultValue: dayjs.unix(defaultValue)})}
+            {...(defaultValue && {defaultValue: dayjs.unix(Number(defaultValue))})}
             render={({field, fieldState}) => (
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateTimePicker

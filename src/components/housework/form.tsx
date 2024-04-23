@@ -6,14 +6,13 @@ import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 import RHFSelect from "@/components/common/react-hook-form/Select";
 import {useEffect, useState} from "react";
-import LoadingScreen from "@/components/common/Loading";
 import '@/styles/housework/detail/form.scss';
 import Family from "@utils/api/family";
+import {endpoint} from "@utils/api/common";
 
 
-const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
+const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
     const data = props.defaultData
-    console.log('data', data)
     const {
         // register,
         handleSubmit,
@@ -28,8 +27,10 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
 
     useEffect(() => {
         (async () => {
-            const res = await Family.getBelongToUserArr('1');
-            console.log(res)
+            if (data === undefined) {
+                return
+            }
+            const res = await Family.getBelongToUserArr(data.familyId);
             setWorkUsers(res);
         })();
     }, []);
@@ -59,9 +60,37 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
         endedAt: {id: "endedAt", label: "終了日時"},
     }
 
-    const onSubmit: SubmitHandler<Inputs> = (data: Inputs) => {
-        let jsonTxt = JSON.stringify(data, null, 2);
+    const onSubmit: SubmitHandler<Inputs> = async (inputData: Inputs) => {
+        let jsonTxt = JSON.stringify(inputData, null, 2);
+        console.log(inputData)
+        console.log(inputData.started_at.unix(), inputData.ended_at.unix())
+        let postData: Record<string, any> = {
+            title: inputData.title,
+            detail: inputData.detail,
+            startedAt: inputData.started_at.unix(),
+            endedAt: inputData.ended_at.unix(),
+            workUser: {
+                id: inputData.work_user_id,
+            },
+            status: inputData.status,
+        }
+        if (data?.id !== undefined) {
+            postData['id'] = data.id
+        }
+        // console.log(postData)
+        // const res = await fetch(`${endpoint}/housework`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'Access-Control-Allow-Origin': '*',
+        //         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        //         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(postData),
+        // });
+
         console.log(`submit: ${jsonTxt}`);
+        // console.log(res, await res.json());
     }
 
     return (
@@ -73,7 +102,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                     labelName={labels.title.label}
                     control={control}
                     validateRules={validateRules}
-                    defaultValue={data.title}
+                    defaultValue={data?.title ?? ''}
                 />
             </FormControl>
             {/*詳細*/}
@@ -84,7 +113,7 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                     validateRules={validateRules}
                     labels={labels.detail}
                     properties={{rows: 4}}
-                    defaultValue={data.detail}
+                    defaultValue={data?.detail ?? ''}
                 />
             </FormControl>
             {/*作業者*/}
@@ -95,28 +124,28 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
                     validateRules={validateRules}
                     labels={labels.work_user_id}
                     control={control}
-                    defaultValue={data.workUser.id}
+                    defaultValue={data?.workUser?.id ?? ''}
                 />
             </FormControl>
             <FormControl className={"form_control_common date_area_common"}>
                 {/*開始日時*/}
                 <div className={"controller_date_common"}>
                     <RHFDatetime
-                        name={'start_date'}
+                        name={'started_at'}
                         labels={labels.startedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data.startedAt}
+                        defaultValue={data?.startedAt ?? null}
                     />
                 </div>
                 {/*終了日時*/}
                 <div className={"controller_date_common"}>
                     <RHFDatetime
-                        name={'end_date'}
+                        name={'ended_at'}
                         labels={labels.endedAt}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data.endedAt}
+                        defaultValue={data?.endedAt ?? null}
                     />
                 </div>
             </FormControl>
@@ -125,15 +154,6 @@ const HouseworkForm = (props: {defaultData?: HouseworkFormValues}) => {
             </FormControl>
         </form>
     );
-}
-
-export type HouseworkFormData = {
-    housework_id: number;
-    housework_title: string;
-    housework_detail: string;
-    work_user_id: number;
-    start_at: string;
-    end_at: string;
 }
 
 export default HouseworkForm;

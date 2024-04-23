@@ -4,10 +4,13 @@ import {useEffect, useState} from "react";
 import Housework from "@utils/api/housework";
 import HouseworkForm from "@/components/housework/form";
 import LoadingScreen from "@/components/common/Loading";
+import {HouseworkFormValues} from "@/components/common/react-hook-form/type";
+import dayjs from "dayjs";
+import {number} from "prop-types";
 
 
 const Page = ({params}: {params: {housework_id: string}}) => {
-    const [data, setData] = useState<Record<string, any>[]>([]);
+    const [data, setData] = useState<Record<string, any>>({});
     const [loading, setLoading] = useState<boolean>(true);
     useEffect(() => {
         (async () => {
