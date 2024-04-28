@@ -5,10 +5,11 @@ import {RHFTextField} from "@/components/common/react-hook-form/TextField";
 import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 import RHFSelect from "@/components/common/react-hook-form/Select";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import '@/styles/housework/detail/form.scss';
 import Family from "@utils/api/family";
 import {endpoint} from "@utils/api/common";
+import {CommonInfoContext} from "@/context/CommonContext";
 
 
 const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
@@ -22,18 +23,8 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
         setError,
         clearErrors,
     } = useForm<HouseworkFormValues>();
+    const commonInfo = useContext(CommonInfoContext);
 
-    const [workUsers, setWorkUsers] = useState<Record<number, string>>({});
-
-    useEffect(() => {
-        (async () => {
-            if (data === undefined) {
-                return
-            }
-            const res = await Family.getBelongToUserArr(data.familyId);
-            setWorkUsers(res);
-        })();
-    }, []);
 
     const validateRules = {
         title: {
@@ -61,10 +52,8 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
     }
 
     const onSubmit: SubmitHandler<Inputs> = async (inputData: Inputs) => {
-        let jsonTxt = JSON.stringify(inputData, null, 2);
-        console.log(inputData)
-        console.log(inputData.started_at.unix(), inputData.ended_at.unix())
         let postData: Record<string, any> = {
+            familyId: commonInfo.familyId,
             title: inputData.title,
             detail: inputData.detail,
             startedAt: inputData.started_at.unix(),
@@ -74,23 +63,21 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
             },
             status: inputData.status,
         }
+        let method = 'POST';
         if (data?.id !== undefined) {
             postData['id'] = data.id
+            method = 'PUT'
         }
-        // console.log(postData)
-        // const res = await fetch(`${endpoint}/housework`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Access-Control-Allow-Origin': '*',
-        //         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        //         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(postData),
-        // });
-
-        console.log(`submit: ${jsonTxt}`);
-        // console.log(res, await res.json());
+        const res = await fetch(`${endpoint}/housework`, {
+            method: method,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+                'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(postData),
+        });
     }
 
     return (
@@ -120,7 +107,7 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
             <FormControl className={"form_control_common"} fullWidth>
                 <RHFSelect
                     name={"work_user_id"}
-                    values={workUsers}
+                    values={commonInfo?.workUsers}
                     validateRules={validateRules}
                     labels={labels.work_user_id}
                     control={control}

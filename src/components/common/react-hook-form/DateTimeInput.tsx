@@ -5,6 +5,7 @@ import {DateTimePicker} from "@mui/x-date-pickers/DateTimePicker";
 import {renderTimeViewClock} from "@mui/x-date-pickers/timeViewRenderers";
 import React, {useEffect} from "react";
 import dayjs, {Dayjs} from "dayjs";
+import {FormControl} from "@mui/material";
 
 
 interface RHFDatetimeProps {
@@ -12,7 +13,7 @@ interface RHFDatetimeProps {
     labels: {id: string, label: string};
     control: Control | any;
     validateRules: {[key: string]: any}
-    defaultValue?: Dayjs | null;
+    defaultValue: Dayjs | null;
 }
 
 export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
@@ -22,25 +23,28 @@ export const RHFDatetime: React.FC<RHFDatetimeProps> = ({
     validateRules,
     defaultValue,
 }) => {
+    const defaultTime = defaultValue ? dayjs.unix(Number(defaultValue)) : dayjs(new Date());
     return (
         <Controller
             name={name}
             control={control}
             rules={validateRules}
-            {...(defaultValue && {defaultValue: dayjs.unix(Number(defaultValue))})}
+            defaultValue={defaultTime}
             render={({field, fieldState}) => (
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateTimePicker
-                        className={"date_time_picker_common"}
-                        label={labels.label}
-                        viewRenderers={{
-                            hours: renderTimeViewClock,
-                            minutes: renderTimeViewClock,
-                            seconds: renderTimeViewClock
-                        }}
-                        {...field}
-                    />
-                </LocalizationProvider>
+                <FormControl error={fieldState.invalid}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DateTimePicker
+                            className={"date_time_picker_common"}
+                            label={labels.label}
+                            viewRenderers={{
+                                hours: renderTimeViewClock,
+                                minutes: renderTimeViewClock,
+                                seconds: renderTimeViewClock
+                            }}
+                            {...field}
+                        />
+                    </LocalizationProvider>
+                </FormControl>
             )}
         />
     );
