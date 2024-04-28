@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import Header from "@/components/common/Header";
 import "@/styles/common.scss"
+import CommonInfoProvider from "@/context/CommonContext";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,12 +21,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body className={`${inter.className} bg-base-200`}>
-        <Header />
-        <main className="flex min-h-screen flex-col items-center justify-between bg-base-200 pl-8">
-          {children}
-        </main>
-        </body>
+        <CommonInfoProvider familyId={'1'}>
+          <body className={`${inter.className} bg-base-200`}>
+          <Header />
+          <main className="flex min-h-screen flex-col items-center justify-between bg-base-200 pl-8">
+            {children}
+          </main>
+          </body>
+        </CommonInfoProvider>
       </UserProvider>
     </html>
   )
