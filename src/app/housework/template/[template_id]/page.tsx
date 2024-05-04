@@ -1,17 +1,27 @@
 'use client';
 import {Box, Card} from "@mui/material";
-import {useRouter} from "next/navigation";
+import {useForm} from "react-hook-form";
+import {HouseworkTemplateFormValues} from "@/components/common/react-hook-form/type";
+import {RHFTextField} from "@/components/common/react-hook-form/TextField";
+import HouseworkForm from "@/components/housework/form";
+import HouseworkTemplateForm from "@/components/housework/template/form";
+import {Suspense, useState} from "react";
+import LoadingScreen from "@/components/common/Loading";
 
 
-const Page = ({params}: {params: {template_id: string}}) => {
-    const router = useRouter()
-
+const Page = () => {
+    const [data, setData] = useState<Record<string, any>>({});
+    const createHouseworkTemplateForm = () => {
+        const res = await Housework.getHouseworkTemplateDetail(params.template_id);
+        return <HouseworkTemplateForm />;
+    }
     return (
         <Card className={"card_common"}>
             <div className={"title_common"}>家事テンプレート編集</div>
             <Box className={"flex flex-wrap justify-between"}>
-                edit <br />
-                template_id: {params.template_id}
+                <Suspense fallback={<LoadingScreen />}>
+                    {createHouseworkTemplateForm()}
+                </Suspense>
             </Box>
         </Card>
     );

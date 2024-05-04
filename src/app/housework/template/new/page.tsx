@@ -3,46 +3,24 @@ import {Box, Card} from "@mui/material";
 import {useForm} from "react-hook-form";
 import {HouseworkTemplateFormValues} from "@/components/common/react-hook-form/type";
 import {RHFTextField} from "@/components/common/react-hook-form/TextField";
+import HouseworkForm from "@/components/housework/form";
+import HouseworkTemplateForm from "@/components/housework/template/form";
+import {Suspense} from "react";
+import LoadingScreen from "@/components/common/Loading";
 
 
 const Page = () => {
-    const {
-        // register,
-        handleSubmit,
-        formState: { errors },
-        getValues,
-        control,
-        setError,
-        clearErrors,
-    } = useForm<HouseworkTemplateFormValues>();
 
-    const validateRules = {
-        housework_title: {
-            required: '家事名を入力してください',
-        },
-        housework_detail: {
-
-        },
+    const createHouseworkTemplateForm = () => {
+        return <HouseworkTemplateForm />;
     }
-
-    const labels = {
-        housework_title: {id: "housework_title", label: "家事名"},
-        housework_detail: {id: "housework_detail", label: "詳細"},
-    }
-
-
     return (
         <Card className={"card_common"}>
             <div className={"title_common"}>家事テンプレート作成</div>
             <Box className={"flex flex-wrap justify-between"}>
-                <form className={"form_common"} onSubmit={handleSubmit()}>
-                    <RHFTextField
-                        name="housework_title"
-                        validateRules={validateRules.housework_title}
-                        labelName={labels.housework_title.label}
-                        control={control}
-                    />
-                </form>
+                <Suspense fallback={<LoadingScreen />}>
+                    {createHouseworkTemplateForm()}
+                </Suspense>
             </Box>
         </Card>
     );
