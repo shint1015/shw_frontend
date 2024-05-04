@@ -1,6 +1,6 @@
 "use client"
 import {Card} from "@mui/material";
-import "@/styles/housework/detail/form.scss"
+import "@/styles/commonForm.scss"
 import "@/styles/common.scss"
 import HouseworkForm from "@/components/housework/form";
 

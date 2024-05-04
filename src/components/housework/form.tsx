@@ -6,7 +6,7 @@ import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 import RHFSelect from "@/components/common/react-hook-form/Select";
 import {useContext, useEffect, useState} from "react";
-import '@/styles/housework/detail/form.scss';
+import "@/styles/commonForm.scss"
 import Family from "@utils/api/family";
 import {endpoint} from "@utils/api/common";
 import {CommonInfoContext} from "@/context/CommonContext";
@@ -34,7 +34,7 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
 
         },
         work_user_id: {
-            required: '作業者を選択してください',
+            required: '担当を選択してください',
         },
         startedAt: {
             required: '開始日時を入力してください',
@@ -46,7 +46,7 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
     const labels = {
         title: {id: "title", label: "家事名"},
         detail: {id: "detail", label: "詳細"},
-        work_user_id: {id: "work_user_id", label: "作業者"},
+        work_user_id: {id: "work_user_id", label: "担当"},
         startedAt: {id: "startedAt", label: "開始日時"},
         endedAt: {id: "endedAt", label: "終了日時"},
     }
@@ -103,7 +103,7 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
                     defaultValue={data?.detail ?? ''}
                 />
             </FormControl>
-            {/*作業者*/}
+            {/*担当*/}
             <FormControl className={"form_control_common"} fullWidth>
                 <RHFSelect
                     name={"work_user_id"}

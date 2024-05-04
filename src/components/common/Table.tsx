@@ -108,14 +108,9 @@ export default function CustomPaginationActionsTable(props: {rows:{[key: string]
     };
 
     const handleActionButtonClick = (houseworkData: {[key: string]: any}, actionType: string) => {
-        // if (actionType === 'edit') {
-        // }
-
         if (actionType === 'delete') {
             alert("delete")
         }
-
-
     }
 
     return (
@@ -154,7 +149,7 @@ export default function CustomPaginationActionsTable(props: {rows:{[key: string]
                                             <Link key={option.value}
                                                   href={option.uri.replace(':id', row.id)}
                                             >
-                                                <IconButton aria-label={option.value} onClick={() => handleActionButtonClick(row, option.value)}>
+                                                <IconButton aria-label={option.value}>
                                                     <EditIcon />
                                                 </IconButton>
                                             </Link>

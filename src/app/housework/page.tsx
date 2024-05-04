@@ -1,25 +1,29 @@
 "use client";
-import {SyntheticEvent, useEffect, useState} from "react";
+import {Suspense, SyntheticEvent, useEffect, useState} from "react";
 import { Box, Card, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import DataTable from "@/components/housework/dataTable";
 import "@/styles/common.scss"
 import Housework from "@utils/api/housework";
+import LoadingScreen from "@/components/common/Loading";
+import * as React from "react";
 
 const Page = () => {
     const [value, setValue] = useState('table');
     const [data, setData] = useState<Record<string, any>[]>([]);
-
-    useEffect(() => {
-        (async () => {
-            const res = await Housework.getByFamilyId("1");
-            setData(res.data.housework);
-        })();
-    }, []);
     const handleChange = (event: SyntheticEvent, newValue: string) => {
-        console.log("newValue", newValue)
         setValue(newValue);
     };
+
+    const createDataTable = async () => {
+        if (data.length == 0) {
+            const res = await Housework.getByFamilyId("1");
+            setData(res.data.housework);
+            return <DataTable data={res.data.housework} />;
+        } else {
+            return <DataTable data={data} />;
+        }
+    }
 
     return (
         <Card className={"card_common"}>
@@ -35,7 +39,9 @@ const Page = () => {
 
                     </TabPanel>
                     <TabPanel value="table">
-                        <DataTable data={data} />
+                        <Suspense fallback={<LoadingScreen/>}>
+                            {createDataTable()}
+                        </Suspense>
                     </TabPanel>
                 </TabContext>
             </Box>
