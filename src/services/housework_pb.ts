@@ -193,13 +193,50 @@ export class HouseworkPointRequest extends Message<HouseworkPointRequest> {
 }
 
 /**
- * @generated from message shw.HouseworkTemplateRequest
+ * @generated from message shw.HouseworkTemplatesRequest
  */
-export class HouseworkTemplateRequest extends Message<HouseworkTemplateRequest> {
+export class HouseworkTemplatesRequest extends Message<HouseworkTemplatesRequest> {
   /**
    * @generated from field: uint64 familyId = 1;
    */
   familyId = protoInt64.zero;
+
+  constructor(data?: PartialMessage<HouseworkTemplatesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.HouseworkTemplatesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HouseworkTemplatesRequest {
+    return new HouseworkTemplatesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HouseworkTemplatesRequest {
+    return new HouseworkTemplatesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HouseworkTemplatesRequest {
+    return new HouseworkTemplatesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: HouseworkTemplatesRequest | PlainMessage<HouseworkTemplatesRequest> | undefined, b: HouseworkTemplatesRequest | PlainMessage<HouseworkTemplatesRequest> | undefined): boolean {
+    return proto3.util.equals(HouseworkTemplatesRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message shw.HouseworkTemplateRequest
+ */
+export class HouseworkTemplateRequest extends Message<HouseworkTemplateRequest> {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id = protoInt64.zero;
 
   constructor(data?: PartialMessage<HouseworkTemplateRequest>) {
     super();
@@ -209,7 +246,7 @@ export class HouseworkTemplateRequest extends Message<HouseworkTemplateRequest> 
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "shw.HouseworkTemplateRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "familyId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HouseworkTemplateRequest {
@@ -462,9 +499,9 @@ export class HouseworkPointHistoryResponse extends Message<HouseworkPointHistory
  */
 export class HouseworkTemplateResponse extends Message<HouseworkTemplateResponse> {
   /**
-   * @generated from field: repeated shw.HouseworkTemplate template = 1;
+   * @generated from field: shw.HouseworkTemplate template = 1;
    */
-  template: HouseworkTemplate[] = [];
+  template?: HouseworkTemplate;
 
   constructor(data?: PartialMessage<HouseworkTemplateResponse>) {
     super();
@@ -474,7 +511,7 @@ export class HouseworkTemplateResponse extends Message<HouseworkTemplateResponse
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "shw.HouseworkTemplateResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "template", kind: "message", T: HouseworkTemplate, repeated: true },
+    { no: 1, name: "template", kind: "message", T: HouseworkTemplate },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HouseworkTemplateResponse {
@@ -491,6 +528,43 @@ export class HouseworkTemplateResponse extends Message<HouseworkTemplateResponse
 
   static equals(a: HouseworkTemplateResponse | PlainMessage<HouseworkTemplateResponse> | undefined, b: HouseworkTemplateResponse | PlainMessage<HouseworkTemplateResponse> | undefined): boolean {
     return proto3.util.equals(HouseworkTemplateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message shw.HouseworkTemplatesResponse
+ */
+export class HouseworkTemplatesResponse extends Message<HouseworkTemplatesResponse> {
+  /**
+   * @generated from field: repeated shw.HouseworkTemplate templates = 1;
+   */
+  templates: HouseworkTemplate[] = [];
+
+  constructor(data?: PartialMessage<HouseworkTemplatesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "shw.HouseworkTemplatesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "templates", kind: "message", T: HouseworkTemplate, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HouseworkTemplatesResponse {
+    return new HouseworkTemplatesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HouseworkTemplatesResponse {
+    return new HouseworkTemplatesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HouseworkTemplatesResponse {
+    return new HouseworkTemplatesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: HouseworkTemplatesResponse | PlainMessage<HouseworkTemplatesResponse> | undefined, b: HouseworkTemplatesResponse | PlainMessage<HouseworkTemplatesResponse> | undefined): boolean {
+    return proto3.util.equals(HouseworkTemplatesResponse, a, b);
   }
 }
 

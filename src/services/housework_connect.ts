@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse, HouseworkTargetRequest } from "./housework_pb";
+import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse, HouseworkTargetRequest, HouseworkTemplate, HouseworkTemplateRequest, HouseworkTemplateResponse, HouseworkTemplatesRequest, HouseworkTemplatesResponse } from "./housework_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CommonResponse } from "./common_pb";
 
@@ -119,6 +119,51 @@ export const HouseworkService = {
       name: "GetHouseworkPointHistory",
       I: HouseworkPointHistoryRequest,
       O: HouseworkPointHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkService.GetHouseworkTemplate
+     */
+    getHouseworkTemplate: {
+      name: "GetHouseworkTemplate",
+      I: HouseworkTemplateRequest,
+      O: HouseworkTemplateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkService.GetHouseworkTemplates
+     */
+    getHouseworkTemplates: {
+      name: "GetHouseworkTemplates",
+      I: HouseworkTemplatesRequest,
+      O: HouseworkTemplatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkService.CreateHouseworkTemplate
+     */
+    createHouseworkTemplate: {
+      name: "CreateHouseworkTemplate",
+      I: HouseworkTemplate,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkService.UpdateHouseworkTemplate
+     */
+    updateHouseworkTemplate: {
+      name: "UpdateHouseworkTemplate",
+      I: HouseworkTemplate,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkService.DeleteHouseworkTemplate
+     */
+    deleteHouseworkTemplate: {
+      name: "DeleteHouseworkTemplate",
+      I: HouseworkTemplate,
+      O: CommonResponse,
       kind: MethodKind.Unary,
     },
   }
