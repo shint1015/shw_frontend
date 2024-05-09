@@ -14,14 +14,14 @@ const pageList: {[key: string]: string}[] = [
         pageUrl: 'housework',
         icon: "housework",
     },
-    {
-        pageName: "housework template",
-        pageUrl: 'housework/template',
-        icon: "housework template",
-    },
+    // {
+    //     pageName: "housework template",
+    //     pageUrl: 'housework/template',
+    //     icon: "housework template",
+    // },
     {
         pageName: "point",
-        pageUrl: 'housework/point',
+        pageUrl: 'point',
         icon: "point",
     },
 ];

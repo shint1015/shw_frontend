@@ -1,5 +1,5 @@
 import {Box, Button} from "@mui/material";
-import * as React from "react";
+import React from "react";
 import CustomPaginationActionsTable from "@/components/common/Table";
 
 

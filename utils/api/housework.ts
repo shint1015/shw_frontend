@@ -10,6 +10,14 @@ class Housework extends Common {
         const res = await fetch(`${endpoint}/housework/detail?id=${houseworkId}`);
         return await res.json();
     }
+
+    static async getHouseworkTemplate(templateId: string) {
+        const res = await fetch(`${endpoint}/housework/template/detail?id=${templateId}`);
+        return await res.json();
+    }
+    static async getHouseworkPointLists(familyId: string) {
+
+    }
 }
 
 export default Housework;
