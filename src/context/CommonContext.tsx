@@ -23,12 +23,16 @@ const CommonInfoProvider: React.FC<{children: ReactNode, familyId: string}> = ({
     useEffect(() => {
         (async () => {
             {
-                const res = await Family.getBelongToUserArr(familyId);
-                setWorkUsers(res);
+                if (Object.keys(workUsers).length == 0) {
+                    const res = await Family.getBelongToUserArr(familyId);
+                    setWorkUsers(res);
+                }
             }
             {
-                const res = await Family.getRoleArr(familyId);
-                setRoles(res);
+                if (Object.keys(roles).length == 0) {
+                    const res = await Family.getRoleArr(familyId);
+                    setRoles(res);
+                }
             }
 
         })();

@@ -12,7 +12,7 @@ import LoadingScreen from "@/components/common/Loading";
 const Page = () => {
     const [data, setData] = useState<Record<string, any>>({});
     const createHouseworkTemplateForm = () => {
-        const res = await Housework.getHouseworkTemplateDetail(params.template_id);
+        // const res = await Housework.getHouseworkTemplateDetail(params.template_id);
         return <HouseworkTemplateForm />;
     }
     return (

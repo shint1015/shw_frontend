@@ -29,7 +29,7 @@ export const PointService = {
       name: "GetFamilyPointList",
       I: FamilyPointListRequest,
       O: FamilyPointList,
-      kind: MethodKind.ServerStreaming,
+      kind: MethodKind.Unary,
     },
     /**
      * @generated from rpc shw.PointService.CreatePoint

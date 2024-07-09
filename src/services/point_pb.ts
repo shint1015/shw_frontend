@@ -5,20 +5,26 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { UserInfo } from "./common_pb";
 
 /**
  * @generated from message shw.Point
  */
 export class Point extends Message<Point> {
   /**
-   * @generated from field: string userId = 1;
+   * @generated from field: uint64 id = 1;
    */
-  userId = "";
+  id = protoInt64.zero;
 
   /**
    * @generated from field: int64 point = 2;
    */
   point = protoInt64.zero;
+
+  /**
+   * @generated from field: shw.UserInfo user = 3;
+   */
+  user?: UserInfo;
 
   constructor(data?: PartialMessage<Point>) {
     super();
@@ -28,8 +34,9 @@ export class Point extends Message<Point> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "shw.Point";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "userId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "point", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "user", kind: "message", T: UserInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Point {
@@ -54,9 +61,9 @@ export class Point extends Message<Point> {
  */
 export class PointRequest extends Message<PointRequest> {
   /**
-   * @generated from field: string userId = 1;
+   * @generated from field: uint64 userId = 1;
    */
-  userId = "";
+  userId = protoInt64.zero;
 
   constructor(data?: PartialMessage<PointRequest>) {
     super();
@@ -66,7 +73,7 @@ export class PointRequest extends Message<PointRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "shw.PointRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "userId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "userId", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PointRequest {
@@ -128,9 +135,9 @@ export class PointResponse extends Message<PointResponse> {
  */
 export class FamilyPointListRequest extends Message<FamilyPointListRequest> {
   /**
-   * @generated from field: string familyId = 1;
+   * @generated from field: int64 familyId = 1;
    */
-  familyId = "";
+  familyId = protoInt64.zero;
 
   constructor(data?: PartialMessage<FamilyPointListRequest>) {
     super();
@@ -140,7 +147,7 @@ export class FamilyPointListRequest extends Message<FamilyPointListRequest> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "shw.FamilyPointListRequest";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "familyId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "familyId", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FamilyPointListRequest {
