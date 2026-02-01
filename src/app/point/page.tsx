@@ -14,6 +14,7 @@ const Page = () => {
 
         if (data && Object.keys(data).length == 0) {
             const res = await HouseworkPoint.getListByFamilyId(commonInfo.familyId);
+            console.log(res.data);
             setData(res.data.points);
             return <DataTable data={res.data.points} />;
         } else {

@@ -2,7 +2,6 @@ import { transport } from "@/apiClient/client";
 import { NextResponse } from "next/server";
 import {createParamsFromUrl} from "@utils/request";
 import {createPromiseClient} from "@connectrpc/connect";
-import {HouseworkPointRequest, HouseworkPointResponse} from "@/services/housework_pb";
 import {PointService} from "@/services/point_connect";
 import {FamilyPointListRequest} from "@/services/point_pb";
 
