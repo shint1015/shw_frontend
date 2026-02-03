@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse, HouseworkTargetRequest, HouseworkTemplate, HouseworkTemplateRequest, HouseworkTemplateResponse, HouseworkTemplatesRequest, HouseworkTemplatesResponse } from "./housework_pb";
+import { Housework, HouseworkDetailRequest, HouseworkDetailResponse, HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse, HouseworkPointHistoryRequest, HouseworkPointHistoryResponse, HouseworkPointRequest, HouseworkPointResponse, HouseworkRequest, HouseworkResponse, HouseworkSchedule, HouseworkScheduleRequest, HouseworkScheduleResponse, HouseworkSchedulesRequest, HouseworkSchedulesResponse, HouseworkTargetRequest, HouseworkTemplate, HouseworkTemplateRequest, HouseworkTemplateResponse, HouseworkTemplatesRequest, HouseworkTemplatesResponse } from "./housework_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CommonResponse } from "./common_pb";
 
@@ -67,8 +67,17 @@ export const HouseworkService = {
       O: CommonResponse,
       kind: MethodKind.Unary,
     },
+  }
+} as const;
+
+/**
+ * @generated from service shw.HouseworkMemoService
+ */
+export const HouseworkMemoService = {
+  typeName: "shw.HouseworkMemoService",
+  methods: {
     /**
-     * @generated from rpc shw.HouseworkService.GetHouseworkMemo
+     * @generated from rpc shw.HouseworkMemoService.GetHouseworkMemo
      */
     getHouseworkMemo: {
       name: "GetHouseworkMemo",
@@ -77,7 +86,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.CreateHouseworkMemo
+     * @generated from rpc shw.HouseworkMemoService.CreateHouseworkMemo
      */
     createHouseworkMemo: {
       name: "CreateHouseworkMemo",
@@ -86,7 +95,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.UpdateHouseworkMemo
+     * @generated from rpc shw.HouseworkMemoService.UpdateHouseworkMemo
      */
     updateHouseworkMemo: {
       name: "UpdateHouseworkMemo",
@@ -95,7 +104,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.DeleteHouseworkMemo
+     * @generated from rpc shw.HouseworkMemoService.DeleteHouseworkMemo
      */
     deleteHouseworkMemo: {
       name: "DeleteHouseworkMemo",
@@ -103,8 +112,17 @@ export const HouseworkService = {
       O: CommonResponse,
       kind: MethodKind.Unary,
     },
+  }
+} as const;
+
+/**
+ * @generated from service shw.HouseworkPointService
+ */
+export const HouseworkPointService = {
+  typeName: "shw.HouseworkPointService",
+  methods: {
     /**
-     * @generated from rpc shw.HouseworkService.GetHouseworkPoint
+     * @generated from rpc shw.HouseworkPointService.GetHouseworkPoint
      */
     getHouseworkPoint: {
       name: "GetHouseworkPoint",
@@ -113,7 +131,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.GetHouseworkPointHistory
+     * @generated from rpc shw.HouseworkPointService.GetHouseworkPointHistory
      */
     getHouseworkPointHistory: {
       name: "GetHouseworkPointHistory",
@@ -121,8 +139,17 @@ export const HouseworkService = {
       O: HouseworkPointHistoryResponse,
       kind: MethodKind.Unary,
     },
+  }
+} as const;
+
+/**
+ * @generated from service shw.HouseworkTemplateService
+ */
+export const HouseworkTemplateService = {
+  typeName: "shw.HouseworkTemplateService",
+  methods: {
     /**
-     * @generated from rpc shw.HouseworkService.GetHouseworkTemplate
+     * @generated from rpc shw.HouseworkTemplateService.GetHouseworkTemplate
      */
     getHouseworkTemplate: {
       name: "GetHouseworkTemplate",
@@ -131,7 +158,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.GetHouseworkTemplates
+     * @generated from rpc shw.HouseworkTemplateService.GetHouseworkTemplates
      */
     getHouseworkTemplates: {
       name: "GetHouseworkTemplates",
@@ -140,7 +167,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.CreateHouseworkTemplate
+     * @generated from rpc shw.HouseworkTemplateService.CreateHouseworkTemplate
      */
     createHouseworkTemplate: {
       name: "CreateHouseworkTemplate",
@@ -149,7 +176,7 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.UpdateHouseworkTemplate
+     * @generated from rpc shw.HouseworkTemplateService.UpdateHouseworkTemplate
      */
     updateHouseworkTemplate: {
       name: "UpdateHouseworkTemplate",
@@ -158,11 +185,65 @@ export const HouseworkService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc shw.HouseworkService.DeleteHouseworkTemplate
+     * @generated from rpc shw.HouseworkTemplateService.DeleteHouseworkTemplate
      */
     deleteHouseworkTemplate: {
       name: "DeleteHouseworkTemplate",
       I: HouseworkTemplate,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+  }
+} as const;
+
+/**
+ * @generated from service shw.HouseworkScheduleService
+ */
+export const HouseworkScheduleService = {
+  typeName: "shw.HouseworkScheduleService",
+  methods: {
+    /**
+     * @generated from rpc shw.HouseworkScheduleService.GetHouseworkSchedules
+     */
+    getHouseworkSchedules: {
+      name: "GetHouseworkSchedules",
+      I: HouseworkSchedulesRequest,
+      O: HouseworkSchedulesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkScheduleService.GetHouseworkSchedule
+     */
+    getHouseworkSchedule: {
+      name: "GetHouseworkSchedule",
+      I: HouseworkScheduleRequest,
+      O: HouseworkScheduleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkScheduleService.CreateHouseworkSchedule
+     */
+    createHouseworkSchedule: {
+      name: "CreateHouseworkSchedule",
+      I: HouseworkSchedule,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkScheduleService.UpdateHouseworkSchedule
+     */
+    updateHouseworkSchedule: {
+      name: "UpdateHouseworkSchedule",
+      I: HouseworkSchedule,
+      O: CommonResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc shw.HouseworkScheduleService.DeleteHouseworkSchedule
+     */
+    deleteHouseworkSchedule: {
+      name: "DeleteHouseworkSchedule",
+      I: HouseworkScheduleRequest,
       O: CommonResponse,
       kind: MethodKind.Unary,
     },

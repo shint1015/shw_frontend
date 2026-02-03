@@ -1,22 +1,20 @@
 import { UserService} from "@/services/user_connect";
-import { transport } from "@/apiClient/client";
-import { User, GetBelongToUserRequest, GetBelongToUserResponse } from "@/services/user_pb";
+import { createAuthTransport } from "@/apiClient/client";
+import { GetBelongToUserRequest, GetBelongToUserResponse } from "@/services/user_pb";
 import { createPromiseClient } from "@connectrpc/connect";
-import { createParamsFromUrl } from "@utils/request";
-import {NextResponse} from "next/server";
+import { createParamsFromUrl, doAuthRequest } from "@utils/request";
 
 
-const client = createPromiseClient(UserService, transport)
 export type UserApiResponse = { ok: true, data: GetBelongToUserResponse } | { ok: false, error: Error };
 
-export const GET = async (req: Request) => {
+const doGrpcRequest = async (req: Request, _method: string, accessToken: string) => {
+    const client = createPromiseClient(UserService, createAuthTransport(accessToken))
     const request = new GetBelongToUserRequest();
     const requestJson = createParamsFromUrl(req.url)
     request.fromJson(requestJson)
-    try {
-        const response = await client.getBelongToUser(request);
-        return NextResponse.json({ ok: true, data: response }, {status: 200});
-    } catch (e) {
-        return NextResponse.json({ ok: false, error: e }, {status: 500});
-    }
+    return client.getBelongToUser(request);
+}
+
+export const GET = async (req: Request) => {
+    return await doAuthRequest(req, "GET", doGrpcRequest);
 }

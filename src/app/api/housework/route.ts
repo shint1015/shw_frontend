@@ -1,15 +1,15 @@
-import { transport } from '@/apiClient/client';
+import { createAuthTransport } from '@/apiClient/client';
 import { createPromiseClient } from '@connectrpc/connect';
 import {Housework, HouseworkRequest, HouseworkResponse} from '@/services/housework_pb';
 import {HouseworkService} from '@/services/housework_connect';
-import {createParamsFromUrl, createRequestMethodFunc, doRequest} from '@utils/request';
+import {createParamsFromUrl, createRequestMethodFunc, doAuthRequest} from '@utils/request';
 import {CommonResponse} from '@/services/common_pb';
 
-const client = createPromiseClient(HouseworkService, transport)
 export type HouseworkApiResponse = { ok: true, data: HouseworkResponse | CommonResponse } | { ok: false, error: Error };
 
 
-const doGrpcRequest = async (req: Request, method: string) => {
+const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
+    const client = createPromiseClient(HouseworkService, createAuthTransport(accessToken))
     const request = new HouseworkRequest();
     const housework = new Housework();
     if (method === 'GET' || method === 'DELETE') {
@@ -36,15 +36,15 @@ const doGrpcRequest = async (req: Request, method: string) => {
 
 
 export const GET = async (req: Request) =>  {
-    return await doRequest(req, 'GET', doGrpcRequest)
+    return await doAuthRequest(req, 'GET', doGrpcRequest)
 }
 
 export const POST = async (req: Request) =>  {
-    return await doRequest(req, 'POST', doGrpcRequest)
+    return await doAuthRequest(req, 'POST', doGrpcRequest)
 }
 export const PUT = async (req: Request) =>  {
-    return await doRequest(req, 'PUT', doGrpcRequest)
+    return await doAuthRequest(req, 'PUT', doGrpcRequest)
 }
 export const DELETE = async (req: Request) =>  {
-    return await doRequest(req, 'DELETE', doGrpcRequest)
+    return await doAuthRequest(req, 'DELETE', doGrpcRequest)
 }

@@ -1,15 +1,15 @@
 import { FamilyService } from "@/services/family_connect";
-import { transport } from "@/apiClient/client";
+import { createAuthTransport } from "@/apiClient/client";
 import { Family, FamilyRequest, FamilyResponse } from "@/services/family_pb";
 import { createPromiseClient } from "@connectrpc/connect";
-import {createParamsFromUrl, createRequestMethodFunc, doRequest} from "@utils/request";
+import {createParamsFromUrl, doAuthRequest} from "@utils/request";
 import { CommonResponse } from "@/services/common_pb";
 
 
-const client = createPromiseClient(FamilyService, transport)
 export type FamilyApiResponse = | { ok: true, data: FamilyResponse | CommonResponse } | { ok: false, error: Error };
 
-const doGrpcRequest = async (req: Request, method: string) => {
+const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
+    const client = createPromiseClient(FamilyService, createAuthTransport(accessToken))
     const request = new FamilyRequest();
     const family = new Family();
     if (method === "GET" || method === "DELETE") {
@@ -35,14 +35,14 @@ const doGrpcRequest = async (req: Request, method: string) => {
 }
 
 export const GET = async (req: Request) =>  {
-    return await doRequest(req, 'GET', doGrpcRequest)
+    return await doAuthRequest(req, 'GET', doGrpcRequest)
 }
 export const POST = async (req: Request) =>  {
-    return await doRequest(req, 'POST', doGrpcRequest)
+    return await doAuthRequest(req, 'POST', doGrpcRequest)
 }
 export const PUT = async (req: Request) =>  {
-    return await doRequest(req, 'PUT', doGrpcRequest)
+    return await doAuthRequest(req, 'PUT', doGrpcRequest)
 }
 export const DELETE = async (req: Request) =>  {
-    return await doRequest(req, 'DELETE', doGrpcRequest)
+    return await doAuthRequest(req, 'DELETE', doGrpcRequest)
 }

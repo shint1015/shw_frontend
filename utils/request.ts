@@ -1,4 +1,5 @@
 import {NextResponse} from "next/server";
+import { getAccessToken } from "@auth0/nextjs-auth0";
 
 /**
  * Create a query string from an object
@@ -32,6 +33,28 @@ export const doRequest = async (
     }
 }
 
+/**
+ * Do an authenticated request
+ * @param req
+ * @param method
+ * @param grpcRequest
+ */
+export const doAuthRequest = async (
+    req: Request,
+    method: string,
+    grpcRequest: (req: Request, method: string, accessToken: string) => Promise<any>
+) => {
+    try {
+        const { accessToken } = await getAccessToken();
+        if (!accessToken) {
+            return NextResponse.json({ ok: false, error: "unauthorized" }, { status: 401 });
+        }
+        return await doRequest(req, method, (r, m) => grpcRequest(r, m, accessToken));
+    } catch (e) {
+        return NextResponse.json({ ok: false, error: e }, { status: 500 });
+    }
+}
+
 
 /**
  * Create a request method function
@@ -56,4 +79,3 @@ export const createRequestMethodFunc = <ResponseType>(grpcRequest: (req: Request
     }
     return requestMethodFunc;
 }
-
