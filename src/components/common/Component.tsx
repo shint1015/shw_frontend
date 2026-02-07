@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import Link from 'next/link'
 import {MenuItem, MenuItemProps, Button, ListItemButton, ListItemIcon, ListItemText} from '@mui/material'
-import '@/styles/component.scss'
+import '@/styles/component.css'
 import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';

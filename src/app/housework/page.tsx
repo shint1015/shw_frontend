@@ -3,7 +3,7 @@ import {Suspense, SyntheticEvent, useEffect, useState} from "react";
 import { Box, Card, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import DataTable from "@/components/housework/dataTable";
-import "@/styles/common.scss"
+import "@/styles/common.css"
 import Housework from "@utils/api/housework";
 import LoadingScreen from "@/components/common/Loading";
 import * as React from "react";

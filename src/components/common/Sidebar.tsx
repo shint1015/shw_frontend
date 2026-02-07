@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Theme, CSSObject } from '@mui/material';
+import { Theme, CSSObject, createTheme } from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import Box from '@mui/material/Box';
-import styled from '@mui/material/styles/styled';
+import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -14,7 +14,6 @@ import MuiAppBar, {AppBarProps as MuiAppBarProps} from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import useTheme from '@mui/material/styles/useTheme';
 import ListItemText from '@mui/material/ListItemText';
 
 
@@ -99,7 +98,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const Sidebar = () => {
 
-    const theme = useTheme();
+    const theme = createTheme();
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {

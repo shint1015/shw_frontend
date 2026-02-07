@@ -1,9 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { Auth0Provider } from '@auth0/nextjs-auth0/client';
 import Header from "@/components/common/Header";
-import "@/styles/common.scss"
+import "@/styles/common.css"
 import CommonInfoProvider from "@/context/CommonContext";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <UserProvider>
+      <Auth0Provider>
         <CommonInfoProvider familyId={'1'}>
           <body className={`${inter.className} bg-base-200`}>
           <Header />
@@ -29,7 +29,7 @@ export default function RootLayout({
           </main>
           </body>
         </CommonInfoProvider>
-      </UserProvider>
+      </Auth0Provider>
     </html>
   )
 }

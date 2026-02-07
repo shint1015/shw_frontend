@@ -19,7 +19,7 @@
 
 .submit_button {
   @apply bg-base-1000 text-black px-6 py-3;
-  &:hover{
-    @apply bg-base-600
-  }
+}
+.submit_button:hover{
+  @apply bg-base-600
 }

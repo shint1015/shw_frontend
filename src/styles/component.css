@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+.base_button {
+    @apply bg-base-600 text-black;
+}
+.base_button:hover {
+    @apply bg-base-400
+}

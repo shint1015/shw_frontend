@@ -1,7 +1,7 @@
 "use client"
 import {Card} from "@mui/material";
-import "@/styles/commonForm.scss"
-import "@/styles/common.scss"
+import "@/styles/commonForm.css"
+import "@/styles/common.css"
 import HouseworkForm from "@/components/housework/form";
 
 const Page = () => {

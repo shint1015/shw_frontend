@@ -28,6 +28,9 @@
       ],
       "@utils/*": [
         "./utils/*"
+      ],
+      "@/styles/*": [
+        "./src/styles/*"
       ]
     }
   },
@@ -35,6 +38,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.css",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
