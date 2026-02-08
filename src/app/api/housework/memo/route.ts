@@ -1,31 +1,29 @@
-import { HouseworkService } from "@/services/housework_connect";
 import { createAuthTransport } from "@/apiClient/client";
-import { createPromiseClient } from "@connectrpc/connect";
-import { HouseworkMemo, HouseworkMemoRequest, HouseworkMemoResponse } from "@/services/housework_pb";
+import { createClient } from "@connectrpc/connect";
+import { HouseworkMemoService, HouseworkMemoRequestSchema, HouseworkMemoResponse, HouseworkMemoSchema } from "@/gen/housework_pb";
 import { createParamsFromUrl, doAuthRequest } from "@utils/request";
-import { CommonResponse } from "@/services/common_pb";
+import { CommonResponse } from "@/gen/common_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 
 export type HouseworkMemoApiResponse = { ok: true, data: HouseworkMemoResponse | CommonResponse } | { ok: false, error: Error };
 
 
 const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
-    const client = createPromiseClient(HouseworkService, createAuthTransport(accessToken))
-    const request = new HouseworkMemoRequest();
-    const houseworkMemo = new HouseworkMemo();
+    const client = createClient(HouseworkMemoService, createAuthTransport(accessToken))
     if (method === 'GET' || method === 'DELETE') {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case 'GET':
-                request.fromJson(requestJson)
+                const request = fromJson(HouseworkMemoRequestSchema, requestJson);
                 return client.getHouseworkMemo(request);
             case 'DELETE':
-                houseworkMemo.fromJson(requestJson)
+                const houseworkMemo = fromJson(HouseworkMemoSchema, requestJson);
                 return client.deleteHouseworkMemo(houseworkMemo);
         }
     } else if (method === 'POST' || method === 'PUT') {
         const data = await req.json();
-        houseworkMemo.fromJson(data)
+        const houseworkMemo = fromJson(HouseworkMemoSchema, data);
         switch (method) {
             case 'POST':
                 return client.createHouseworkMemo(houseworkMemo);

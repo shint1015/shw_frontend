@@ -1,14 +1,13 @@
 import { createAuthTransport } from "@/apiClient/client";
 import {createParamsFromUrl, doAuthRequest} from "@utils/request";
-import {createPromiseClient} from "@connectrpc/connect";
-import {PointService} from "@/services/point_connect";
-import {FamilyPointListRequest} from "@/services/point_pb";
+import {createClient} from "@connectrpc/connect";
+import {FamilyPointListRequestSchema, PointService} from "@/gen/point_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 const doGrpcRequest = async (req: Request, _method: string, accessToken: string) => {
-    const client = createPromiseClient(PointService, createAuthTransport(accessToken))
-    const request = new FamilyPointListRequest();
+    const client = createClient(PointService, createAuthTransport(accessToken))
     const requestJson = createParamsFromUrl(req.url)
-    request.fromJson(requestJson)
+    const request = fromJson(FamilyPointListRequestSchema, requestJson);
     return client.getFamilyPointList(request);
 }
 

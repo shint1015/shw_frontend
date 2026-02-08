@@ -1,16 +1,16 @@
-import {HouseworkService} from "@/services/housework_connect";
 import { createAuthTransport } from "@/apiClient/client";
 import {createParamsFromUrl, doAuthRequest} from "@utils/request";
-import {createPromiseClient} from "@connectrpc/connect";
-import {HouseworkDetailRequest} from "@/services/housework_pb";
+import {createClient} from "@connectrpc/connect";
+import {HouseworkService, HouseworkDetailRequestSchema} from "@/gen/housework_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 // export type FamilyApiResponse = | { ok: true, data: HouseworkDetailRequest } | { ok: false, error: Error };
 
 const doGrpcRequest = async (req: Request, _method: string, accessToken: string) => {
-    const client = createPromiseClient(HouseworkService, createAuthTransport(accessToken))
-    const request = new HouseworkDetailRequest();
+    const client = createClient(HouseworkService, createAuthTransport(accessToken))
     const requestJson = createParamsFromUrl(req.url)
-    request.fromJson(requestJson)
+    const request = fromJson(HouseworkDetailRequestSchema, requestJson);
+
     return client.getHouseworkDetail(request);
 }
 

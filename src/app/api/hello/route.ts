@@ -1,17 +1,15 @@
-import { HelloService } from "@/services/sample_connect";
 import { transport } from "@/apiClient/client";
-import { HelloRequest, HelloResponse } from "@/services/sample_pb";
-import { createPromiseClient } from "@connectrpc/connect";
+import { HelloService, HelloRequestSchema, HelloResponse } from "@/gen/sample_pb";
+import { createClient } from "@connectrpc/connect";
 import { NextResponse } from "next/server";
+import { fromJson } from "@bufbuild/protobuf";
 
-const request = new HelloRequest();
-const client = createPromiseClient(HelloService, transport)
+const client = createClient(HelloService, transport)
 export type HelloApiResponse = | { ok: true, data: HelloResponse } | { ok: false, error: Error };
-
 const POST = async (req: Request) => {
     const data = await req.json();
     try {
-        request.fromJson(data)
+        const request = fromJson(HelloRequestSchema, data);
         const response = await client.hello(request);
         return NextResponse.json({ ok: true, data: response }, {status: 200});
     }catch (e) {

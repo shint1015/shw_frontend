@@ -1,35 +1,32 @@
-import { FamilyService } from "@/services/family_connect";
+import { FamilyRoleRequestSchema, FamilyRequestSchema, FamilyRoleSchema, FamilyService, FamilyRoleResponse } from "@/gen/family_pb";
 import { createAuthTransport } from "@/apiClient/client";
-import {FamilyRequest, FamilyRole, FamilyRoleRequest, FamilyRoleResponse} from "@/services/family_pb";
-import { createPromiseClient } from "@connectrpc/connect";
+import { createClient } from "@connectrpc/connect";
 import {createParamsFromUrl, doAuthRequest} from "@utils/request";
-import { CommonResponse } from "@/services/common_pb";
+import { CommonResponse } from "@/gen/common_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 
 export type FamilyRoleApiResponse = { ok: true, data: FamilyRoleResponse | CommonResponse } | { ok: false, error: Error };
 
 const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
-    const client = createPromiseClient(FamilyService, createAuthTransport(accessToken))
-    const familyRole = new FamilyRole();
+    const client = createClient(FamilyService, createAuthTransport(accessToken))
     if (method === "GET" || method === "DELETE") {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case "GET":
                 {
-                    const request = new FamilyRequest();
-                    request.fromJson(requestJson)
+                    const request = fromJson(FamilyRequestSchema, requestJson);
                     return client.getFamilyRole(request);
                 }
             case "DELETE":
                 {
-                    const request = new FamilyRoleRequest();
-                    request.fromJson(requestJson)
+                    const request = fromJson(FamilyRoleRequestSchema, requestJson);
                     return client.deleteFamilyRole(request);
                 }
         }
     } else if (method === "POST" || method === "PUT") {
         const data = await req.json();
-        familyRole.fromJson(data)
+        const familyRole = fromJson(FamilyRoleSchema, data);
         switch (method) {
             case "POST":
                 return client.createFamilyRole(familyRole);

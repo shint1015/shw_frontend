@@ -1,14 +1,14 @@
-import {HouseworkService} from "@/services/housework_connect";
+
 import { createAuthTransport } from "@/apiClient/client";
-import {createParamsFromUrl, doAuthRequest} from "@utils/request";
-import {createPromiseClient} from "@connectrpc/connect";
-import {HouseworkPointHistoryRequest, HouseworkPointHistoryResponse} from "@/services/housework_pb";
+import { createParamsFromUrl, doAuthRequest } from "@utils/request";
+import { createClient } from "@connectrpc/connect";
+import { HouseworkPointHistoryRequestSchema, HouseworkPointService } from "@/gen/housework_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 const doGrpcRequest = async (req: Request, _method: string, accessToken: string) => {
-    const client = createPromiseClient(HouseworkService, createAuthTransport(accessToken))
-    const request = new HouseworkPointHistoryRequest();
+    const client = createClient(HouseworkPointService, createAuthTransport(accessToken))
     const requestJson = createParamsFromUrl(req.url)
-    request.fromJson(requestJson)
+    const request = fromJson(HouseworkPointHistoryRequestSchema, requestJson);
     return client.getHouseworkPointHistory(request);
 }
 

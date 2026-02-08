@@ -1,30 +1,28 @@
 import { createAuthTransport } from '@/apiClient/client';
-import { createPromiseClient } from '@connectrpc/connect';
-import {Housework, HouseworkRequest, HouseworkResponse} from '@/services/housework_pb';
-import {HouseworkService} from '@/services/housework_connect';
+import { createClient } from '@connectrpc/connect';
+import {HouseworkService, Housework, HouseworkRequest, HouseworkResponse, HouseworkRequestSchema, HouseworkTargetRequestSchema, HouseworkSchema} from '@/gen/housework_pb';
 import {createParamsFromUrl, createRequestMethodFunc, doAuthRequest} from '@utils/request';
-import {CommonResponse} from '@/services/common_pb';
+import {CommonResponse} from '@/gen/common_pb';
+import { fromJson } from '@bufbuild/protobuf';
 
 export type HouseworkApiResponse = { ok: true, data: HouseworkResponse | CommonResponse } | { ok: false, error: Error };
 
 
 const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
-    const client = createPromiseClient(HouseworkService, createAuthTransport(accessToken))
-    const request = new HouseworkRequest();
-    const housework = new Housework();
+    const client = createClient(HouseworkService, createAuthTransport(accessToken))
     if (method === 'GET' || method === 'DELETE') {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case 'GET':
-                request.fromJson(requestJson)
+                const request = fromJson(HouseworkRequestSchema, requestJson);
                 return client.getHousework(request);
             case 'DELETE':
-                housework.fromJson(requestJson)
+                const housework = fromJson(HouseworkTargetRequestSchema, requestJson);
                 return client.deleteHousework(housework);
         }
     } else if (method === 'POST' || method === 'PUT') {
         const data = await req.json();
-        housework.fromJson(data)
+        const housework = fromJson(HouseworkSchema, data);
         switch (method) {
             case 'POST':
                 return client.createHousework(housework);

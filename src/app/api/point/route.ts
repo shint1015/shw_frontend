@@ -1,26 +1,24 @@
 import { createAuthTransport } from '@/apiClient/client';
-import { createPromiseClient } from '@connectrpc/connect';
+import { createClient } from '@connectrpc/connect';
 import {createParamsFromUrl, doAuthRequest} from '@utils/request';
-import {PointService} from "@/services/point_connect";
-import {Point, PointRequest} from "@/services/point_pb";
+import {PointService, PointRequestSchema, PointSchema} from "@/gen/point_pb";
+import { fromJson } from '@bufbuild/protobuf';
 
 const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
-    const client = createPromiseClient(PointService, createAuthTransport(accessToken))
-    const request = new PointRequest();
-    const point = new Point();
+    const client = createClient(PointService, createAuthTransport(accessToken))
     if (method === 'GET' || method === 'DELETE') {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case 'GET':
-                request.fromJson(requestJson)
+                const request = fromJson(PointRequestSchema, requestJson);
                 return client.getPoint(request);
             case 'DELETE':
-                point.fromJson(requestJson)
+                const point = fromJson(PointSchema, requestJson);
                 return client.deletePoint(point);
         }
     } else if (method === 'POST' || method === 'PUT') {
         const data = await req.json();
-        point.fromJson(data)
+        const point = fromJson(PointSchema, data);
         switch (method) {
             case 'POST':
                 return client.createPoint(point);

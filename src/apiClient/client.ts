@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { ServiceType } from "@bufbuild/protobuf";
-import { createConnectTransport } from "@connectrpc/connect-web";
-import { createPromiseClient, PromiseClient } from "@connectrpc/connect";
+import { type DescService } from "@bufbuild/protobuf";
+import { createClient, type Client } from "@connectrpc/connect";
+import { createGrpcTransport } from "@connectrpc/connect-node";
 
 const baseUrl =
     process.env.GRPC_BASE_URL ||
@@ -9,7 +9,7 @@ const baseUrl =
     "http://172.20.0.4:8080";
 
 const createAuthTransport = (accessToken?: string) =>
-    createConnectTransport({
+    createGrpcTransport({
         baseUrl,
         interceptors: accessToken
             ? [
@@ -23,8 +23,8 @@ const createAuthTransport = (accessToken?: string) =>
 
 const transport = createAuthTransport();
 
-const useClient = <T extends ServiceType>(service: T): PromiseClient<T> => {
-    return useMemo(() => createPromiseClient(service, transport), [service]);
+const useClient = <T extends DescService>(service: T): Client<T> => {
+    return useMemo(() => createClient(service, transport), [service]);
 }
 
 export { useClient, transport, createAuthTransport }

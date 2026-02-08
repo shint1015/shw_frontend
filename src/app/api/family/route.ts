@@ -1,30 +1,28 @@
-import { FamilyService } from "@/services/family_connect";
 import { createAuthTransport } from "@/apiClient/client";
-import { Family, FamilyRequest, FamilyResponse } from "@/services/family_pb";
-import { createPromiseClient } from "@connectrpc/connect";
+import { FamilyService, FamilySchema, FamilyRequest, FamilyResponse, FamilyRequestSchema } from "@/gen/family_pb";
+import { createClient } from "@connectrpc/connect";
 import {createParamsFromUrl, doAuthRequest} from "@utils/request";
-import { CommonResponse } from "@/services/common_pb";
+import { CommonResponse } from "@/gen/common_pb";
+import { fromJson } from "@bufbuild/protobuf";
 
 
 export type FamilyApiResponse = | { ok: true, data: FamilyResponse | CommonResponse } | { ok: false, error: Error };
 
 const doGrpcRequest = async (req: Request, method: string, accessToken: string) => {
-    const client = createPromiseClient(FamilyService, createAuthTransport(accessToken))
-    const request = new FamilyRequest();
-    const family = new Family();
+    const client = createClient(FamilyService, createAuthTransport(accessToken))
     if (method === "GET" || method === "DELETE") {
         const requestJson = createParamsFromUrl(req.url)
         switch (method) {
             case "GET":
-                request.fromJson(requestJson)
+                const request = fromJson(FamilyRequestSchema, requestJson);
                 return client.getFamily(request);
             case "DELETE":
-                family.fromJson(requestJson)
+                const family = fromJson(FamilySchema, requestJson);
                 return client.deleteFamily(family);
         }
     } else if (method === "POST" || method === "PUT") {
         const data = await req.json();
-        family.fromJson(data)
+        const family = fromJson(FamilySchema, data);
         switch (method) {
             case "POST":
                 return client.createFamily(family);
