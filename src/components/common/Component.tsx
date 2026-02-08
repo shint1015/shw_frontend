@@ -8,28 +8,11 @@ import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ArticleIcon from '@mui/icons-material/Article';
 import SavingsIcon from '@mui/icons-material/Savings';
 
-type LinkMenuItemProps = Omit<MenuItemProps<'a', { href: string }>, 'component' | 'button'>
-
-// const LinkMenuItem = forwardRef<HTMLAnchorElement, LinkMenuItemProps>(
-//     function LinkMenuItem(props, forwardedRef) {
-//
-//         const {
-//             href,
-//             ...other
-//         } = props
-//         return (
-//             <Link href={href}>
-//                 <MenuItem component='a' ref={forwardedRef} {...other}/>
-//             </Link>
-//         )
-//     }
-// )
-
 const LinkButton = ({href, linkName}: {href: string, linkName: string}) => {
     return (
         <>
             <Link href={href}>
-                <Button className={`base_button`}>{linkName}</Button>
+                <Button>{linkName}</Button>
             </Link>
         </>
     )

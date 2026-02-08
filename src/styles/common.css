@@ -21,6 +21,14 @@
   @apply bg-base-600
 }
 
+.MuiButton-root {
+  @apply bg-base-1000 text-white px-4 py-2;
+}
+
+.MuiButton-root:hover {
+  @apply bg-base-600
+}
+
 .loading {
   @apply flex h-screen w-full items-center justify-center;
 }

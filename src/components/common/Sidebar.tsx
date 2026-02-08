@@ -98,7 +98,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const Sidebar = () => {
 
-    const theme = createTheme();
+    const theme = createTheme({
+        palette: {
+            primary: {
+                light: '#ffefe0',
+                main: '#ffd8b2',
+                dark: '#ffc489',
+                contrastText: '#3a2a1a',
+            }
+        }
+    });
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -111,28 +120,29 @@ const Sidebar = () => {
 
     return (
         <Box sx={{ display: 'flex' }} className={`flex bg-base-200`}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open} className={`flex flex-row bg-base-1000`}>
-                <Toolbar className={`w-[60%]`}>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{
-                            marginRight: 5,
-                            ...(open && { display: 'none' }),
-                        }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Share Housework
-                    </Typography>
+            <AppBar position="fixed" open={open} color="primary" className={`flex flex-row bg-base-1000`}>
+                <Toolbar className={`flex flex-row justify-between`}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{
+                                marginRight: 5,
+                                ...(open && { display: 'none' }),
+                            }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" noWrap component="div">
+                            ハウスワシェア
+                        </Typography>
+                    </Box>
+                    <Box sx={{ flexGrow: 0 }} className={`flex mx-3 justify-end items-center`}>
+                        <UserSettingsComponents />
+                    </Box>
                 </Toolbar>
-                <Box sx={{ flexGrow: 0 }} className={`flex w-[40%] mx-3 justify-end items-center`}>
-                    <UserSettingsComponents />
-                </Box>
             </AppBar>
             <Drawer variant="permanent" open={open}>
                 <DrawerHeader>

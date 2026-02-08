@@ -2,7 +2,7 @@
 import {Card} from "@mui/material";
 import DataTable from "@/components/family/dataTable";
 import {Suspense, useContext, useState} from "react";
-import Family from "@utils/api/Family";
+import Family from "@utils/api/family";
 import * as React from "react";
 import LoadingScreen from "@/components/common/Loading";
 import {CommonInfoContext} from "@/context/CommonContext";

@@ -6,7 +6,7 @@ import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {RHFDatetime} from "@/components/common/react-hook-form/DateTimeInput";
 import RHFSelect from "@/components/common/react-hook-form/Select";
 import {useContext, useEffect, useState} from "react";
-import "@/styles/commonForm.scss"
+import "@/styles/commonForm.css";
 import Family from "@utils/api/family";
 import {endpoint} from "@utils/api/common";
 import {CommonInfoContext} from "@/context/CommonContext";
