@@ -6,7 +6,7 @@ import {Button, FormControl} from "@mui/material";
 import {RHFTextField} from "@/components/common/react-hook-form/TextField";
 import {RHFTextarea} from "@/components/common/react-hook-form/Textarea";
 import {endpoint} from "@utils/api/common";
-import "@/styles/commonForm.scss"
+import "@/styles/commonForm.css"
 
 const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
     const data = props.defaultData
@@ -25,9 +25,6 @@ const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
         title: {
             required: '家事名を入力してください',
         },
-        detail: {
-
-        },
     }
 
     const labels = {
@@ -35,7 +32,7 @@ const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
         detail: {id: "detail", label: "詳細"},
     }
 
-    const onSubmit = async (inputData: Inputs) => {
+    const onSubmit = async (inputData: HouseworkFormValues) => {
        let postData: Record<string, any> = {
             familyId: commonInfo.familyId,
             title: inputData.title,
@@ -61,7 +58,7 @@ const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
 
     return (
         <form className={"form_common"} onSubmit={handleSubmit(onSubmit)}>
-            <FormControl className={"form_control_common"} fullWidth>
+            <FormControl margin="normal" className={"form_control_common"} fullWidth>
                 {/*家事*/}
                 <RHFTextField
                     name={"title"}
@@ -72,17 +69,17 @@ const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
                 />
             </FormControl>
             {/*詳細*/}
-            <FormControl className={"form_control_common"} fullWidth>
+            <FormControl margin="normal" className={"form_control_common"} fullWidth>
                 <RHFTextarea
                     name={"detail"}
                     control={control}
                     validateRules={validateRules}
                     labels={labels.detail}
-                    properties={{rows: 4}}
+                    properties={{rows: 6}}
                     defaultValue={data?.detail ?? ''}
                 />
             </FormControl>
-            <FormControl className={"form_control_common button_area"}>
+            <FormControl margin="normal" className={"form_control_common button_area"} fullWidth>
                 <Button className={"submit_button"} type={"submit"}>送信</Button>
             </FormControl>
         </form>

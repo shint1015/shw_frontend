@@ -2,8 +2,8 @@
 @config "../../tailwind.config.ts";
 
 .base_button {
-    @apply bg-base-1000 text-black;
+    @apply bg-basic-1000 text-black;
 }
 .base_button:hover {
-    @apply bg-base-700
+    @apply bg-basic-700
 }

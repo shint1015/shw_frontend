@@ -5,20 +5,25 @@ const pageList: {[key: string]: string}[] = [
         icon: "dashboard",
     },
     {
-        pageName: "family",
-        pageUrl: 'family',
-        icon: "family",
-    },
-    {
         pageName: "housework",
         pageUrl: 'housework',
         icon: "housework",
     },
-    // {
-    //     pageName: "housework template",
-    //     pageUrl: 'housework/template',
-    //     icon: "housework template",
-    // },
+    {
+        pageName: "schedule",
+        pageUrl: 'housework/schedule',
+        icon: "schedule",        
+    },
+    {
+        pageName: "template",
+        pageUrl: 'housework/template',
+        icon: "template",
+    },
+    {
+        pageName: "family",
+        pageUrl: 'family',
+        icon: "family",
+    },
     {
         pageName: "point",
         pageUrl: 'point',

@@ -14,19 +14,19 @@
 }
 
 .common_btn {
-  @apply bg-base-1000 text-white px-4 py-2;
+  @apply bg-basic-1000 text-white px-4 py-2;
 }
 
 .common_btn:hover {
-  @apply bg-base-600
+  @apply bg-basic-600
 }
 
 .MuiButton-root {
-  @apply bg-base-1000 text-white px-4 py-2;
+  @apply bg-basic-1000 text-white px-4 py-2;
 }
 
 .MuiButton-root:hover {
-  @apply bg-base-600
+  @apply bg-basic-600
 }
 
 .loading {

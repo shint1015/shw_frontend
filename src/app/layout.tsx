@@ -20,12 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-base-200`}>
+      <body className={`${inter.className} bg-basic-200`}>
         <ThemeProviderWrapper>
           <Auth0Provider>
             <CommonInfoProvider familyId={'1'}>
               <Header />
-              <main className="flex min-h-screen flex-col items-center justify-between bg-base-200 pl-8">
+              <main className="flex min-h-screen flex-col items-center justify-between bg-basic-200 pl-8">
                 {children}
               </main>
             </CommonInfoProvider>

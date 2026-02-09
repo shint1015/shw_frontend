@@ -1,6 +1,6 @@
 'use client';
 import { Box, Button } from "@mui/material";
-import "@/styles/housework/template/card.scss"
+import "@/styles/housework/template/card.css"
 import AddIcon from '@mui/icons-material/Add';
 import Link from "next/link";
 

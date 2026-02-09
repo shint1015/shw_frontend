@@ -7,6 +7,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ArticleIcon from '@mui/icons-material/Article';
 import SavingsIcon from '@mui/icons-material/Savings';
+import ScheduleIcon from '@mui/icons-material/Schedule';
 
 const LinkButton = ({href, linkName}: {href: string, linkName: string}) => {
     return (
@@ -27,8 +28,10 @@ const IconComponentFromPageName = ({pageName}: {pageName: string}) => {
             return <FamilyRestroomIcon />
         case 'housework':
             return <HomeWorkIcon />
-        case 'housework template':
+        case 'template':
             return <ArticleIcon />
+        case 'schedule':
+            return <ScheduleIcon />
         case 'point':
             return <SavingsIcon />
         default:

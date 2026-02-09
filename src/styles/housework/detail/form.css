@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@config "../../../../tailwind.config.ts";
+
 .form_control_common {
   @apply my-3;
 }
@@ -18,8 +21,5 @@
 }
 
 .submit_button {
-  @apply bg-base-1000 text-black px-6 py-3;
-  &:hover{
-    @apply bg-base-600
-  }
+  @apply w-[30%] bg-basic-1000 text-black px-6 py-3 hover:bg-basic-600;
 }

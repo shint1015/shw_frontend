@@ -18,8 +18,11 @@ const Page = () => {
     const createDataTable = async () => {
         if (data.length == 0) {
             const res = await Housework.getByFamilyId("1");
-            setData(res.data.housework);
-            return <DataTable data={res.data.housework} />;
+            if (res.status === 200) {
+                setData(res.data.housework);
+                return <DataTable data={res.data.housework} />;
+            }
+            return <DataTable data={[]} />
         } else {
             return <DataTable data={data} />;
         }

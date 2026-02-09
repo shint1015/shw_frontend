@@ -12,9 +12,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Link from 'next/link';
 import MuiAppBar, {AppBarProps as MuiAppBarProps} from '@mui/material/AppBar';
 import MuiDrawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import { theme } from "./ThemeProviderWrapper";
 
 
 
@@ -97,17 +97,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Sidebar = () => {
-
-    const theme = createTheme({
-        palette: {
-            primary: {
-                light: '#ffefe0',
-                main: '#ffd8b2',
-                dark: '#ffc489',
-                contrastText: '#3a2a1a',
-            }
-        }
-    });
     const [open, setOpen] = useState(false);
 
     const handleDrawerOpen = () => {
@@ -119,8 +108,8 @@ const Sidebar = () => {
     };
 
     return (
-        <Box sx={{ display: 'flex' }} className={`flex bg-base-200`}>
-            <AppBar position="fixed" open={open} color="primary" className={`flex flex-row bg-base-1000`}>
+        <Box sx={{ display: 'flex' }} className={`flex bg-basic-200`}>
+            <AppBar position="fixed" open={open} color="primary" className={`flex flex-row bg-basic-1000`}>
                 <Toolbar className={`flex flex-row justify-between`}>
                     <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <IconButton

@@ -1,11 +1,7 @@
 "use client";
-import * as React from 'react';
-import {Box, Button, Card} from "@mui/material";
+import {Box, Button} from "@mui/material";
 import CustomPaginationActionsTable from "@/components/common/Table";
 import Link from "next/link";
-import Housework from "@utils/api/housework";
-import {Suspense, useEffect, useState} from "react";
-import LoadingScreen from "@/components/common/Loading";
 interface Props {
     data: Record<string, any>[];
 }
