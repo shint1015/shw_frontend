@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file common.proto.
  */
 export const file_common: GenFile = /*@__PURE__*/
-  fileDesc("Cgxjb21tb24ucHJvdG8SA3NodyJeCg5Db21tb25SZXNwb25zZRIKCgJvaxgBIAEoCBISCgpzdGF0dXNDb2RlGAIgASgDEg8KB21lc3NhZ2UYAyABKAkSGwoGcmVzdWx0GAQgASgLMgsuc2h3LlJlc3VsdCIyCghVc2VySW5mbxIKCgJpZBgBIAEoBBIMCgRuYW1lGAIgASgJEgwKBHJvbGUYAyABKAkiFAoGUmVzdWx0EgoKAmlkGAEgASgEQhJaEHNod2dycGMvcGtnL2dycGNiBnByb3RvMw");
+  fileDesc("Cgxjb21tb24ucHJvdG8SA3NodyKVAQoOQ29tbW9uUmVzcG9uc2USCgoCb2sYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIbCgZyZXN1bHQYAyABKAsyCy5zaHcuUmVzdWx0EhMKC3N0YXR1c19jb2RlGAQgASgDEhIKCmVycm9yX2NvZGUYBSABKAkSIAoGZXJyb3JzGAYgAygLMhAuc2h3LkVycm9yRGV0YWlsIjEKC0Vycm9yRGV0YWlsEg0KBWZpZWxkGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJIkgKCFVzZXJJbmZvEgoKAmlkGAEgASgEEgwKBG5hbWUYAiABKAkSDwoHcm9sZV9pZBgDIAEoBBIRCglmYW1pbHlfaWQYBCABKAQieAoGUmVzdWx0EgoKAmlkGAEgASgEEi8KCmF0dHJpYnV0ZXMYAiADKAsyGy5zaHcuUmVzdWx0LkF0dHJpYnV0ZXNFbnRyeRoxCg9BdHRyaWJ1dGVzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AUISWhBzaHdncnBjL3BrZy9ncnBjYgZwcm90bzM");
 
 /**
  * @generated from message shw.CommonResponse
@@ -22,19 +22,31 @@ export type CommonResponse = Message<"shw.CommonResponse"> & {
   ok: boolean;
 
   /**
-   * @generated from field: int64 statusCode = 2;
-   */
-  statusCode: bigint;
-
-  /**
-   * @generated from field: string message = 3;
+   * @generated from field: string message = 2;
    */
   message: string;
 
   /**
-   * @generated from field: shw.Result result = 4;
+   * @generated from field: shw.Result result = 3;
    */
   result?: Result;
+
+  /**
+   * @generated from field: int64 status_code = 4;
+   */
+  statusCode: bigint;
+
+  /**
+   * 例: "HOUSEWORK_NOT_FOUND"
+   *
+   * @generated from field: string error_code = 5;
+   */
+  errorCode: string;
+
+  /**
+   * @generated from field: repeated shw.ErrorDetail errors = 6;
+   */
+  errors: ErrorDetail[];
 };
 
 /**
@@ -43,6 +55,32 @@ export type CommonResponse = Message<"shw.CommonResponse"> & {
  */
 export const CommonResponseSchema: GenMessage<CommonResponse> = /*@__PURE__*/
   messageDesc(file_common, 0);
+
+/**
+ * @generated from message shw.ErrorDetail
+ */
+export type ErrorDetail = Message<"shw.ErrorDetail"> & {
+  /**
+   * 例: "email"
+   *
+   * @generated from field: string field = 1;
+   */
+  field: string;
+
+  /**
+   * 例: "invalid format"
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+};
+
+/**
+ * Describes the message shw.ErrorDetail.
+ * Use `create(ErrorDetailSchema)` to create a new message.
+ */
+export const ErrorDetailSchema: GenMessage<ErrorDetail> = /*@__PURE__*/
+  messageDesc(file_common, 1);
 
 /**
  * @generated from message shw.UserInfo
@@ -59,9 +97,14 @@ export type UserInfo = Message<"shw.UserInfo"> & {
   name: string;
 
   /**
-   * @generated from field: string role = 3;
+   * @generated from field: uint64 role_id = 3;
    */
-  role: string;
+  roleId: bigint;
+
+  /**
+   * @generated from field: uint64 family_id = 4;
+   */
+  familyId: bigint;
 };
 
 /**
@@ -69,7 +112,7 @@ export type UserInfo = Message<"shw.UserInfo"> & {
  * Use `create(UserInfoSchema)` to create a new message.
  */
 export const UserInfoSchema: GenMessage<UserInfo> = /*@__PURE__*/
-  messageDesc(file_common, 1);
+  messageDesc(file_common, 2);
 
 /**
  * @generated from message shw.Result
@@ -79,6 +122,11 @@ export type Result = Message<"shw.Result"> & {
    * @generated from field: uint64 id = 1;
    */
   id: bigint;
+
+  /**
+   * @generated from field: map<string, string> attributes = 2;
+   */
+  attributes: { [key: string]: string };
 };
 
 /**
@@ -86,5 +134,5 @@ export type Result = Message<"shw.Result"> & {
  * Use `create(ResultSchema)` to create a new message.
  */
 export const ResultSchema: GenMessage<Result> = /*@__PURE__*/
-  messageDesc(file_common, 2);
+  messageDesc(file_common, 3);
 

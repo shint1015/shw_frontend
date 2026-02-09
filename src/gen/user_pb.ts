@@ -12,12 +12,12 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file user.proto.
  */
 export const file_user: GenFile = /*@__PURE__*/
-  fileDesc("Cgp1c2VyLnByb3RvEgNzaHciQgoEVXNlchIKCgJpZBgBIAEoBBIMCgRuYW1lGAIgASgJEg4KBnJvbGVJZBgDIAEoBBIQCghmYW1pbHlJZBgEIAEoBCIzChFVcGRhdGVSb2xlUmVxdWVzdBIOCgZ1c2VySWQYASABKAQSDgoGcm9sZUlkGAIgASgEIioKFkdldEJlbG9uZ1RvVXNlclJlcXVlc3QSEAoIZmFtaWx5SWQYASABKAQiMwoXR2V0QmVsb25nVG9Vc2VyUmVzcG9uc2USGAoFdXNlcnMYASADKAsyCS5zaHcuVXNlcjKaAQoLVXNlclNlcnZpY2USOwoKVXBkYXRlUm9sZRIWLnNody5VcGRhdGVSb2xlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAEk4KD0dldEJlbG9uZ1RvVXNlchIbLnNody5HZXRCZWxvbmdUb1VzZXJSZXF1ZXN0Ghwuc2h3LkdldEJlbG9uZ1RvVXNlclJlc3BvbnNlIgBCEloQc2h3Z3JwYy9wa2cvZ3JwY2IGcHJvdG8z", [file_common]);
+  fileDesc("Cgp1c2VyLnByb3RvEgNzaHciSgoKRmFtaWx5VXNlchIKCgJpZBgBIAEoBBIMCgRuYW1lGAIgASgJEg8KB3JvbGVfaWQYAyABKAQSEQoJZmFtaWx5X2lkGAQgASgEIisKFkxpc3RGYW1pbHlVc2Vyc1JlcXVlc3QSEQoJZmFtaWx5X2lkGAEgASgEIjkKF0xpc3RGYW1pbHlVc2Vyc1Jlc3BvbnNlEh4KBXVzZXJzGAEgAygLMg8uc2h3LkZhbWlseVVzZXIiOQoVVXBkYXRlVXNlclJvbGVSZXF1ZXN0Eg8KB3VzZXJfaWQYASABKAQSDwoHcm9sZV9pZBgCIAEoBDKiAQoLVXNlclNlcnZpY2USTgoPTGlzdEZhbWlseVVzZXJzEhsuc2h3Lkxpc3RGYW1pbHlVc2Vyc1JlcXVlc3QaHC5zaHcuTGlzdEZhbWlseVVzZXJzUmVzcG9uc2UiABJDCg5VcGRhdGVVc2VyUm9sZRIaLnNody5VcGRhdGVVc2VyUm9sZVJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiAEISWhBzaHdncnBjL3BrZy9ncnBjYgZwcm90bzM", [file_common]);
 
 /**
- * @generated from message shw.User
+ * @generated from message shw.FamilyUser
  */
-export type User = Message<"shw.User"> & {
+export type FamilyUser = Message<"shw.FamilyUser"> & {
   /**
    * @generated from field: uint64 id = 1;
    */
@@ -29,77 +29,79 @@ export type User = Message<"shw.User"> & {
   name: string;
 
   /**
-   * @generated from field: uint64 roleId = 3;
+   * @generated from field: uint64 role_id = 3;
    */
   roleId: bigint;
 
   /**
-   * @generated from field: uint64 familyId = 4;
+   * @generated from field: uint64 family_id = 4;
    */
   familyId: bigint;
 };
 
 /**
- * Describes the message shw.User.
- * Use `create(UserSchema)` to create a new message.
+ * Describes the message shw.FamilyUser.
+ * Use `create(FamilyUserSchema)` to create a new message.
  */
-export const UserSchema: GenMessage<User> = /*@__PURE__*/
+export const FamilyUserSchema: GenMessage<FamilyUser> = /*@__PURE__*/
   messageDesc(file_user, 0);
 
 /**
- * @generated from message shw.UpdateRoleRequest
+ * @generated from message shw.ListFamilyUsersRequest
  */
-export type UpdateRoleRequest = Message<"shw.UpdateRoleRequest"> & {
+export type ListFamilyUsersRequest = Message<"shw.ListFamilyUsersRequest"> & {
   /**
-   * @generated from field: uint64 userId = 1;
+   * was GetBelongToUserRequest.family_id
+   *
+   * @generated from field: uint64 family_id = 1;
+   */
+  familyId: bigint;
+};
+
+/**
+ * Describes the message shw.ListFamilyUsersRequest.
+ * Use `create(ListFamilyUsersRequestSchema)` to create a new message.
+ */
+export const ListFamilyUsersRequestSchema: GenMessage<ListFamilyUsersRequest> = /*@__PURE__*/
+  messageDesc(file_user, 1);
+
+/**
+ * @generated from message shw.ListFamilyUsersResponse
+ */
+export type ListFamilyUsersResponse = Message<"shw.ListFamilyUsersResponse"> & {
+  /**
+   * @generated from field: repeated shw.FamilyUser users = 1;
+   */
+  users: FamilyUser[];
+};
+
+/**
+ * Describes the message shw.ListFamilyUsersResponse.
+ * Use `create(ListFamilyUsersResponseSchema)` to create a new message.
+ */
+export const ListFamilyUsersResponseSchema: GenMessage<ListFamilyUsersResponse> = /*@__PURE__*/
+  messageDesc(file_user, 2);
+
+/**
+ * @generated from message shw.UpdateUserRoleRequest
+ */
+export type UpdateUserRoleRequest = Message<"shw.UpdateUserRoleRequest"> & {
+  /**
+   * @generated from field: uint64 user_id = 1;
    */
   userId: bigint;
 
   /**
-   * @generated from field: uint64 roleId = 2;
+   * @generated from field: uint64 role_id = 2;
    */
   roleId: bigint;
 };
 
 /**
- * Describes the message shw.UpdateRoleRequest.
- * Use `create(UpdateRoleRequestSchema)` to create a new message.
+ * Describes the message shw.UpdateUserRoleRequest.
+ * Use `create(UpdateUserRoleRequestSchema)` to create a new message.
  */
-export const UpdateRoleRequestSchema: GenMessage<UpdateRoleRequest> = /*@__PURE__*/
-  messageDesc(file_user, 1);
-
-/**
- * @generated from message shw.GetBelongToUserRequest
- */
-export type GetBelongToUserRequest = Message<"shw.GetBelongToUserRequest"> & {
-  /**
-   * @generated from field: uint64 familyId = 1;
-   */
-  familyId: bigint;
-};
-
-/**
- * Describes the message shw.GetBelongToUserRequest.
- * Use `create(GetBelongToUserRequestSchema)` to create a new message.
- */
-export const GetBelongToUserRequestSchema: GenMessage<GetBelongToUserRequest> = /*@__PURE__*/
-  messageDesc(file_user, 2);
-
-/**
- * @generated from message shw.GetBelongToUserResponse
- */
-export type GetBelongToUserResponse = Message<"shw.GetBelongToUserResponse"> & {
-  /**
-   * @generated from field: repeated shw.User users = 1;
-   */
-  users: User[];
-};
-
-/**
- * Describes the message shw.GetBelongToUserResponse.
- * Use `create(GetBelongToUserResponseSchema)` to create a new message.
- */
-export const GetBelongToUserResponseSchema: GenMessage<GetBelongToUserResponse> = /*@__PURE__*/
+export const UpdateUserRoleRequestSchema: GenMessage<UpdateUserRoleRequest> = /*@__PURE__*/
   messageDesc(file_user, 3);
 
 /**
@@ -107,20 +109,20 @@ export const GetBelongToUserResponseSchema: GenMessage<GetBelongToUserResponse> 
  */
 export const UserService: GenService<{
   /**
-   * @generated from rpc shw.UserService.UpdateRole
+   * @generated from rpc shw.UserService.ListFamilyUsers
    */
-  updateRole: {
+  listFamilyUsers: {
     methodKind: "unary";
-    input: typeof UpdateRoleRequestSchema;
-    output: typeof CommonResponseSchema;
+    input: typeof ListFamilyUsersRequestSchema;
+    output: typeof ListFamilyUsersResponseSchema;
   },
   /**
-   * @generated from rpc shw.UserService.GetBelongToUser
+   * @generated from rpc shw.UserService.UpdateUserRole
    */
-  getBelongToUser: {
+  updateUserRole: {
     methodKind: "unary";
-    input: typeof GetBelongToUserRequestSchema;
-    output: typeof GetBelongToUserResponseSchema;
+    input: typeof UpdateUserRoleRequestSchema;
+    output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_user, 0);

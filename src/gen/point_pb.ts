@@ -12,12 +12,12 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file point.proto.
  */
 export const file_point: GenFile = /*@__PURE__*/
-  fileDesc("Cgtwb2ludC5wcm90bxIDc2h3Ij8KBVBvaW50EgoKAmlkGAEgASgEEg0KBXBvaW50GAIgASgDEhsKBHVzZXIYAyABKAsyDS5zaHcuVXNlckluZm8iHgoMUG9pbnRSZXF1ZXN0Eg4KBnVzZXJJZBgBIAEoBCIqCg1Qb2ludFJlc3BvbnNlEhkKBXBvaW50GAEgASgLMgouc2h3LlBvaW50IioKFkZhbWlseVBvaW50TGlzdFJlcXVlc3QSEAoIZmFtaWx5SWQYASABKAMiLQoPRmFtaWx5UG9pbnRMaXN0EhoKBnBvaW50cxgBIAMoCzIKLnNody5Qb2ludDKkAgoMUG9pbnRTZXJ2aWNlEjMKCEdldFBvaW50EhEuc2h3LlBvaW50UmVxdWVzdBoSLnNody5Qb2ludFJlc3BvbnNlIgASSQoSR2V0RmFtaWx5UG9pbnRMaXN0Ehsuc2h3LkZhbWlseVBvaW50TGlzdFJlcXVlc3QaFC5zaHcuRmFtaWx5UG9pbnRMaXN0IgASMAoLQ3JlYXRlUG9pbnQSCi5zaHcuUG9pbnQaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABIwCgtVcGRhdGVQb2ludBIKLnNody5Qb2ludBoTLnNody5Db21tb25SZXNwb25zZSIAEjAKC0RlbGV0ZVBvaW50Egouc2h3LlBvaW50GhMuc2h3LkNvbW1vblJlc3BvbnNlIgBCEloQc2h3Z3JwYy9wa2cvZ3JwY2IGcHJvdG8z", [file_common]);
+  fileDesc("Cgtwb2ludC5wcm90bxIDc2h3IkMKCVVzZXJQb2ludBIKCgJpZBgBIAEoBBINCgVwb2ludBgCIAEoAxIbCgR1c2VyGAMgASgLMg0uc2h3LlVzZXJJbmZvIiYKE0dldFVzZXJQb2ludFJlcXVlc3QSDwoHdXNlcl9pZBgBIAEoBCI1ChRHZXRVc2VyUG9pbnRSZXNwb25zZRIdCgVwb2ludBgBIAEoCzIOLnNody5Vc2VyUG9pbnQiNwoWQ3JlYXRlVXNlclBvaW50UmVxdWVzdBIdCgVwb2ludBgBIAEoCzIOLnNody5Vc2VyUG9pbnQiNwoWVXBkYXRlVXNlclBvaW50UmVxdWVzdBIdCgVwb2ludBgBIAEoCzIOLnNody5Vc2VyUG9pbnQiJAoWRGVsZXRlVXNlclBvaW50UmVxdWVzdBIKCgJpZBgBIAEoBCIsChdMaXN0RmFtaWx5UG9pbnRzUmVxdWVzdBIRCglmYW1pbHlfaWQYASABKAQiOgoYTGlzdEZhbWlseVBvaW50c1Jlc3BvbnNlEh4KBnBvaW50cxgBIAMoCzIOLnNody5Vc2VyUG9pbnQyrgIKEFVzZXJQb2ludFNlcnZpY2USRQoMR2V0VXNlclBvaW50Ehguc2h3LkdldFVzZXJQb2ludFJlcXVlc3QaGS5zaHcuR2V0VXNlclBvaW50UmVzcG9uc2UiABJFCg9DcmVhdGVVc2VyUG9pbnQSGy5zaHcuQ3JlYXRlVXNlclBvaW50UmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAEkUKD1VwZGF0ZVVzZXJQb2ludBIbLnNody5VcGRhdGVVc2VyUG9pbnRSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRQoPRGVsZXRlVXNlclBvaW50Ehsuc2h3LkRlbGV0ZVVzZXJQb2ludFJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiADJnChJGYW1pbHlQb2ludFNlcnZpY2USUQoQTGlzdEZhbWlseVBvaW50cxIcLnNody5MaXN0RmFtaWx5UG9pbnRzUmVxdWVzdBodLnNody5MaXN0RmFtaWx5UG9pbnRzUmVzcG9uc2UiAEISWhBzaHdncnBjL3BrZy9ncnBjYgZwcm90bzM", [file_common]);
 
 /**
- * @generated from message shw.Point
+ * @generated from message shw.UserPoint
  */
-export type Point = Message<"shw.Point"> & {
+export type UserPoint = Message<"shw.UserPoint"> & {
   /**
    * @generated from field: uint64 id = 1;
    */
@@ -35,124 +35,184 @@ export type Point = Message<"shw.Point"> & {
 };
 
 /**
- * Describes the message shw.Point.
- * Use `create(PointSchema)` to create a new message.
+ * Describes the message shw.UserPoint.
+ * Use `create(UserPointSchema)` to create a new message.
  */
-export const PointSchema: GenMessage<Point> = /*@__PURE__*/
+export const UserPointSchema: GenMessage<UserPoint> = /*@__PURE__*/
   messageDesc(file_point, 0);
 
 /**
- * @generated from message shw.PointRequest
+ * @generated from message shw.GetUserPointRequest
  */
-export type PointRequest = Message<"shw.PointRequest"> & {
+export type GetUserPointRequest = Message<"shw.GetUserPointRequest"> & {
   /**
-   * @generated from field: uint64 userId = 1;
+   * was userId
+   *
+   * @generated from field: uint64 user_id = 1;
    */
   userId: bigint;
 };
 
 /**
- * Describes the message shw.PointRequest.
- * Use `create(PointRequestSchema)` to create a new message.
+ * Describes the message shw.GetUserPointRequest.
+ * Use `create(GetUserPointRequestSchema)` to create a new message.
  */
-export const PointRequestSchema: GenMessage<PointRequest> = /*@__PURE__*/
+export const GetUserPointRequestSchema: GenMessage<GetUserPointRequest> = /*@__PURE__*/
   messageDesc(file_point, 1);
 
 /**
- * @generated from message shw.PointResponse
+ * @generated from message shw.GetUserPointResponse
  */
-export type PointResponse = Message<"shw.PointResponse"> & {
+export type GetUserPointResponse = Message<"shw.GetUserPointResponse"> & {
   /**
-   * @generated from field: shw.Point point = 1;
+   * @generated from field: shw.UserPoint point = 1;
    */
-  point?: Point;
+  point?: UserPoint;
 };
 
 /**
- * Describes the message shw.PointResponse.
- * Use `create(PointResponseSchema)` to create a new message.
+ * Describes the message shw.GetUserPointResponse.
+ * Use `create(GetUserPointResponseSchema)` to create a new message.
  */
-export const PointResponseSchema: GenMessage<PointResponse> = /*@__PURE__*/
+export const GetUserPointResponseSchema: GenMessage<GetUserPointResponse> = /*@__PURE__*/
   messageDesc(file_point, 2);
 
 /**
- * @generated from message shw.FamilyPointListRequest
+ * @generated from message shw.CreateUserPointRequest
  */
-export type FamilyPointListRequest = Message<"shw.FamilyPointListRequest"> & {
+export type CreateUserPointRequest = Message<"shw.CreateUserPointRequest"> & {
   /**
-   * @generated from field: int64 familyId = 1;
+   * @generated from field: shw.UserPoint point = 1;
+   */
+  point?: UserPoint;
+};
+
+/**
+ * Describes the message shw.CreateUserPointRequest.
+ * Use `create(CreateUserPointRequestSchema)` to create a new message.
+ */
+export const CreateUserPointRequestSchema: GenMessage<CreateUserPointRequest> = /*@__PURE__*/
+  messageDesc(file_point, 3);
+
+/**
+ * @generated from message shw.UpdateUserPointRequest
+ */
+export type UpdateUserPointRequest = Message<"shw.UpdateUserPointRequest"> & {
+  /**
+   * @generated from field: shw.UserPoint point = 1;
+   */
+  point?: UserPoint;
+};
+
+/**
+ * Describes the message shw.UpdateUserPointRequest.
+ * Use `create(UpdateUserPointRequestSchema)` to create a new message.
+ */
+export const UpdateUserPointRequestSchema: GenMessage<UpdateUserPointRequest> = /*@__PURE__*/
+  messageDesc(file_point, 4);
+
+/**
+ * @generated from message shw.DeleteUserPointRequest
+ */
+export type DeleteUserPointRequest = Message<"shw.DeleteUserPointRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.DeleteUserPointRequest.
+ * Use `create(DeleteUserPointRequestSchema)` to create a new message.
+ */
+export const DeleteUserPointRequestSchema: GenMessage<DeleteUserPointRequest> = /*@__PURE__*/
+  messageDesc(file_point, 5);
+
+/**
+ * @generated from message shw.ListFamilyPointsRequest
+ */
+export type ListFamilyPointsRequest = Message<"shw.ListFamilyPointsRequest"> & {
+  /**
+   * @generated from field: uint64 family_id = 1;
    */
   familyId: bigint;
 };
 
 /**
- * Describes the message shw.FamilyPointListRequest.
- * Use `create(FamilyPointListRequestSchema)` to create a new message.
+ * Describes the message shw.ListFamilyPointsRequest.
+ * Use `create(ListFamilyPointsRequestSchema)` to create a new message.
  */
-export const FamilyPointListRequestSchema: GenMessage<FamilyPointListRequest> = /*@__PURE__*/
-  messageDesc(file_point, 3);
+export const ListFamilyPointsRequestSchema: GenMessage<ListFamilyPointsRequest> = /*@__PURE__*/
+  messageDesc(file_point, 6);
 
 /**
- * @generated from message shw.FamilyPointList
+ * @generated from message shw.ListFamilyPointsResponse
  */
-export type FamilyPointList = Message<"shw.FamilyPointList"> & {
+export type ListFamilyPointsResponse = Message<"shw.ListFamilyPointsResponse"> & {
   /**
-   * @generated from field: repeated shw.Point points = 1;
+   * @generated from field: repeated shw.UserPoint points = 1;
    */
-  points: Point[];
+  points: UserPoint[];
 };
 
 /**
- * Describes the message shw.FamilyPointList.
- * Use `create(FamilyPointListSchema)` to create a new message.
+ * Describes the message shw.ListFamilyPointsResponse.
+ * Use `create(ListFamilyPointsResponseSchema)` to create a new message.
  */
-export const FamilyPointListSchema: GenMessage<FamilyPointList> = /*@__PURE__*/
-  messageDesc(file_point, 4);
+export const ListFamilyPointsResponseSchema: GenMessage<ListFamilyPointsResponse> = /*@__PURE__*/
+  messageDesc(file_point, 7);
 
 /**
- * @generated from service shw.PointService
+ * @generated from service shw.UserPointService
  */
-export const PointService: GenService<{
+export const UserPointService: GenService<{
   /**
-   * @generated from rpc shw.PointService.GetPoint
+   * @generated from rpc shw.UserPointService.GetUserPoint
    */
-  getPoint: {
+  getUserPoint: {
     methodKind: "unary";
-    input: typeof PointRequestSchema;
-    output: typeof PointResponseSchema;
+    input: typeof GetUserPointRequestSchema;
+    output: typeof GetUserPointResponseSchema;
   },
   /**
-   * @generated from rpc shw.PointService.GetFamilyPointList
+   * @generated from rpc shw.UserPointService.CreateUserPoint
    */
-  getFamilyPointList: {
+  createUserPoint: {
     methodKind: "unary";
-    input: typeof FamilyPointListRequestSchema;
-    output: typeof FamilyPointListSchema;
-  },
-  /**
-   * @generated from rpc shw.PointService.CreatePoint
-   */
-  createPoint: {
-    methodKind: "unary";
-    input: typeof PointSchema;
+    input: typeof CreateUserPointRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
-   * @generated from rpc shw.PointService.UpdatePoint
+   * @generated from rpc shw.UserPointService.UpdateUserPoint
    */
-  updatePoint: {
+  updateUserPoint: {
     methodKind: "unary";
-    input: typeof PointSchema;
+    input: typeof UpdateUserPointRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
-   * @generated from rpc shw.PointService.DeletePoint
+   * @generated from rpc shw.UserPointService.DeleteUserPoint
    */
-  deletePoint: {
+  deleteUserPoint: {
     methodKind: "unary";
-    input: typeof PointSchema;
+    input: typeof DeleteUserPointRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_point, 0);
+
+/**
+ * @generated from service shw.FamilyPointService
+ */
+export const FamilyPointService: GenService<{
+  /**
+   * @generated from rpc shw.FamilyPointService.ListFamilyPoints
+   */
+  listFamilyPoints: {
+    methodKind: "unary";
+    input: typeof ListFamilyPointsRequestSchema;
+    output: typeof ListFamilyPointsResponseSchema;
+  },
+}> = /*@__PURE__*/
+  serviceDesc(file_point, 1);
 

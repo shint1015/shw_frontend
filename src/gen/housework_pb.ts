@@ -12,46 +12,46 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file housework.proto.
  */
 export const file_housework: GenFile = /*@__PURE__*/
-  fileDesc("Cg9ob3VzZXdvcmsucHJvdG8SA3NodyIkChBIb3VzZXdvcmtSZXF1ZXN0EhAKCGZhbWlseUlkGAEgASgEIiQKFkhvdXNld29ya1RhcmdldFJlcXVlc3QSCgoCaWQYASABKAQiJAoWSG91c2V3b3JrRGV0YWlsUmVxdWVzdBIKCgJpZBgBIAEoBCIrChRIb3VzZXdvcmtNZW1vUmVxdWVzdBITCgtob3VzZXdvcmtJZBgBIAEoBCInChVIb3VzZXdvcmtQb2ludFJlcXVlc3QSDgoGdXNlcklkGAEgASgEIi0KGUhvdXNld29ya1RlbXBsYXRlc1JlcXVlc3QSEAoIZmFtaWx5SWQYASABKAQiJgoYSG91c2V3b3JrVGVtcGxhdGVSZXF1ZXN0EgoKAmlkGAEgASgEIi4KHEhvdXNld29ya1BvaW50SGlzdG9yeVJlcXVlc3QSDgoGdXNlcklkGAEgASgEIi0KGUhvdXNld29ya1NjaGVkdWxlc1JlcXVlc3QSEAoIZmFtaWx5SWQYASABKAQiJgoYSG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0EgoKAmlkGAEgASgEIjYKEUhvdXNld29ya1Jlc3BvbnNlEiEKCWhvdXNld29yaxgBIAMoCzIOLnNody5Ib3VzZXdvcmsiXgoXSG91c2V3b3JrRGV0YWlsUmVzcG9uc2USIQoJaG91c2V3b3JrGAEgASgLMg4uc2h3LkhvdXNld29yaxIgCgRtZW1vGAIgAygLMhIuc2h3LkhvdXNld29ya01lbW8iOQoVSG91c2V3b3JrTWVtb1Jlc3BvbnNlEiAKBG1lbW8YASADKAsyEi5zaHcuSG91c2V3b3JrTWVtbyI8ChZIb3VzZXdvcmtQb2ludFJlc3BvbnNlEiIKBXBvaW50GAEgASgLMhMuc2h3LkhvdXNld29ya1BvaW50IkwKHUhvdXNld29ya1BvaW50SGlzdG9yeVJlc3BvbnNlEisKB2hpc3RvcnkYASADKAsyGi5zaHcuSG91c2V3b3JrUG9pbnRIaXN0b3J5IkUKGUhvdXNld29ya1RlbXBsYXRlUmVzcG9uc2USKAoIdGVtcGxhdGUYASABKAsyFi5zaHcuSG91c2V3b3JrVGVtcGxhdGUiRwoaSG91c2V3b3JrVGVtcGxhdGVzUmVzcG9uc2USKQoJdGVtcGxhdGVzGAEgAygLMhYuc2h3LkhvdXNld29ya1RlbXBsYXRlIkUKGUhvdXNld29ya1NjaGVkdWxlUmVzcG9uc2USKAoIc2NoZWR1bGUYASABKAsyFi5zaHcuSG91c2V3b3JrU2NoZWR1bGUiRwoaSG91c2V3b3JrU2NoZWR1bGVzUmVzcG9uc2USKQoJc2NoZWR1bGVzGAEgAygLMhYuc2h3LkhvdXNld29ya1NjaGVkdWxlIp0BCglIb3VzZXdvcmsSCgoCaWQYASABKAQSEAoIZmFtaWx5SWQYAiABKAQSDQoFdGl0bGUYAyABKAkSDgoGZGV0YWlsGAQgASgJEg4KBnN0YXR1cxgFIAEoCRIfCgh3b3JrVXNlchgGIAEoCzINLnNody5Vc2VySW5mbxIRCglzdGFydGVkQXQYByABKAMSDwoHZW5kZWRBdBgIIAEoAyKIAQoNSG91c2V3b3JrTWVtbxIKCgJpZBgBIAEoBBITCgtob3VzZXdvcmtJZBgCIAEoBBIPCgdtZXNzYWdlGAMgASgJEh8KCHNlbmRGcm9tGAQgASgLMg0uc2h3LlVzZXJJbmZvEhEKCWNyZWF0ZWRBdBgFIAEoAxIRCgl1cGRhdGVkQXQYBiABKAMibgoOSG91c2V3b3JrUG9pbnQSCgoCaWQYASABKAQSGwoEdXNlchgCIAEoCzINLnNody5Vc2VySW5mbxINCgVwb2ludBgEIAEoAxIRCgljcmVhdGVkQXQYBSABKAMSEQoJdXBkYXRlZEF0GAYgASgDInIKFUhvdXNld29ya1BvaW50SGlzdG9yeRIKCgJpZBgBIAEoBBIbCgR1c2VyGAIgASgLMg0uc2h3LlVzZXJJbmZvEg4KBmRldGFpbBgDIAEoCRINCgVwb2ludBgEIAEoAxIRCgljcmVhdGVkQXQYBSABKAMidgoRSG91c2V3b3JrVGVtcGxhdGUSCgoCaWQYASABKAQSEAoIZmFtaWx5SWQYAiABKAQSDQoFdGl0bGUYAyABKAkSDgoGZGV0YWlsGAQgASgJEhEKCWNyZWF0ZWRBdBgFIAEoAxIRCgl1cGRhdGVkQXQYBiABKAMinwIKEUhvdXNld29ya1NjaGVkdWxlEgoKAmlkGAEgASgEEhAKCGZhbWlseUlkGAIgASgEEg0KBXRpdGxlGAMgASgJEg4KBmRldGFpbBgEIAEoCRIoCgh0ZW1wbGF0ZRgFIAEoCzIWLnNody5Ib3VzZXdvcmtUZW1wbGF0ZRIfCghhc3NpZ25lZRgGIAEoCzINLnNody5Vc2VySW5mbxINCgVkdWVBdBgHIAEoAxIjCgZyZXBlYXQYCCABKAsyEy5zaHcuU2NoZWR1bGVSZXBlYXQSKAoJcmVtaW5kZXJzGAkgAygLMhUuc2h3LlNjaGVkdWxlUmVtaW5kZXISEQoJY3JlYXRlZEF0GAogASgDEhEKCXVwZGF0ZWRBdBgLIAEoAyJ2Cg5TY2hlZHVsZVJlcGVhdBIlCgR0eXBlGAEgASgOMhcuc2h3LlNjaGVkdWxlUmVwZWF0VHlwZRIQCgh3ZWVrZGF5cxgCIAMoBRITCgt3ZWVrT2ZNb250aBgDIAEoBRIWCg53ZWVrZGF5SW5Nb250aBgEIAEoBSIpChBTY2hlZHVsZVJlbWluZGVyEhUKDW1pbnV0ZXNCZWZvcmUYASABKAUqfQoSU2NoZWR1bGVSZXBlYXRUeXBlEiQKIFNDSEVEVUxFX1JFUEVBVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobU0NIRURVTEVfUkVQRUFUX1RZUEVfV0VFS0xZEAESIAocU0NIRURVTEVfUkVQRUFUX1RZUEVfTU9OVEhMWRACMqgDChBIb3VzZXdvcmtTZXJ2aWNlEj8KDEdldEhvdXNld29yaxIVLnNody5Ib3VzZXdvcmtSZXF1ZXN0GhYuc2h3LkhvdXNld29ya1Jlc3BvbnNlIgASUQoSR2V0SG91c2V3b3JrRGV0YWlsEhsuc2h3LkhvdXNld29ya0RldGFpbFJlcXVlc3QaHC5zaHcuSG91c2V3b3JrRGV0YWlsUmVzcG9uc2UiABI4Cg9DcmVhdGVIb3VzZXdvcmsSDi5zaHcuSG91c2V3b3JrGhMuc2h3LkNvbW1vblJlc3BvbnNlIgASOAoPVXBkYXRlSG91c2V3b3JrEg4uc2h3LkhvdXNld29yaxoTLnNody5Db21tb25SZXNwb25zZSIAEkUKD0ZpbmlzaEhvdXNld29yaxIbLnNody5Ib3VzZXdvcmtUYXJnZXRSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRQoPRGVsZXRlSG91c2V3b3JrEhsuc2h3LkhvdXNld29ya1RhcmdldFJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiADKpAgoUSG91c2V3b3JrTWVtb1NlcnZpY2USSwoQR2V0SG91c2V3b3JrTWVtbxIZLnNody5Ib3VzZXdvcmtNZW1vUmVxdWVzdBoaLnNody5Ib3VzZXdvcmtNZW1vUmVzcG9uc2UiABJAChNDcmVhdGVIb3VzZXdvcmtNZW1vEhIuc2h3LkhvdXNld29ya01lbW8aEy5zaHcuQ29tbW9uUmVzcG9uc2UiABJAChNVcGRhdGVIb3VzZXdvcmtNZW1vEhIuc2h3LkhvdXNld29ya01lbW8aEy5zaHcuQ29tbW9uUmVzcG9uc2UiABJAChNEZWxldGVIb3VzZXdvcmtNZW1vEhIuc2h3LkhvdXNld29ya01lbW8aEy5zaHcuQ29tbW9uUmVzcG9uc2UiADLMAQoVSG91c2V3b3JrUG9pbnRTZXJ2aWNlEk4KEUdldEhvdXNld29ya1BvaW50Ehouc2h3LkhvdXNld29ya1BvaW50UmVxdWVzdBobLnNody5Ib3VzZXdvcmtQb2ludFJlc3BvbnNlIgASYwoYR2V0SG91c2V3b3JrUG9pbnRIaXN0b3J5EiEuc2h3LkhvdXNld29ya1BvaW50SGlzdG9yeVJlcXVlc3QaIi5zaHcuSG91c2V3b3JrUG9pbnRIaXN0b3J5UmVzcG9uc2UiADKtAwoYSG91c2V3b3JrVGVtcGxhdGVTZXJ2aWNlElcKFEdldEhvdXNld29ya1RlbXBsYXRlEh0uc2h3LkhvdXNld29ya1RlbXBsYXRlUmVxdWVzdBoeLnNody5Ib3VzZXdvcmtUZW1wbGF0ZVJlc3BvbnNlIgASWgoVR2V0SG91c2V3b3JrVGVtcGxhdGVzEh4uc2h3LkhvdXNld29ya1RlbXBsYXRlc1JlcXVlc3QaHy5zaHcuSG91c2V3b3JrVGVtcGxhdGVzUmVzcG9uc2UiABJIChdDcmVhdGVIb3VzZXdvcmtUZW1wbGF0ZRIWLnNody5Ib3VzZXdvcmtUZW1wbGF0ZRoTLnNody5Db21tb25SZXNwb25zZSIAEkgKF1VwZGF0ZUhvdXNld29ya1RlbXBsYXRlEhYuc2h3LkhvdXNld29ya1RlbXBsYXRlGhMuc2h3LkNvbW1vblJlc3BvbnNlIgASSAoXRGVsZXRlSG91c2V3b3JrVGVtcGxhdGUSFi5zaHcuSG91c2V3b3JrVGVtcGxhdGUaEy5zaHcuQ29tbW9uUmVzcG9uc2UiADK0AwoYSG91c2V3b3JrU2NoZWR1bGVTZXJ2aWNlEloKFUdldEhvdXNld29ya1NjaGVkdWxlcxIeLnNody5Ib3VzZXdvcmtTY2hlZHVsZXNSZXF1ZXN0Gh8uc2h3LkhvdXNld29ya1NjaGVkdWxlc1Jlc3BvbnNlIgASVwoUR2V0SG91c2V3b3JrU2NoZWR1bGUSHS5zaHcuSG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0Gh4uc2h3LkhvdXNld29ya1NjaGVkdWxlUmVzcG9uc2UiABJIChdDcmVhdGVIb3VzZXdvcmtTY2hlZHVsZRIWLnNody5Ib3VzZXdvcmtTY2hlZHVsZRoTLnNody5Db21tb25SZXNwb25zZSIAEkgKF1VwZGF0ZUhvdXNld29ya1NjaGVkdWxlEhYuc2h3LkhvdXNld29ya1NjaGVkdWxlGhMuc2h3LkNvbW1vblJlc3BvbnNlIgASTwoXRGVsZXRlSG91c2V3b3JrU2NoZWR1bGUSHS5zaHcuSG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgBCEloQc2h3Z3JwYy9wa2cvZ3JwY2IGcHJvdG8z", [file_common]);
+  fileDesc("Cg9ob3VzZXdvcmsucHJvdG8SA3NodyIqChVMaXN0SG91c2V3b3Jrc1JlcXVlc3QSEQoJZmFtaWx5X2lkGAEgASgEIjwKFkxpc3RIb3VzZXdvcmtzUmVzcG9uc2USIgoKaG91c2V3b3JrcxgBIAMoCzIOLnNody5Ib3VzZXdvcmsiIQoTR2V0SG91c2V3b3JrUmVxdWVzdBIKCgJpZBgBIAEoBCJcChRHZXRIb3VzZXdvcmtSZXNwb25zZRIhCglob3VzZXdvcmsYASABKAsyDi5zaHcuSG91c2V3b3JrEiEKBW1lbW9zGAIgAygLMhIuc2h3LkhvdXNld29ya01lbW8iOwoWQ3JlYXRlSG91c2V3b3JrUmVxdWVzdBIhCglob3VzZXdvcmsYASABKAsyDi5zaHcuSG91c2V3b3JrIjsKFlVwZGF0ZUhvdXNld29ya1JlcXVlc3QSIQoJaG91c2V3b3JrGAEgASgLMg4uc2h3LkhvdXNld29yayIkChZGaW5pc2hIb3VzZXdvcmtSZXF1ZXN0EgoKAmlkGAEgASgEIiQKFkRlbGV0ZUhvdXNld29ya1JlcXVlc3QSCgoCaWQYASABKAQiMQoZTGlzdEhvdXNld29ya01lbW9zUmVxdWVzdBIUCgxob3VzZXdvcmtfaWQYASABKAQiPwoaTGlzdEhvdXNld29ya01lbW9zUmVzcG9uc2USIQoFbWVtb3MYASADKAsyEi5zaHcuSG91c2V3b3JrTWVtbyI+ChpDcmVhdGVIb3VzZXdvcmtNZW1vUmVxdWVzdBIgCgRtZW1vGAEgASgLMhIuc2h3LkhvdXNld29ya01lbW8iPgoaVXBkYXRlSG91c2V3b3JrTWVtb1JlcXVlc3QSIAoEbWVtbxgBIAEoCzISLnNody5Ib3VzZXdvcmtNZW1vIigKGkRlbGV0ZUhvdXNld29ya01lbW9SZXF1ZXN0EgoKAmlkGAEgASgEIisKGEdldEhvdXNld29ya1BvaW50UmVxdWVzdBIPCgd1c2VyX2lkGAEgASgEIj8KGUdldEhvdXNld29ya1BvaW50UmVzcG9uc2USIgoFcG9pbnQYASABKAsyEy5zaHcuSG91c2V3b3JrUG9pbnQiNQoiTGlzdEhvdXNld29ya1BvaW50SGlzdG9yaWVzUmVxdWVzdBIPCgd1c2VyX2lkGAEgASgEIlQKI0xpc3RIb3VzZXdvcmtQb2ludEhpc3Rvcmllc1Jlc3BvbnNlEi0KCWhpc3RvcmllcxgBIAMoCzIaLnNody5Ib3VzZXdvcmtQb2ludEhpc3RvcnkiKQobR2V0SG91c2V3b3JrVGVtcGxhdGVSZXF1ZXN0EgoKAmlkGAEgASgEIkgKHEdldEhvdXNld29ya1RlbXBsYXRlUmVzcG9uc2USKAoIdGVtcGxhdGUYASABKAsyFi5zaHcuSG91c2V3b3JrVGVtcGxhdGUiMgodTGlzdEhvdXNld29ya1RlbXBsYXRlc1JlcXVlc3QSEQoJZmFtaWx5X2lkGAEgASgEIksKHkxpc3RIb3VzZXdvcmtUZW1wbGF0ZXNSZXNwb25zZRIpCgl0ZW1wbGF0ZXMYASADKAsyFi5zaHcuSG91c2V3b3JrVGVtcGxhdGUiSgoeQ3JlYXRlSG91c2V3b3JrVGVtcGxhdGVSZXF1ZXN0EigKCHRlbXBsYXRlGAEgASgLMhYuc2h3LkhvdXNld29ya1RlbXBsYXRlIkoKHlVwZGF0ZUhvdXNld29ya1RlbXBsYXRlUmVxdWVzdBIoCgh0ZW1wbGF0ZRgBIAEoCzIWLnNody5Ib3VzZXdvcmtUZW1wbGF0ZSIsCh5EZWxldGVIb3VzZXdvcmtUZW1wbGF0ZVJlcXVlc3QSCgoCaWQYASABKAQiKQobR2V0SG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0EgoKAmlkGAEgASgEIkgKHEdldEhvdXNld29ya1NjaGVkdWxlUmVzcG9uc2USKAoIc2NoZWR1bGUYASABKAsyFi5zaHcuSG91c2V3b3JrU2NoZWR1bGUiMgodTGlzdEhvdXNld29ya1NjaGVkdWxlc1JlcXVlc3QSEQoJZmFtaWx5X2lkGAEgASgEIksKHkxpc3RIb3VzZXdvcmtTY2hlZHVsZXNSZXNwb25zZRIpCglzY2hlZHVsZXMYASADKAsyFi5zaHcuSG91c2V3b3JrU2NoZWR1bGUiSgoeQ3JlYXRlSG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0EigKCHNjaGVkdWxlGAEgASgLMhYuc2h3LkhvdXNld29ya1NjaGVkdWxlIkoKHlVwZGF0ZUhvdXNld29ya1NjaGVkdWxlUmVxdWVzdBIoCghzY2hlZHVsZRgBIAEoCzIWLnNody5Ib3VzZXdvcmtTY2hlZHVsZSIsCh5EZWxldGVIb3VzZXdvcmtTY2hlZHVsZVJlcXVlc3QSCgoCaWQYASABKAQipAEKCUhvdXNld29yaxIKCgJpZBgBIAEoBBIRCglmYW1pbHlfaWQYAiABKAQSDQoFdGl0bGUYAyABKAkSDgoGZGV0YWlsGAQgASgJEhEKCXN0YXR1c19pZBgFIAEoBBIgCgl3b3JrX3VzZXIYBiABKAsyDS5zaHcuVXNlckluZm8SEgoKc3RhcnRlZF9hdBgHIAEoAxIQCghlbmRlZF9hdBgIIAEoAyKyAQoNSG91c2V3b3JrTWVtbxIKCgJpZBgBIAEoBBIUCgxob3VzZXdvcmtfaWQYAiABKAQSDwoHbWVzc2FnZRgDIAEoCRIgCglzZW5kX2Zyb20YBCABKAsyDS5zaHcuVXNlckluZm8SEgoKc3RhcnRlZF9hdBgFIAEoAxIQCghlbmRlZF9hdBgGIAEoAxISCgpjcmVhdGVkX2F0GAcgASgDEhIKCnVwZGF0ZWRfYXQYCCABKAMicAoOSG91c2V3b3JrUG9pbnQSCgoCaWQYASABKAQSGwoEdXNlchgCIAEoCzINLnNody5Vc2VySW5mbxINCgVwb2ludBgDIAEoAxISCgpjcmVhdGVkX2F0GAQgASgDEhIKCnVwZGF0ZWRfYXQYBSABKAMihwEKFUhvdXNld29ya1BvaW50SGlzdG9yeRIKCgJpZBgBIAEoBBIbCgR1c2VyGAIgASgLMg0uc2h3LlVzZXJJbmZvEg4KBmRldGFpbBgDIAEoCRINCgVwb2ludBgEIAEoAxISCgpjcmVhdGVkX2F0GAUgASgDEhIKCnVwZGF0ZWRfYXQYBiABKAMieQoRSG91c2V3b3JrVGVtcGxhdGUSCgoCaWQYASABKAQSEQoJZmFtaWx5X2lkGAIgASgEEg0KBXRpdGxlGAMgASgJEg4KBmRldGFpbBgEIAEoCRISCgpjcmVhdGVkX2F0GAUgASgDEhIKCnVwZGF0ZWRfYXQYBiABKAMi+QEKEUhvdXNld29ya1NjaGVkdWxlEgoKAmlkGAEgASgEEhEKCWZhbWlseV9pZBgCIAEoBBINCgV0aXRsZRgDIAEoCRIOCgZkZXRhaWwYBCABKAkSHwoIYXNzaWduZWUYBSABKAsyDS5zaHcuVXNlckluZm8SDgoGZHVlX2F0GAYgASgDEiMKBnJlcGVhdBgHIAEoCzITLnNody5TY2hlZHVsZVJlcGVhdBIoCglyZW1pbmRlcnMYCCADKAsyFS5zaHcuU2NoZWR1bGVSZW1pbmRlchISCgpjcmVhdGVkX2F0GAkgASgDEhIKCnVwZGF0ZWRfYXQYCiABKAMiegoOU2NoZWR1bGVSZXBlYXQSJQoEdHlwZRgBIAEoDjIXLnNody5TY2hlZHVsZVJlcGVhdFR5cGUSEAoId2Vla2RheXMYAiADKAUSFQoNd2Vla19vZl9tb250aBgDIAMoBRIYChB3ZWVrZGF5X2luX21vbnRoGAQgAygFIioKEFNjaGVkdWxlUmVtaW5kZXISFgoObWludXRlc19iZWZvcmUYASABKAUqfQoSU2NoZWR1bGVSZXBlYXRUeXBlEiQKIFNDSEVEVUxFX1JFUEVBVF9UWVBFX1VOU1BFQ0lGSUVEEAASHwobU0NIRURVTEVfUkVQRUFUX1RZUEVfV0VFS0xZEAESIAocU0NIRURVTEVfUkVQRUFUX1RZUEVfTU9OVEhMWRACMsIDChBIb3VzZXdvcmtTZXJ2aWNlEksKDkxpc3RIb3VzZXdvcmtzEhouc2h3Lkxpc3RIb3VzZXdvcmtzUmVxdWVzdBobLnNody5MaXN0SG91c2V3b3Jrc1Jlc3BvbnNlIgASRQoMR2V0SG91c2V3b3JrEhguc2h3LkdldEhvdXNld29ya1JlcXVlc3QaGS5zaHcuR2V0SG91c2V3b3JrUmVzcG9uc2UiABJFCg9DcmVhdGVIb3VzZXdvcmsSGy5zaHcuQ3JlYXRlSG91c2V3b3JrUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAEkUKD1VwZGF0ZUhvdXNld29yaxIbLnNody5VcGRhdGVIb3VzZXdvcmtSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRQoPRmluaXNoSG91c2V3b3JrEhsuc2h3LkZpbmlzaEhvdXNld29ya1JlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABJFCg9EZWxldGVIb3VzZXdvcmsSGy5zaHcuRGVsZXRlSG91c2V3b3JrUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAMtwCChRIb3VzZXdvcmtNZW1vU2VydmljZRJXChJMaXN0SG91c2V3b3JrTWVtb3MSHi5zaHcuTGlzdEhvdXNld29ya01lbW9zUmVxdWVzdBofLnNody5MaXN0SG91c2V3b3JrTWVtb3NSZXNwb25zZSIAEk0KE0NyZWF0ZUhvdXNld29ya01lbW8SHy5zaHcuQ3JlYXRlSG91c2V3b3JrTWVtb1JlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABJNChNVcGRhdGVIb3VzZXdvcmtNZW1vEh8uc2h3LlVwZGF0ZUhvdXNld29ya01lbW9SZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASTQoTRGVsZXRlSG91c2V3b3JrTWVtbxIfLnNody5EZWxldGVIb3VzZXdvcmtNZW1vUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAMuEBChVIb3VzZXdvcmtQb2ludFNlcnZpY2USVAoRR2V0SG91c2V3b3JrUG9pbnQSHS5zaHcuR2V0SG91c2V3b3JrUG9pbnRSZXF1ZXN0Gh4uc2h3LkdldEhvdXNld29ya1BvaW50UmVzcG9uc2UiABJyChtMaXN0SG91c2V3b3JrUG9pbnRIaXN0b3JpZXMSJy5zaHcuTGlzdEhvdXNld29ya1BvaW50SGlzdG9yaWVzUmVxdWVzdBooLnNody5MaXN0SG91c2V3b3JrUG9pbnRIaXN0b3JpZXNSZXNwb25zZSIAMuMDChhIb3VzZXdvcmtUZW1wbGF0ZVNlcnZpY2USXQoUR2V0SG91c2V3b3JrVGVtcGxhdGUSIC5zaHcuR2V0SG91c2V3b3JrVGVtcGxhdGVSZXF1ZXN0GiEuc2h3LkdldEhvdXNld29ya1RlbXBsYXRlUmVzcG9uc2UiABJjChZMaXN0SG91c2V3b3JrVGVtcGxhdGVzEiIuc2h3Lkxpc3RIb3VzZXdvcmtUZW1wbGF0ZXNSZXF1ZXN0GiMuc2h3Lkxpc3RIb3VzZXdvcmtUZW1wbGF0ZXNSZXNwb25zZSIAElUKF0NyZWF0ZUhvdXNld29ya1RlbXBsYXRlEiMuc2h3LkNyZWF0ZUhvdXNld29ya1RlbXBsYXRlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAElUKF1VwZGF0ZUhvdXNld29ya1RlbXBsYXRlEiMuc2h3LlVwZGF0ZUhvdXNld29ya1RlbXBsYXRlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAElUKF0RlbGV0ZUhvdXNld29ya1RlbXBsYXRlEiMuc2h3LkRlbGV0ZUhvdXNld29ya1RlbXBsYXRlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAMuMDChhIb3VzZXdvcmtTY2hlZHVsZVNlcnZpY2USXQoUR2V0SG91c2V3b3JrU2NoZWR1bGUSIC5zaHcuR2V0SG91c2V3b3JrU2NoZWR1bGVSZXF1ZXN0GiEuc2h3LkdldEhvdXNld29ya1NjaGVkdWxlUmVzcG9uc2UiABJjChZMaXN0SG91c2V3b3JrU2NoZWR1bGVzEiIuc2h3Lkxpc3RIb3VzZXdvcmtTY2hlZHVsZXNSZXF1ZXN0GiMuc2h3Lkxpc3RIb3VzZXdvcmtTY2hlZHVsZXNSZXNwb25zZSIAElUKF0NyZWF0ZUhvdXNld29ya1NjaGVkdWxlEiMuc2h3LkNyZWF0ZUhvdXNld29ya1NjaGVkdWxlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAElUKF1VwZGF0ZUhvdXNld29ya1NjaGVkdWxlEiMuc2h3LlVwZGF0ZUhvdXNld29ya1NjaGVkdWxlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAElUKF0RlbGV0ZUhvdXNld29ya1NjaGVkdWxlEiMuc2h3LkRlbGV0ZUhvdXNld29ya1NjaGVkdWxlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAQhJaEHNod2dycGMvcGtnL2dycGNiBnByb3RvMw", [file_common]);
 
 /**
- * @generated from message shw.HouseworkRequest
+ * @generated from message shw.ListHouseworksRequest
  */
-export type HouseworkRequest = Message<"shw.HouseworkRequest"> & {
+export type ListHouseworksRequest = Message<"shw.ListHouseworksRequest"> & {
   /**
-   * @generated from field: uint64 familyId = 1;
+   * @generated from field: uint64 family_id = 1;
    */
   familyId: bigint;
 };
 
 /**
- * Describes the message shw.HouseworkRequest.
- * Use `create(HouseworkRequestSchema)` to create a new message.
+ * Describes the message shw.ListHouseworksRequest.
+ * Use `create(ListHouseworksRequestSchema)` to create a new message.
  */
-export const HouseworkRequestSchema: GenMessage<HouseworkRequest> = /*@__PURE__*/
+export const ListHouseworksRequestSchema: GenMessage<ListHouseworksRequest> = /*@__PURE__*/
   messageDesc(file_housework, 0);
 
 /**
- * @generated from message shw.HouseworkTargetRequest
+ * @generated from message shw.ListHouseworksResponse
  */
-export type HouseworkTargetRequest = Message<"shw.HouseworkTargetRequest"> & {
+export type ListHouseworksResponse = Message<"shw.ListHouseworksResponse"> & {
   /**
-   * @generated from field: uint64 id = 1;
+   * @generated from field: repeated shw.Housework houseworks = 1;
    */
-  id: bigint;
+  houseworks: Housework[];
 };
 
 /**
- * Describes the message shw.HouseworkTargetRequest.
- * Use `create(HouseworkTargetRequestSchema)` to create a new message.
+ * Describes the message shw.ListHouseworksResponse.
+ * Use `create(ListHouseworksResponseSchema)` to create a new message.
  */
-export const HouseworkTargetRequestSchema: GenMessage<HouseworkTargetRequest> = /*@__PURE__*/
+export const ListHouseworksResponseSchema: GenMessage<ListHouseworksResponse> = /*@__PURE__*/
   messageDesc(file_housework, 1);
 
 /**
- * @generated from message shw.HouseworkDetailRequest
+ * @generated from message shw.GetHouseworkRequest
  */
-export type HouseworkDetailRequest = Message<"shw.HouseworkDetailRequest"> & {
+export type GetHouseworkRequest = Message<"shw.GetHouseworkRequest"> & {
   /**
    * @generated from field: uint64 id = 1;
    */
@@ -59,191 +59,208 @@ export type HouseworkDetailRequest = Message<"shw.HouseworkDetailRequest"> & {
 };
 
 /**
- * Describes the message shw.HouseworkDetailRequest.
- * Use `create(HouseworkDetailRequestSchema)` to create a new message.
+ * Describes the message shw.GetHouseworkRequest.
+ * Use `create(GetHouseworkRequestSchema)` to create a new message.
  */
-export const HouseworkDetailRequestSchema: GenMessage<HouseworkDetailRequest> = /*@__PURE__*/
+export const GetHouseworkRequestSchema: GenMessage<GetHouseworkRequest> = /*@__PURE__*/
   messageDesc(file_housework, 2);
 
 /**
- * @generated from message shw.HouseworkMemoRequest
+ * @generated from message shw.GetHouseworkResponse
  */
-export type HouseworkMemoRequest = Message<"shw.HouseworkMemoRequest"> & {
-  /**
-   * @generated from field: uint64 houseworkId = 1;
-   */
-  houseworkId: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkMemoRequest.
- * Use `create(HouseworkMemoRequestSchema)` to create a new message.
- */
-export const HouseworkMemoRequestSchema: GenMessage<HouseworkMemoRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 3);
-
-/**
- * @generated from message shw.HouseworkPointRequest
- */
-export type HouseworkPointRequest = Message<"shw.HouseworkPointRequest"> & {
-  /**
-   * @generated from field: uint64 userId = 1;
-   */
-  userId: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkPointRequest.
- * Use `create(HouseworkPointRequestSchema)` to create a new message.
- */
-export const HouseworkPointRequestSchema: GenMessage<HouseworkPointRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 4);
-
-/**
- * @generated from message shw.HouseworkTemplatesRequest
- */
-export type HouseworkTemplatesRequest = Message<"shw.HouseworkTemplatesRequest"> & {
-  /**
-   * @generated from field: uint64 familyId = 1;
-   */
-  familyId: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkTemplatesRequest.
- * Use `create(HouseworkTemplatesRequestSchema)` to create a new message.
- */
-export const HouseworkTemplatesRequestSchema: GenMessage<HouseworkTemplatesRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 5);
-
-/**
- * @generated from message shw.HouseworkTemplateRequest
- */
-export type HouseworkTemplateRequest = Message<"shw.HouseworkTemplateRequest"> & {
-  /**
-   * @generated from field: uint64 id = 1;
-   */
-  id: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkTemplateRequest.
- * Use `create(HouseworkTemplateRequestSchema)` to create a new message.
- */
-export const HouseworkTemplateRequestSchema: GenMessage<HouseworkTemplateRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 6);
-
-/**
- * @generated from message shw.HouseworkPointHistoryRequest
- */
-export type HouseworkPointHistoryRequest = Message<"shw.HouseworkPointHistoryRequest"> & {
-  /**
-   * @generated from field: uint64 userId = 1;
-   */
-  userId: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkPointHistoryRequest.
- * Use `create(HouseworkPointHistoryRequestSchema)` to create a new message.
- */
-export const HouseworkPointHistoryRequestSchema: GenMessage<HouseworkPointHistoryRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 7);
-
-/**
- * @generated from message shw.HouseworkSchedulesRequest
- */
-export type HouseworkSchedulesRequest = Message<"shw.HouseworkSchedulesRequest"> & {
-  /**
-   * @generated from field: uint64 familyId = 1;
-   */
-  familyId: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkSchedulesRequest.
- * Use `create(HouseworkSchedulesRequestSchema)` to create a new message.
- */
-export const HouseworkSchedulesRequestSchema: GenMessage<HouseworkSchedulesRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 8);
-
-/**
- * @generated from message shw.HouseworkScheduleRequest
- */
-export type HouseworkScheduleRequest = Message<"shw.HouseworkScheduleRequest"> & {
-  /**
-   * @generated from field: uint64 id = 1;
-   */
-  id: bigint;
-};
-
-/**
- * Describes the message shw.HouseworkScheduleRequest.
- * Use `create(HouseworkScheduleRequestSchema)` to create a new message.
- */
-export const HouseworkScheduleRequestSchema: GenMessage<HouseworkScheduleRequest> = /*@__PURE__*/
-  messageDesc(file_housework, 9);
-
-/**
- * @generated from message shw.HouseworkResponse
- */
-export type HouseworkResponse = Message<"shw.HouseworkResponse"> & {
-  /**
-   * @generated from field: repeated shw.Housework housework = 1;
-   */
-  housework: Housework[];
-};
-
-/**
- * Describes the message shw.HouseworkResponse.
- * Use `create(HouseworkResponseSchema)` to create a new message.
- */
-export const HouseworkResponseSchema: GenMessage<HouseworkResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 10);
-
-/**
- * @generated from message shw.HouseworkDetailResponse
- */
-export type HouseworkDetailResponse = Message<"shw.HouseworkDetailResponse"> & {
+export type GetHouseworkResponse = Message<"shw.GetHouseworkResponse"> & {
   /**
    * @generated from field: shw.Housework housework = 1;
    */
   housework?: Housework;
 
   /**
-   * @generated from field: repeated shw.HouseworkMemo memo = 2;
+   * @generated from field: repeated shw.HouseworkMemo memos = 2;
    */
-  memo: HouseworkMemo[];
+  memos: HouseworkMemo[];
 };
 
 /**
- * Describes the message shw.HouseworkDetailResponse.
- * Use `create(HouseworkDetailResponseSchema)` to create a new message.
+ * Describes the message shw.GetHouseworkResponse.
+ * Use `create(GetHouseworkResponseSchema)` to create a new message.
  */
-export const HouseworkDetailResponseSchema: GenMessage<HouseworkDetailResponse> = /*@__PURE__*/
+export const GetHouseworkResponseSchema: GenMessage<GetHouseworkResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 3);
+
+/**
+ * @generated from message shw.CreateHouseworkRequest
+ */
+export type CreateHouseworkRequest = Message<"shw.CreateHouseworkRequest"> & {
+  /**
+   * @generated from field: shw.Housework housework = 1;
+   */
+  housework?: Housework;
+};
+
+/**
+ * Describes the message shw.CreateHouseworkRequest.
+ * Use `create(CreateHouseworkRequestSchema)` to create a new message.
+ */
+export const CreateHouseworkRequestSchema: GenMessage<CreateHouseworkRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 4);
+
+/**
+ * @generated from message shw.UpdateHouseworkRequest
+ */
+export type UpdateHouseworkRequest = Message<"shw.UpdateHouseworkRequest"> & {
+  /**
+   * @generated from field: shw.Housework housework = 1;
+   */
+  housework?: Housework;
+};
+
+/**
+ * Describes the message shw.UpdateHouseworkRequest.
+ * Use `create(UpdateHouseworkRequestSchema)` to create a new message.
+ */
+export const UpdateHouseworkRequestSchema: GenMessage<UpdateHouseworkRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 5);
+
+/**
+ * @generated from message shw.FinishHouseworkRequest
+ */
+export type FinishHouseworkRequest = Message<"shw.FinishHouseworkRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.FinishHouseworkRequest.
+ * Use `create(FinishHouseworkRequestSchema)` to create a new message.
+ */
+export const FinishHouseworkRequestSchema: GenMessage<FinishHouseworkRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 6);
+
+/**
+ * @generated from message shw.DeleteHouseworkRequest
+ */
+export type DeleteHouseworkRequest = Message<"shw.DeleteHouseworkRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.DeleteHouseworkRequest.
+ * Use `create(DeleteHouseworkRequestSchema)` to create a new message.
+ */
+export const DeleteHouseworkRequestSchema: GenMessage<DeleteHouseworkRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 7);
+
+/**
+ * @generated from message shw.ListHouseworkMemosRequest
+ */
+export type ListHouseworkMemosRequest = Message<"shw.ListHouseworkMemosRequest"> & {
+  /**
+   * @generated from field: uint64 housework_id = 1;
+   */
+  houseworkId: bigint;
+};
+
+/**
+ * Describes the message shw.ListHouseworkMemosRequest.
+ * Use `create(ListHouseworkMemosRequestSchema)` to create a new message.
+ */
+export const ListHouseworkMemosRequestSchema: GenMessage<ListHouseworkMemosRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 8);
+
+/**
+ * @generated from message shw.ListHouseworkMemosResponse
+ */
+export type ListHouseworkMemosResponse = Message<"shw.ListHouseworkMemosResponse"> & {
+  /**
+   * @generated from field: repeated shw.HouseworkMemo memos = 1;
+   */
+  memos: HouseworkMemo[];
+};
+
+/**
+ * Describes the message shw.ListHouseworkMemosResponse.
+ * Use `create(ListHouseworkMemosResponseSchema)` to create a new message.
+ */
+export const ListHouseworkMemosResponseSchema: GenMessage<ListHouseworkMemosResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 9);
+
+/**
+ * @generated from message shw.CreateHouseworkMemoRequest
+ */
+export type CreateHouseworkMemoRequest = Message<"shw.CreateHouseworkMemoRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkMemo memo = 1;
+   */
+  memo?: HouseworkMemo;
+};
+
+/**
+ * Describes the message shw.CreateHouseworkMemoRequest.
+ * Use `create(CreateHouseworkMemoRequestSchema)` to create a new message.
+ */
+export const CreateHouseworkMemoRequestSchema: GenMessage<CreateHouseworkMemoRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 10);
+
+/**
+ * @generated from message shw.UpdateHouseworkMemoRequest
+ */
+export type UpdateHouseworkMemoRequest = Message<"shw.UpdateHouseworkMemoRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkMemo memo = 1;
+   */
+  memo?: HouseworkMemo;
+};
+
+/**
+ * Describes the message shw.UpdateHouseworkMemoRequest.
+ * Use `create(UpdateHouseworkMemoRequestSchema)` to create a new message.
+ */
+export const UpdateHouseworkMemoRequestSchema: GenMessage<UpdateHouseworkMemoRequest> = /*@__PURE__*/
   messageDesc(file_housework, 11);
 
 /**
- * @generated from message shw.HouseworkMemoResponse
+ * @generated from message shw.DeleteHouseworkMemoRequest
  */
-export type HouseworkMemoResponse = Message<"shw.HouseworkMemoResponse"> & {
+export type DeleteHouseworkMemoRequest = Message<"shw.DeleteHouseworkMemoRequest"> & {
   /**
-   * @generated from field: repeated shw.HouseworkMemo memo = 1;
+   * @generated from field: uint64 id = 1;
    */
-  memo: HouseworkMemo[];
+  id: bigint;
 };
 
 /**
- * Describes the message shw.HouseworkMemoResponse.
- * Use `create(HouseworkMemoResponseSchema)` to create a new message.
+ * Describes the message shw.DeleteHouseworkMemoRequest.
+ * Use `create(DeleteHouseworkMemoRequestSchema)` to create a new message.
  */
-export const HouseworkMemoResponseSchema: GenMessage<HouseworkMemoResponse> = /*@__PURE__*/
+export const DeleteHouseworkMemoRequestSchema: GenMessage<DeleteHouseworkMemoRequest> = /*@__PURE__*/
   messageDesc(file_housework, 12);
 
 /**
- * @generated from message shw.HouseworkPointResponse
+ * @generated from message shw.GetHouseworkPointRequest
  */
-export type HouseworkPointResponse = Message<"shw.HouseworkPointResponse"> & {
+export type GetHouseworkPointRequest = Message<"shw.GetHouseworkPointRequest"> & {
+  /**
+   * @generated from field: uint64 user_id = 1;
+   */
+  userId: bigint;
+};
+
+/**
+ * Describes the message shw.GetHouseworkPointRequest.
+ * Use `create(GetHouseworkPointRequestSchema)` to create a new message.
+ */
+export const GetHouseworkPointRequestSchema: GenMessage<GetHouseworkPointRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 13);
+
+/**
+ * @generated from message shw.GetHouseworkPointResponse
+ */
+export type GetHouseworkPointResponse = Message<"shw.GetHouseworkPointResponse"> & {
   /**
    * @generated from field: shw.HouseworkPoint point = 1;
    */
@@ -251,33 +268,67 @@ export type HouseworkPointResponse = Message<"shw.HouseworkPointResponse"> & {
 };
 
 /**
- * Describes the message shw.HouseworkPointResponse.
- * Use `create(HouseworkPointResponseSchema)` to create a new message.
+ * Describes the message shw.GetHouseworkPointResponse.
+ * Use `create(GetHouseworkPointResponseSchema)` to create a new message.
  */
-export const HouseworkPointResponseSchema: GenMessage<HouseworkPointResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 13);
-
-/**
- * @generated from message shw.HouseworkPointHistoryResponse
- */
-export type HouseworkPointHistoryResponse = Message<"shw.HouseworkPointHistoryResponse"> & {
-  /**
-   * @generated from field: repeated shw.HouseworkPointHistory history = 1;
-   */
-  history: HouseworkPointHistory[];
-};
-
-/**
- * Describes the message shw.HouseworkPointHistoryResponse.
- * Use `create(HouseworkPointHistoryResponseSchema)` to create a new message.
- */
-export const HouseworkPointHistoryResponseSchema: GenMessage<HouseworkPointHistoryResponse> = /*@__PURE__*/
+export const GetHouseworkPointResponseSchema: GenMessage<GetHouseworkPointResponse> = /*@__PURE__*/
   messageDesc(file_housework, 14);
 
 /**
- * @generated from message shw.HouseworkTemplateResponse
+ * @generated from message shw.ListHouseworkPointHistoriesRequest
  */
-export type HouseworkTemplateResponse = Message<"shw.HouseworkTemplateResponse"> & {
+export type ListHouseworkPointHistoriesRequest = Message<"shw.ListHouseworkPointHistoriesRequest"> & {
+  /**
+   * @generated from field: uint64 user_id = 1;
+   */
+  userId: bigint;
+};
+
+/**
+ * Describes the message shw.ListHouseworkPointHistoriesRequest.
+ * Use `create(ListHouseworkPointHistoriesRequestSchema)` to create a new message.
+ */
+export const ListHouseworkPointHistoriesRequestSchema: GenMessage<ListHouseworkPointHistoriesRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 15);
+
+/**
+ * @generated from message shw.ListHouseworkPointHistoriesResponse
+ */
+export type ListHouseworkPointHistoriesResponse = Message<"shw.ListHouseworkPointHistoriesResponse"> & {
+  /**
+   * @generated from field: repeated shw.HouseworkPointHistory histories = 1;
+   */
+  histories: HouseworkPointHistory[];
+};
+
+/**
+ * Describes the message shw.ListHouseworkPointHistoriesResponse.
+ * Use `create(ListHouseworkPointHistoriesResponseSchema)` to create a new message.
+ */
+export const ListHouseworkPointHistoriesResponseSchema: GenMessage<ListHouseworkPointHistoriesResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 16);
+
+/**
+ * @generated from message shw.GetHouseworkTemplateRequest
+ */
+export type GetHouseworkTemplateRequest = Message<"shw.GetHouseworkTemplateRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.GetHouseworkTemplateRequest.
+ * Use `create(GetHouseworkTemplateRequestSchema)` to create a new message.
+ */
+export const GetHouseworkTemplateRequestSchema: GenMessage<GetHouseworkTemplateRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 17);
+
+/**
+ * @generated from message shw.GetHouseworkTemplateResponse
+ */
+export type GetHouseworkTemplateResponse = Message<"shw.GetHouseworkTemplateResponse"> & {
   /**
    * @generated from field: shw.HouseworkTemplate template = 1;
    */
@@ -285,16 +336,33 @@ export type HouseworkTemplateResponse = Message<"shw.HouseworkTemplateResponse">
 };
 
 /**
- * Describes the message shw.HouseworkTemplateResponse.
- * Use `create(HouseworkTemplateResponseSchema)` to create a new message.
+ * Describes the message shw.GetHouseworkTemplateResponse.
+ * Use `create(GetHouseworkTemplateResponseSchema)` to create a new message.
  */
-export const HouseworkTemplateResponseSchema: GenMessage<HouseworkTemplateResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 15);
+export const GetHouseworkTemplateResponseSchema: GenMessage<GetHouseworkTemplateResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 18);
 
 /**
- * @generated from message shw.HouseworkTemplatesResponse
+ * @generated from message shw.ListHouseworkTemplatesRequest
  */
-export type HouseworkTemplatesResponse = Message<"shw.HouseworkTemplatesResponse"> & {
+export type ListHouseworkTemplatesRequest = Message<"shw.ListHouseworkTemplatesRequest"> & {
+  /**
+   * @generated from field: uint64 family_id = 1;
+   */
+  familyId: bigint;
+};
+
+/**
+ * Describes the message shw.ListHouseworkTemplatesRequest.
+ * Use `create(ListHouseworkTemplatesRequestSchema)` to create a new message.
+ */
+export const ListHouseworkTemplatesRequestSchema: GenMessage<ListHouseworkTemplatesRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 19);
+
+/**
+ * @generated from message shw.ListHouseworkTemplatesResponse
+ */
+export type ListHouseworkTemplatesResponse = Message<"shw.ListHouseworkTemplatesResponse"> & {
   /**
    * @generated from field: repeated shw.HouseworkTemplate templates = 1;
    */
@@ -302,16 +370,84 @@ export type HouseworkTemplatesResponse = Message<"shw.HouseworkTemplatesResponse
 };
 
 /**
- * Describes the message shw.HouseworkTemplatesResponse.
- * Use `create(HouseworkTemplatesResponseSchema)` to create a new message.
+ * Describes the message shw.ListHouseworkTemplatesResponse.
+ * Use `create(ListHouseworkTemplatesResponseSchema)` to create a new message.
  */
-export const HouseworkTemplatesResponseSchema: GenMessage<HouseworkTemplatesResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 16);
+export const ListHouseworkTemplatesResponseSchema: GenMessage<ListHouseworkTemplatesResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 20);
 
 /**
- * @generated from message shw.HouseworkScheduleResponse
+ * @generated from message shw.CreateHouseworkTemplateRequest
  */
-export type HouseworkScheduleResponse = Message<"shw.HouseworkScheduleResponse"> & {
+export type CreateHouseworkTemplateRequest = Message<"shw.CreateHouseworkTemplateRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkTemplate template = 1;
+   */
+  template?: HouseworkTemplate;
+};
+
+/**
+ * Describes the message shw.CreateHouseworkTemplateRequest.
+ * Use `create(CreateHouseworkTemplateRequestSchema)` to create a new message.
+ */
+export const CreateHouseworkTemplateRequestSchema: GenMessage<CreateHouseworkTemplateRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 21);
+
+/**
+ * @generated from message shw.UpdateHouseworkTemplateRequest
+ */
+export type UpdateHouseworkTemplateRequest = Message<"shw.UpdateHouseworkTemplateRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkTemplate template = 1;
+   */
+  template?: HouseworkTemplate;
+};
+
+/**
+ * Describes the message shw.UpdateHouseworkTemplateRequest.
+ * Use `create(UpdateHouseworkTemplateRequestSchema)` to create a new message.
+ */
+export const UpdateHouseworkTemplateRequestSchema: GenMessage<UpdateHouseworkTemplateRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 22);
+
+/**
+ * @generated from message shw.DeleteHouseworkTemplateRequest
+ */
+export type DeleteHouseworkTemplateRequest = Message<"shw.DeleteHouseworkTemplateRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.DeleteHouseworkTemplateRequest.
+ * Use `create(DeleteHouseworkTemplateRequestSchema)` to create a new message.
+ */
+export const DeleteHouseworkTemplateRequestSchema: GenMessage<DeleteHouseworkTemplateRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 23);
+
+/**
+ * @generated from message shw.GetHouseworkScheduleRequest
+ */
+export type GetHouseworkScheduleRequest = Message<"shw.GetHouseworkScheduleRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.GetHouseworkScheduleRequest.
+ * Use `create(GetHouseworkScheduleRequestSchema)` to create a new message.
+ */
+export const GetHouseworkScheduleRequestSchema: GenMessage<GetHouseworkScheduleRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 24);
+
+/**
+ * @generated from message shw.GetHouseworkScheduleResponse
+ */
+export type GetHouseworkScheduleResponse = Message<"shw.GetHouseworkScheduleResponse"> & {
   /**
    * @generated from field: shw.HouseworkSchedule schedule = 1;
    */
@@ -319,16 +455,33 @@ export type HouseworkScheduleResponse = Message<"shw.HouseworkScheduleResponse">
 };
 
 /**
- * Describes the message shw.HouseworkScheduleResponse.
- * Use `create(HouseworkScheduleResponseSchema)` to create a new message.
+ * Describes the message shw.GetHouseworkScheduleResponse.
+ * Use `create(GetHouseworkScheduleResponseSchema)` to create a new message.
  */
-export const HouseworkScheduleResponseSchema: GenMessage<HouseworkScheduleResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 17);
+export const GetHouseworkScheduleResponseSchema: GenMessage<GetHouseworkScheduleResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 25);
 
 /**
- * @generated from message shw.HouseworkSchedulesResponse
+ * @generated from message shw.ListHouseworkSchedulesRequest
  */
-export type HouseworkSchedulesResponse = Message<"shw.HouseworkSchedulesResponse"> & {
+export type ListHouseworkSchedulesRequest = Message<"shw.ListHouseworkSchedulesRequest"> & {
+  /**
+   * @generated from field: uint64 family_id = 1;
+   */
+  familyId: bigint;
+};
+
+/**
+ * Describes the message shw.ListHouseworkSchedulesRequest.
+ * Use `create(ListHouseworkSchedulesRequestSchema)` to create a new message.
+ */
+export const ListHouseworkSchedulesRequestSchema: GenMessage<ListHouseworkSchedulesRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 26);
+
+/**
+ * @generated from message shw.ListHouseworkSchedulesResponse
+ */
+export type ListHouseworkSchedulesResponse = Message<"shw.ListHouseworkSchedulesResponse"> & {
   /**
    * @generated from field: repeated shw.HouseworkSchedule schedules = 1;
    */
@@ -336,11 +489,62 @@ export type HouseworkSchedulesResponse = Message<"shw.HouseworkSchedulesResponse
 };
 
 /**
- * Describes the message shw.HouseworkSchedulesResponse.
- * Use `create(HouseworkSchedulesResponseSchema)` to create a new message.
+ * Describes the message shw.ListHouseworkSchedulesResponse.
+ * Use `create(ListHouseworkSchedulesResponseSchema)` to create a new message.
  */
-export const HouseworkSchedulesResponseSchema: GenMessage<HouseworkSchedulesResponse> = /*@__PURE__*/
-  messageDesc(file_housework, 18);
+export const ListHouseworkSchedulesResponseSchema: GenMessage<ListHouseworkSchedulesResponse> = /*@__PURE__*/
+  messageDesc(file_housework, 27);
+
+/**
+ * @generated from message shw.CreateHouseworkScheduleRequest
+ */
+export type CreateHouseworkScheduleRequest = Message<"shw.CreateHouseworkScheduleRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkSchedule schedule = 1;
+   */
+  schedule?: HouseworkSchedule;
+};
+
+/**
+ * Describes the message shw.CreateHouseworkScheduleRequest.
+ * Use `create(CreateHouseworkScheduleRequestSchema)` to create a new message.
+ */
+export const CreateHouseworkScheduleRequestSchema: GenMessage<CreateHouseworkScheduleRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 28);
+
+/**
+ * @generated from message shw.UpdateHouseworkScheduleRequest
+ */
+export type UpdateHouseworkScheduleRequest = Message<"shw.UpdateHouseworkScheduleRequest"> & {
+  /**
+   * @generated from field: shw.HouseworkSchedule schedule = 1;
+   */
+  schedule?: HouseworkSchedule;
+};
+
+/**
+ * Describes the message shw.UpdateHouseworkScheduleRequest.
+ * Use `create(UpdateHouseworkScheduleRequestSchema)` to create a new message.
+ */
+export const UpdateHouseworkScheduleRequestSchema: GenMessage<UpdateHouseworkScheduleRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 29);
+
+/**
+ * @generated from message shw.DeleteHouseworkScheduleRequest
+ */
+export type DeleteHouseworkScheduleRequest = Message<"shw.DeleteHouseworkScheduleRequest"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+};
+
+/**
+ * Describes the message shw.DeleteHouseworkScheduleRequest.
+ * Use `create(DeleteHouseworkScheduleRequestSchema)` to create a new message.
+ */
+export const DeleteHouseworkScheduleRequestSchema: GenMessage<DeleteHouseworkScheduleRequest> = /*@__PURE__*/
+  messageDesc(file_housework, 30);
 
 /**
  * @generated from message shw.Housework
@@ -352,7 +556,7 @@ export type Housework = Message<"shw.Housework"> & {
   id: bigint;
 
   /**
-   * @generated from field: uint64 familyId = 2;
+   * @generated from field: uint64 family_id = 2;
    */
   familyId: bigint;
 
@@ -367,22 +571,22 @@ export type Housework = Message<"shw.Housework"> & {
   detail: string;
 
   /**
-   * @generated from field: string status = 5;
+   * @generated from field: uint64 status_id = 5;
    */
-  status: string;
+  statusId: bigint;
 
   /**
-   * @generated from field: shw.UserInfo workUser = 6;
+   * @generated from field: shw.UserInfo work_user = 6;
    */
   workUser?: UserInfo;
 
   /**
-   * @generated from field: int64 startedAt = 7;
+   * @generated from field: int64 started_at = 7;
    */
   startedAt: bigint;
 
   /**
-   * @generated from field: int64 endedAt = 8;
+   * @generated from field: int64 ended_at = 8;
    */
   endedAt: bigint;
 };
@@ -392,7 +596,7 @@ export type Housework = Message<"shw.Housework"> & {
  * Use `create(HouseworkSchema)` to create a new message.
  */
 export const HouseworkSchema: GenMessage<Housework> = /*@__PURE__*/
-  messageDesc(file_housework, 19);
+  messageDesc(file_housework, 31);
 
 /**
  * @generated from message shw.HouseworkMemo
@@ -404,7 +608,7 @@ export type HouseworkMemo = Message<"shw.HouseworkMemo"> & {
   id: bigint;
 
   /**
-   * @generated from field: uint64 houseworkId = 2;
+   * @generated from field: uint64 housework_id = 2;
    */
   houseworkId: bigint;
 
@@ -414,17 +618,27 @@ export type HouseworkMemo = Message<"shw.HouseworkMemo"> & {
   message: string;
 
   /**
-   * @generated from field: shw.UserInfo sendFrom = 4;
+   * @generated from field: shw.UserInfo send_from = 4;
    */
   sendFrom?: UserInfo;
 
   /**
-   * @generated from field: int64 createdAt = 5;
+   * @generated from field: int64 started_at = 5;
+   */
+  startedAt: bigint;
+
+  /**
+   * @generated from field: int64 ended_at = 6;
+   */
+  endedAt: bigint;
+
+  /**
+   * @generated from field: int64 created_at = 7;
    */
   createdAt: bigint;
 
   /**
-   * @generated from field: int64 updatedAt = 6;
+   * @generated from field: int64 updated_at = 8;
    */
   updatedAt: bigint;
 };
@@ -434,7 +648,7 @@ export type HouseworkMemo = Message<"shw.HouseworkMemo"> & {
  * Use `create(HouseworkMemoSchema)` to create a new message.
  */
 export const HouseworkMemoSchema: GenMessage<HouseworkMemo> = /*@__PURE__*/
-  messageDesc(file_housework, 20);
+  messageDesc(file_housework, 32);
 
 /**
  * @generated from message shw.HouseworkPoint
@@ -451,17 +665,17 @@ export type HouseworkPoint = Message<"shw.HouseworkPoint"> & {
   user?: UserInfo;
 
   /**
-   * @generated from field: int64 point = 4;
+   * @generated from field: int64 point = 3;
    */
   point: bigint;
 
   /**
-   * @generated from field: int64 createdAt = 5;
+   * @generated from field: int64 created_at = 4;
    */
   createdAt: bigint;
 
   /**
-   * @generated from field: int64 updatedAt = 6;
+   * @generated from field: int64 updated_at = 5;
    */
   updatedAt: bigint;
 };
@@ -471,7 +685,7 @@ export type HouseworkPoint = Message<"shw.HouseworkPoint"> & {
  * Use `create(HouseworkPointSchema)` to create a new message.
  */
 export const HouseworkPointSchema: GenMessage<HouseworkPoint> = /*@__PURE__*/
-  messageDesc(file_housework, 21);
+  messageDesc(file_housework, 33);
 
 /**
  * @generated from message shw.HouseworkPointHistory
@@ -498,9 +712,14 @@ export type HouseworkPointHistory = Message<"shw.HouseworkPointHistory"> & {
   point: bigint;
 
   /**
-   * @generated from field: int64 createdAt = 5;
+   * @generated from field: int64 created_at = 5;
    */
   createdAt: bigint;
+
+  /**
+   * @generated from field: int64 updated_at = 6;
+   */
+  updatedAt: bigint;
 };
 
 /**
@@ -508,7 +727,7 @@ export type HouseworkPointHistory = Message<"shw.HouseworkPointHistory"> & {
  * Use `create(HouseworkPointHistorySchema)` to create a new message.
  */
 export const HouseworkPointHistorySchema: GenMessage<HouseworkPointHistory> = /*@__PURE__*/
-  messageDesc(file_housework, 22);
+  messageDesc(file_housework, 34);
 
 /**
  * @generated from message shw.HouseworkTemplate
@@ -520,7 +739,7 @@ export type HouseworkTemplate = Message<"shw.HouseworkTemplate"> & {
   id: bigint;
 
   /**
-   * @generated from field: uint64 familyId = 2;
+   * @generated from field: uint64 family_id = 2;
    */
   familyId: bigint;
 
@@ -535,12 +754,12 @@ export type HouseworkTemplate = Message<"shw.HouseworkTemplate"> & {
   detail: string;
 
   /**
-   * @generated from field: int64 createdAt = 5;
+   * @generated from field: int64 created_at = 5;
    */
   createdAt: bigint;
 
   /**
-   * @generated from field: int64 updatedAt = 6;
+   * @generated from field: int64 updated_at = 6;
    */
   updatedAt: bigint;
 };
@@ -550,7 +769,7 @@ export type HouseworkTemplate = Message<"shw.HouseworkTemplate"> & {
  * Use `create(HouseworkTemplateSchema)` to create a new message.
  */
 export const HouseworkTemplateSchema: GenMessage<HouseworkTemplate> = /*@__PURE__*/
-  messageDesc(file_housework, 23);
+  messageDesc(file_housework, 35);
 
 /**
  * @generated from message shw.HouseworkSchedule
@@ -562,7 +781,7 @@ export type HouseworkSchedule = Message<"shw.HouseworkSchedule"> & {
   id: bigint;
 
   /**
-   * @generated from field: uint64 familyId = 2;
+   * @generated from field: uint64 family_id = 2;
    */
   familyId: bigint;
 
@@ -577,37 +796,32 @@ export type HouseworkSchedule = Message<"shw.HouseworkSchedule"> & {
   detail: string;
 
   /**
-   * @generated from field: shw.HouseworkTemplate template = 5;
-   */
-  template?: HouseworkTemplate;
-
-  /**
-   * @generated from field: shw.UserInfo assignee = 6;
+   * @generated from field: shw.UserInfo assignee = 5;
    */
   assignee?: UserInfo;
 
   /**
-   * @generated from field: int64 dueAt = 7;
+   * @generated from field: int64 due_at = 6;
    */
   dueAt: bigint;
 
   /**
-   * @generated from field: shw.ScheduleRepeat repeat = 8;
+   * @generated from field: shw.ScheduleRepeat repeat = 7;
    */
   repeat?: ScheduleRepeat;
 
   /**
-   * @generated from field: repeated shw.ScheduleReminder reminders = 9;
+   * @generated from field: repeated shw.ScheduleReminder reminders = 8;
    */
   reminders: ScheduleReminder[];
 
   /**
-   * @generated from field: int64 createdAt = 10;
+   * @generated from field: int64 created_at = 9;
    */
   createdAt: bigint;
 
   /**
-   * @generated from field: int64 updatedAt = 11;
+   * @generated from field: int64 updated_at = 10;
    */
   updatedAt: bigint;
 };
@@ -617,7 +831,7 @@ export type HouseworkSchedule = Message<"shw.HouseworkSchedule"> & {
  * Use `create(HouseworkScheduleSchema)` to create a new message.
  */
 export const HouseworkScheduleSchema: GenMessage<HouseworkSchedule> = /*@__PURE__*/
-  messageDesc(file_housework, 24);
+  messageDesc(file_housework, 36);
 
 /**
  * @generated from message shw.ScheduleRepeat
@@ -629,19 +843,25 @@ export type ScheduleRepeat = Message<"shw.ScheduleRepeat"> & {
   type: ScheduleRepeatType;
 
   /**
+   * 0-6 or 1-7 どっちかに統一推奨
+   *
    * @generated from field: repeated int32 weekdays = 2;
    */
   weekdays: number[];
 
   /**
-   * @generated from field: int32 weekOfMonth = 3;
+   * 例: 1-5
+   *
+   * @generated from field: repeated int32 week_of_month = 3;
    */
-  weekOfMonth: number;
+  weekOfMonth: number[];
 
   /**
-   * @generated from field: int32 weekdayInMonth = 4;
+   * 例: 第X週の何曜日
+   *
+   * @generated from field: repeated int32 weekday_in_month = 4;
    */
-  weekdayInMonth: number;
+  weekdayInMonth: number[];
 };
 
 /**
@@ -649,14 +869,14 @@ export type ScheduleRepeat = Message<"shw.ScheduleRepeat"> & {
  * Use `create(ScheduleRepeatSchema)` to create a new message.
  */
 export const ScheduleRepeatSchema: GenMessage<ScheduleRepeat> = /*@__PURE__*/
-  messageDesc(file_housework, 25);
+  messageDesc(file_housework, 37);
 
 /**
  * @generated from message shw.ScheduleReminder
  */
 export type ScheduleReminder = Message<"shw.ScheduleReminder"> & {
   /**
-   * @generated from field: int32 minutesBefore = 1;
+   * @generated from field: int32 minutes_before = 1;
    */
   minutesBefore: number;
 };
@@ -666,7 +886,7 @@ export type ScheduleReminder = Message<"shw.ScheduleReminder"> & {
  * Use `create(ScheduleReminderSchema)` to create a new message.
  */
 export const ScheduleReminderSchema: GenMessage<ScheduleReminder> = /*@__PURE__*/
-  messageDesc(file_housework, 26);
+  messageDesc(file_housework, 38);
 
 /**
  * @generated from enum shw.ScheduleRepeatType
@@ -699,27 +919,33 @@ export const ScheduleRepeatTypeSchema: GenEnum<ScheduleRepeatType> = /*@__PURE__
  */
 export const HouseworkService: GenService<{
   /**
+   * List
+   *
+   * @generated from rpc shw.HouseworkService.ListHouseworks
+   */
+  listHouseworks: {
+    methodKind: "unary";
+    input: typeof ListHouseworksRequestSchema;
+    output: typeof ListHouseworksResponseSchema;
+  },
+  /**
+   * Get
+   *
    * @generated from rpc shw.HouseworkService.GetHousework
    */
   getHousework: {
     methodKind: "unary";
-    input: typeof HouseworkRequestSchema;
-    output: typeof HouseworkResponseSchema;
+    input: typeof GetHouseworkRequestSchema;
+    output: typeof GetHouseworkResponseSchema;
   },
   /**
-   * @generated from rpc shw.HouseworkService.GetHouseworkDetail
-   */
-  getHouseworkDetail: {
-    methodKind: "unary";
-    input: typeof HouseworkDetailRequestSchema;
-    output: typeof HouseworkDetailResponseSchema;
-  },
-  /**
+   * Write
+   *
    * @generated from rpc shw.HouseworkService.CreateHousework
    */
   createHousework: {
     methodKind: "unary";
-    input: typeof HouseworkSchema;
+    input: typeof CreateHouseworkRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -727,7 +953,7 @@ export const HouseworkService: GenService<{
    */
   updateHousework: {
     methodKind: "unary";
-    input: typeof HouseworkSchema;
+    input: typeof UpdateHouseworkRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -735,7 +961,7 @@ export const HouseworkService: GenService<{
    */
   finishHousework: {
     methodKind: "unary";
-    input: typeof HouseworkTargetRequestSchema;
+    input: typeof FinishHouseworkRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -743,7 +969,7 @@ export const HouseworkService: GenService<{
    */
   deleteHousework: {
     methodKind: "unary";
-    input: typeof HouseworkTargetRequestSchema;
+    input: typeof DeleteHouseworkRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
@@ -754,19 +980,19 @@ export const HouseworkService: GenService<{
  */
 export const HouseworkMemoService: GenService<{
   /**
-   * @generated from rpc shw.HouseworkMemoService.GetHouseworkMemo
+   * @generated from rpc shw.HouseworkMemoService.ListHouseworkMemos
    */
-  getHouseworkMemo: {
+  listHouseworkMemos: {
     methodKind: "unary";
-    input: typeof HouseworkMemoRequestSchema;
-    output: typeof HouseworkMemoResponseSchema;
+    input: typeof ListHouseworkMemosRequestSchema;
+    output: typeof ListHouseworkMemosResponseSchema;
   },
   /**
    * @generated from rpc shw.HouseworkMemoService.CreateHouseworkMemo
    */
   createHouseworkMemo: {
     methodKind: "unary";
-    input: typeof HouseworkMemoSchema;
+    input: typeof CreateHouseworkMemoRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -774,7 +1000,7 @@ export const HouseworkMemoService: GenService<{
    */
   updateHouseworkMemo: {
     methodKind: "unary";
-    input: typeof HouseworkMemoSchema;
+    input: typeof UpdateHouseworkMemoRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -782,7 +1008,7 @@ export const HouseworkMemoService: GenService<{
    */
   deleteHouseworkMemo: {
     methodKind: "unary";
-    input: typeof HouseworkMemoSchema;
+    input: typeof DeleteHouseworkMemoRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
@@ -797,16 +1023,16 @@ export const HouseworkPointService: GenService<{
    */
   getHouseworkPoint: {
     methodKind: "unary";
-    input: typeof HouseworkPointRequestSchema;
-    output: typeof HouseworkPointResponseSchema;
+    input: typeof GetHouseworkPointRequestSchema;
+    output: typeof GetHouseworkPointResponseSchema;
   },
   /**
-   * @generated from rpc shw.HouseworkPointService.GetHouseworkPointHistory
+   * @generated from rpc shw.HouseworkPointService.ListHouseworkPointHistories
    */
-  getHouseworkPointHistory: {
+  listHouseworkPointHistories: {
     methodKind: "unary";
-    input: typeof HouseworkPointHistoryRequestSchema;
-    output: typeof HouseworkPointHistoryResponseSchema;
+    input: typeof ListHouseworkPointHistoriesRequestSchema;
+    output: typeof ListHouseworkPointHistoriesResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_housework, 2);
@@ -820,23 +1046,23 @@ export const HouseworkTemplateService: GenService<{
    */
   getHouseworkTemplate: {
     methodKind: "unary";
-    input: typeof HouseworkTemplateRequestSchema;
-    output: typeof HouseworkTemplateResponseSchema;
+    input: typeof GetHouseworkTemplateRequestSchema;
+    output: typeof GetHouseworkTemplateResponseSchema;
   },
   /**
-   * @generated from rpc shw.HouseworkTemplateService.GetHouseworkTemplates
+   * @generated from rpc shw.HouseworkTemplateService.ListHouseworkTemplates
    */
-  getHouseworkTemplates: {
+  listHouseworkTemplates: {
     methodKind: "unary";
-    input: typeof HouseworkTemplatesRequestSchema;
-    output: typeof HouseworkTemplatesResponseSchema;
+    input: typeof ListHouseworkTemplatesRequestSchema;
+    output: typeof ListHouseworkTemplatesResponseSchema;
   },
   /**
    * @generated from rpc shw.HouseworkTemplateService.CreateHouseworkTemplate
    */
   createHouseworkTemplate: {
     methodKind: "unary";
-    input: typeof HouseworkTemplateSchema;
+    input: typeof CreateHouseworkTemplateRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -844,7 +1070,7 @@ export const HouseworkTemplateService: GenService<{
    */
   updateHouseworkTemplate: {
     methodKind: "unary";
-    input: typeof HouseworkTemplateSchema;
+    input: typeof UpdateHouseworkTemplateRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -852,7 +1078,7 @@ export const HouseworkTemplateService: GenService<{
    */
   deleteHouseworkTemplate: {
     methodKind: "unary";
-    input: typeof HouseworkTemplateSchema;
+    input: typeof DeleteHouseworkTemplateRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
@@ -863,27 +1089,27 @@ export const HouseworkTemplateService: GenService<{
  */
 export const HouseworkScheduleService: GenService<{
   /**
-   * @generated from rpc shw.HouseworkScheduleService.GetHouseworkSchedules
-   */
-  getHouseworkSchedules: {
-    methodKind: "unary";
-    input: typeof HouseworkSchedulesRequestSchema;
-    output: typeof HouseworkSchedulesResponseSchema;
-  },
-  /**
    * @generated from rpc shw.HouseworkScheduleService.GetHouseworkSchedule
    */
   getHouseworkSchedule: {
     methodKind: "unary";
-    input: typeof HouseworkScheduleRequestSchema;
-    output: typeof HouseworkScheduleResponseSchema;
+    input: typeof GetHouseworkScheduleRequestSchema;
+    output: typeof GetHouseworkScheduleResponseSchema;
+  },
+  /**
+   * @generated from rpc shw.HouseworkScheduleService.ListHouseworkSchedules
+   */
+  listHouseworkSchedules: {
+    methodKind: "unary";
+    input: typeof ListHouseworkSchedulesRequestSchema;
+    output: typeof ListHouseworkSchedulesResponseSchema;
   },
   /**
    * @generated from rpc shw.HouseworkScheduleService.CreateHouseworkSchedule
    */
   createHouseworkSchedule: {
     methodKind: "unary";
-    input: typeof HouseworkScheduleSchema;
+    input: typeof CreateHouseworkScheduleRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -891,7 +1117,7 @@ export const HouseworkScheduleService: GenService<{
    */
   updateHouseworkSchedule: {
     methodKind: "unary";
-    input: typeof HouseworkScheduleSchema;
+    input: typeof UpdateHouseworkScheduleRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -899,7 +1125,7 @@ export const HouseworkScheduleService: GenService<{
    */
   deleteHouseworkSchedule: {
     methodKind: "unary";
-    input: typeof HouseworkScheduleRequestSchema;
+    input: typeof DeleteHouseworkScheduleRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/

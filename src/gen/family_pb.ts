@@ -12,95 +12,94 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file family.proto.
  */
 export const file_family: GenFile = /*@__PURE__*/
-  fileDesc("CgxmYW1pbHkucHJvdG8SA3NodyIhCg1GYW1pbHlSZXF1ZXN0EhAKCGZhbWlseUlkGAEgASgEIi8KG0ZhbWlseUhvdXNld29ya1BvaW50UmVxdWVzdBIQCghmYW1pbHlJZBgCIAEoBCJRChxGYW1pbHlIb3VzZXdvcmtQb2ludFJlc3BvbnNlEjEKDmhvdXNld29ya1BvaW50GAEgAygLMhkuc2h3LkZhbWlseUhvdXNld29ya1BvaW50InQKFEZhbWlseUhvdXNld29ya1BvaW50EgoKAmlkGAEgASgEEhsKBHVzZXIYAiABKAsyDS5zaHcuVXNlckluZm8SDQoFcG9pbnQYBCABKAMSEQoJY3JlYXRlZEF0GAUgASgDEhEKCXVwZGF0ZWRBdBgGIAEoAyJHChZBZGRGYW1pbHlNZW1iZXJSZXF1ZXN0EgwKBG5hbWUYASABKAkSDQoFZW1haWwYAiABKAkSEAoIZmFtaWx5SWQYAyABKAQiLQoORmFtaWx5UmVzcG9uc2USGwoGZmFtaWx5GAEgASgLMgsuc2h3LkZhbWlseSJZCgZGYW1pbHkSCgoCaWQYASABKAQSGwoEdXNlchgCIAMoCzINLnNody5Vc2VySW5mbxIMCgRuYW1lGAMgASgJEhgKEHBvaW50UGVyV29ya1RpbWUYBCABKAkiKQoRRmFtaWx5Um9sZVJlcXVlc3QSFAoMZmFtaWx5Um9sZUlkGAEgASgEIk0KCkZhbWlseVJvbGUSCgoCaWQYASABKAQSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIQCghmYW1pbHlJZBgEIAEoBCI5ChJGYW1pbHlSb2xlUmVzcG9uc2USIwoKZmFtaWx5Um9sZRgBIAMoCzIPLnNody5GYW1pbHlSb2xlMqUECg1GYW1pbHlTZXJ2aWNlEjYKCUdldEZhbWlseRISLnNody5GYW1pbHlSZXF1ZXN0GhMuc2h3LkZhbWlseVJlc3BvbnNlIgASMgoMQ3JlYXRlRmFtaWx5Egsuc2h3LkZhbWlseRoTLnNody5Db21tb25SZXNwb25zZSIAEjIKDFVwZGF0ZUZhbWlseRILLnNody5GYW1pbHkaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABIyCgxEZWxldGVGYW1pbHkSCy5zaHcuRmFtaWx5GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRQoPQWRkRmFtaWx5TWVtYmVyEhsuc2h3LkFkZEZhbWlseU1lbWJlclJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABI+Cg1HZXRGYW1pbHlSb2xlEhIuc2h3LkZhbWlseVJlcXVlc3QaFy5zaHcuRmFtaWx5Um9sZVJlc3BvbnNlIgASOgoQQ3JlYXRlRmFtaWx5Um9sZRIPLnNody5GYW1pbHlSb2xlGhMuc2h3LkNvbW1vblJlc3BvbnNlIgASOgoQVXBkYXRlRmFtaWx5Um9sZRIPLnNody5GYW1pbHlSb2xlGhMuc2h3LkNvbW1vblJlc3BvbnNlIgASQQoQRGVsZXRlRmFtaWx5Um9sZRIWLnNody5GYW1pbHlSb2xlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAQhJaEHNod2dycGMvcGtnL2dycGNiBnByb3RvMw", [file_common]);
+  fileDesc("CgxmYW1pbHkucHJvdG8SA3NodyIlChBHZXRGYW1pbHlSZXF1ZXN0EhEKCWZhbWlseV9pZBgBIAEoBCIwChFHZXRGYW1pbHlSZXNwb25zZRIbCgZmYW1pbHkYASABKAsyCy5zaHcuRmFtaWx5IjIKE0NyZWF0ZUZhbWlseVJlcXVlc3QSGwoGZmFtaWx5GAEgASgLMgsuc2h3LkZhbWlseSIyChNVcGRhdGVGYW1pbHlSZXF1ZXN0EhsKBmZhbWlseRgBIAEoCzILLnNody5GYW1pbHkiKAoTRGVsZXRlRmFtaWx5UmVxdWVzdBIRCglmYW1pbHlfaWQYASABKAQiSAoWQWRkRmFtaWx5TWVtYmVyUmVxdWVzdBIMCgRuYW1lGAEgASgJEg0KBWVtYWlsGAIgASgJEhEKCWZhbWlseV9pZBgDIAEoBCJACgZGYW1pbHkSCgoCaWQYASABKAQSHAoFdXNlcnMYAiADKAsyDS5zaHcuVXNlckluZm8SDAoEbmFtZRgDIAEoCSIrChZMaXN0RmFtaWx5Um9sZXNSZXF1ZXN0EhEKCWZhbWlseV9pZBgBIAEoBCI5ChdMaXN0RmFtaWx5Um9sZXNSZXNwb25zZRIeCgVyb2xlcxgBIAMoCzIPLnNody5GYW1pbHlSb2xlIi4KFEdldEZhbWlseVJvbGVSZXF1ZXN0EhYKDmZhbWlseV9yb2xlX2lkGAEgASgEIjYKFUdldEZhbWlseVJvbGVSZXNwb25zZRIdCgRyb2xlGAEgASgLMg8uc2h3LkZhbWlseVJvbGUiOAoXQ3JlYXRlRmFtaWx5Um9sZVJlcXVlc3QSHQoEcm9sZRgBIAEoCzIPLnNody5GYW1pbHlSb2xlIjgKF1VwZGF0ZUZhbWlseVJvbGVSZXF1ZXN0Eh0KBHJvbGUYASABKAsyDy5zaHcuRmFtaWx5Um9sZSIxChdEZWxldGVGYW1pbHlSb2xlUmVxdWVzdBIWCg5mYW1pbHlfcm9sZV9pZBgBIAEoBCJOCgpGYW1pbHlSb2xlEgoKAmlkGAEgASgEEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSEQoJZmFtaWx5X2lkGAQgASgEMtcCCg1GYW1pbHlTZXJ2aWNlEjwKCUdldEZhbWlseRIVLnNody5HZXRGYW1pbHlSZXF1ZXN0GhYuc2h3LkdldEZhbWlseVJlc3BvbnNlIgASPwoMQ3JlYXRlRmFtaWx5Ehguc2h3LkNyZWF0ZUZhbWlseVJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABI/CgxVcGRhdGVGYW1pbHkSGC5zaHcuVXBkYXRlRmFtaWx5UmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAEj8KDERlbGV0ZUZhbWlseRIYLnNody5EZWxldGVGYW1pbHlSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRQoPQWRkRmFtaWx5TWVtYmVyEhsuc2h3LkFkZEZhbWlseU1lbWJlclJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiADKIAwoRRmFtaWx5Um9sZVNlcnZpY2USTgoPTGlzdEZhbWlseVJvbGVzEhsuc2h3Lkxpc3RGYW1pbHlSb2xlc1JlcXVlc3QaHC5zaHcuTGlzdEZhbWlseVJvbGVzUmVzcG9uc2UiABJICg1HZXRGYW1pbHlSb2xlEhkuc2h3LkdldEZhbWlseVJvbGVSZXF1ZXN0Ghouc2h3LkdldEZhbWlseVJvbGVSZXNwb25zZSIAEkcKEENyZWF0ZUZhbWlseVJvbGUSHC5zaHcuQ3JlYXRlRmFtaWx5Um9sZVJlcXVlc3QaEy5zaHcuQ29tbW9uUmVzcG9uc2UiABJHChBVcGRhdGVGYW1pbHlSb2xlEhwuc2h3LlVwZGF0ZUZhbWlseVJvbGVSZXF1ZXN0GhMuc2h3LkNvbW1vblJlc3BvbnNlIgASRwoQRGVsZXRlRmFtaWx5Um9sZRIcLnNody5EZWxldGVGYW1pbHlSb2xlUmVxdWVzdBoTLnNody5Db21tb25SZXNwb25zZSIAQhJaEHNod2dycGMvcGtnL2dycGNiBnByb3RvMw", [file_common]);
 
 /**
- * @generated from message shw.FamilyRequest
+ * @generated from message shw.GetFamilyRequest
  */
-export type FamilyRequest = Message<"shw.FamilyRequest"> & {
+export type GetFamilyRequest = Message<"shw.GetFamilyRequest"> & {
   /**
-   * @generated from field: uint64 familyId = 1;
+   * was familyId
+   *
+   * @generated from field: uint64 family_id = 1;
    */
   familyId: bigint;
 };
 
 /**
- * Describes the message shw.FamilyRequest.
- * Use `create(FamilyRequestSchema)` to create a new message.
+ * Describes the message shw.GetFamilyRequest.
+ * Use `create(GetFamilyRequestSchema)` to create a new message.
  */
-export const FamilyRequestSchema: GenMessage<FamilyRequest> = /*@__PURE__*/
+export const GetFamilyRequestSchema: GenMessage<GetFamilyRequest> = /*@__PURE__*/
   messageDesc(file_family, 0);
 
 /**
- * @generated from message shw.FamilyHouseworkPointRequest
+ * @generated from message shw.GetFamilyResponse
  */
-export type FamilyHouseworkPointRequest = Message<"shw.FamilyHouseworkPointRequest"> & {
+export type GetFamilyResponse = Message<"shw.GetFamilyResponse"> & {
   /**
-   * @generated from field: uint64 familyId = 2;
+   * @generated from field: shw.Family family = 1;
+   */
+  family?: Family;
+};
+
+/**
+ * Describes the message shw.GetFamilyResponse.
+ * Use `create(GetFamilyResponseSchema)` to create a new message.
+ */
+export const GetFamilyResponseSchema: GenMessage<GetFamilyResponse> = /*@__PURE__*/
+  messageDesc(file_family, 1);
+
+/**
+ * @generated from message shw.CreateFamilyRequest
+ */
+export type CreateFamilyRequest = Message<"shw.CreateFamilyRequest"> & {
+  /**
+   * @generated from field: shw.Family family = 1;
+   */
+  family?: Family;
+};
+
+/**
+ * Describes the message shw.CreateFamilyRequest.
+ * Use `create(CreateFamilyRequestSchema)` to create a new message.
+ */
+export const CreateFamilyRequestSchema: GenMessage<CreateFamilyRequest> = /*@__PURE__*/
+  messageDesc(file_family, 2);
+
+/**
+ * @generated from message shw.UpdateFamilyRequest
+ */
+export type UpdateFamilyRequest = Message<"shw.UpdateFamilyRequest"> & {
+  /**
+   * @generated from field: shw.Family family = 1;
+   */
+  family?: Family;
+};
+
+/**
+ * Describes the message shw.UpdateFamilyRequest.
+ * Use `create(UpdateFamilyRequestSchema)` to create a new message.
+ */
+export const UpdateFamilyRequestSchema: GenMessage<UpdateFamilyRequest> = /*@__PURE__*/
+  messageDesc(file_family, 3);
+
+/**
+ * @generated from message shw.DeleteFamilyRequest
+ */
+export type DeleteFamilyRequest = Message<"shw.DeleteFamilyRequest"> & {
+  /**
+   * @generated from field: uint64 family_id = 1;
    */
   familyId: bigint;
 };
 
 /**
- * Describes the message shw.FamilyHouseworkPointRequest.
- * Use `create(FamilyHouseworkPointRequestSchema)` to create a new message.
+ * Describes the message shw.DeleteFamilyRequest.
+ * Use `create(DeleteFamilyRequestSchema)` to create a new message.
  */
-export const FamilyHouseworkPointRequestSchema: GenMessage<FamilyHouseworkPointRequest> = /*@__PURE__*/
-  messageDesc(file_family, 1);
-
-/**
- * @generated from message shw.FamilyHouseworkPointResponse
- */
-export type FamilyHouseworkPointResponse = Message<"shw.FamilyHouseworkPointResponse"> & {
-  /**
-   * @generated from field: repeated shw.FamilyHouseworkPoint houseworkPoint = 1;
-   */
-  houseworkPoint: FamilyHouseworkPoint[];
-};
-
-/**
- * Describes the message shw.FamilyHouseworkPointResponse.
- * Use `create(FamilyHouseworkPointResponseSchema)` to create a new message.
- */
-export const FamilyHouseworkPointResponseSchema: GenMessage<FamilyHouseworkPointResponse> = /*@__PURE__*/
-  messageDesc(file_family, 2);
-
-/**
- * @generated from message shw.FamilyHouseworkPoint
- */
-export type FamilyHouseworkPoint = Message<"shw.FamilyHouseworkPoint"> & {
-  /**
-   * @generated from field: uint64 id = 1;
-   */
-  id: bigint;
-
-  /**
-   * @generated from field: shw.UserInfo user = 2;
-   */
-  user?: UserInfo;
-
-  /**
-   * @generated from field: int64 point = 4;
-   */
-  point: bigint;
-
-  /**
-   * @generated from field: int64 createdAt = 5;
-   */
-  createdAt: bigint;
-
-  /**
-   * @generated from field: int64 updatedAt = 6;
-   */
-  updatedAt: bigint;
-};
-
-/**
- * Describes the message shw.FamilyHouseworkPoint.
- * Use `create(FamilyHouseworkPointSchema)` to create a new message.
- */
-export const FamilyHouseworkPointSchema: GenMessage<FamilyHouseworkPoint> = /*@__PURE__*/
-  messageDesc(file_family, 3);
+export const DeleteFamilyRequestSchema: GenMessage<DeleteFamilyRequest> = /*@__PURE__*/
+  messageDesc(file_family, 4);
 
 /**
  * @generated from message shw.AddFamilyMemberRequest
@@ -117,7 +116,7 @@ export type AddFamilyMemberRequest = Message<"shw.AddFamilyMemberRequest"> & {
   email: string;
 
   /**
-   * @generated from field: uint64 familyId = 3;
+   * @generated from field: uint64 family_id = 3;
    */
   familyId: bigint;
 };
@@ -127,23 +126,6 @@ export type AddFamilyMemberRequest = Message<"shw.AddFamilyMemberRequest"> & {
  * Use `create(AddFamilyMemberRequestSchema)` to create a new message.
  */
 export const AddFamilyMemberRequestSchema: GenMessage<AddFamilyMemberRequest> = /*@__PURE__*/
-  messageDesc(file_family, 4);
-
-/**
- * @generated from message shw.FamilyResponse
- */
-export type FamilyResponse = Message<"shw.FamilyResponse"> & {
-  /**
-   * @generated from field: shw.Family family = 1;
-   */
-  family?: Family;
-};
-
-/**
- * Describes the message shw.FamilyResponse.
- * Use `create(FamilyResponseSchema)` to create a new message.
- */
-export const FamilyResponseSchema: GenMessage<FamilyResponse> = /*@__PURE__*/
   messageDesc(file_family, 5);
 
 /**
@@ -156,19 +138,14 @@ export type Family = Message<"shw.Family"> & {
   id: bigint;
 
   /**
-   * @generated from field: repeated shw.UserInfo user = 2;
+   * @generated from field: repeated shw.UserInfo users = 2;
    */
-  user: UserInfo[];
+  users: UserInfo[];
 
   /**
    * @generated from field: string name = 3;
    */
   name: string;
-
-  /**
-   * @generated from field: string pointPerWorkTime = 4;
-   */
-  pointPerWorkTime: string;
 };
 
 /**
@@ -179,21 +156,127 @@ export const FamilySchema: GenMessage<Family> = /*@__PURE__*/
   messageDesc(file_family, 6);
 
 /**
- * @generated from message shw.FamilyRoleRequest
+ * @generated from message shw.ListFamilyRolesRequest
  */
-export type FamilyRoleRequest = Message<"shw.FamilyRoleRequest"> & {
+export type ListFamilyRolesRequest = Message<"shw.ListFamilyRolesRequest"> & {
   /**
-   * @generated from field: uint64 familyRoleId = 1;
+   * @generated from field: uint64 family_id = 1;
+   */
+  familyId: bigint;
+};
+
+/**
+ * Describes the message shw.ListFamilyRolesRequest.
+ * Use `create(ListFamilyRolesRequestSchema)` to create a new message.
+ */
+export const ListFamilyRolesRequestSchema: GenMessage<ListFamilyRolesRequest> = /*@__PURE__*/
+  messageDesc(file_family, 7);
+
+/**
+ * @generated from message shw.ListFamilyRolesResponse
+ */
+export type ListFamilyRolesResponse = Message<"shw.ListFamilyRolesResponse"> & {
+  /**
+   * was family_role
+   *
+   * @generated from field: repeated shw.FamilyRole roles = 1;
+   */
+  roles: FamilyRole[];
+};
+
+/**
+ * Describes the message shw.ListFamilyRolesResponse.
+ * Use `create(ListFamilyRolesResponseSchema)` to create a new message.
+ */
+export const ListFamilyRolesResponseSchema: GenMessage<ListFamilyRolesResponse> = /*@__PURE__*/
+  messageDesc(file_family, 8);
+
+/**
+ * @generated from message shw.GetFamilyRoleRequest
+ */
+export type GetFamilyRoleRequest = Message<"shw.GetFamilyRoleRequest"> & {
+  /**
+   * was FamilyRoleRequest.family_role_id
+   *
+   * @generated from field: uint64 family_role_id = 1;
    */
   familyRoleId: bigint;
 };
 
 /**
- * Describes the message shw.FamilyRoleRequest.
- * Use `create(FamilyRoleRequestSchema)` to create a new message.
+ * Describes the message shw.GetFamilyRoleRequest.
+ * Use `create(GetFamilyRoleRequestSchema)` to create a new message.
  */
-export const FamilyRoleRequestSchema: GenMessage<FamilyRoleRequest> = /*@__PURE__*/
-  messageDesc(file_family, 7);
+export const GetFamilyRoleRequestSchema: GenMessage<GetFamilyRoleRequest> = /*@__PURE__*/
+  messageDesc(file_family, 9);
+
+/**
+ * @generated from message shw.GetFamilyRoleResponse
+ */
+export type GetFamilyRoleResponse = Message<"shw.GetFamilyRoleResponse"> & {
+  /**
+   * @generated from field: shw.FamilyRole role = 1;
+   */
+  role?: FamilyRole;
+};
+
+/**
+ * Describes the message shw.GetFamilyRoleResponse.
+ * Use `create(GetFamilyRoleResponseSchema)` to create a new message.
+ */
+export const GetFamilyRoleResponseSchema: GenMessage<GetFamilyRoleResponse> = /*@__PURE__*/
+  messageDesc(file_family, 10);
+
+/**
+ * @generated from message shw.CreateFamilyRoleRequest
+ */
+export type CreateFamilyRoleRequest = Message<"shw.CreateFamilyRoleRequest"> & {
+  /**
+   * @generated from field: shw.FamilyRole role = 1;
+   */
+  role?: FamilyRole;
+};
+
+/**
+ * Describes the message shw.CreateFamilyRoleRequest.
+ * Use `create(CreateFamilyRoleRequestSchema)` to create a new message.
+ */
+export const CreateFamilyRoleRequestSchema: GenMessage<CreateFamilyRoleRequest> = /*@__PURE__*/
+  messageDesc(file_family, 11);
+
+/**
+ * @generated from message shw.UpdateFamilyRoleRequest
+ */
+export type UpdateFamilyRoleRequest = Message<"shw.UpdateFamilyRoleRequest"> & {
+  /**
+   * @generated from field: shw.FamilyRole role = 1;
+   */
+  role?: FamilyRole;
+};
+
+/**
+ * Describes the message shw.UpdateFamilyRoleRequest.
+ * Use `create(UpdateFamilyRoleRequestSchema)` to create a new message.
+ */
+export const UpdateFamilyRoleRequestSchema: GenMessage<UpdateFamilyRoleRequest> = /*@__PURE__*/
+  messageDesc(file_family, 12);
+
+/**
+ * @generated from message shw.DeleteFamilyRoleRequest
+ */
+export type DeleteFamilyRoleRequest = Message<"shw.DeleteFamilyRoleRequest"> & {
+  /**
+   * @generated from field: uint64 family_role_id = 1;
+   */
+  familyRoleId: bigint;
+};
+
+/**
+ * Describes the message shw.DeleteFamilyRoleRequest.
+ * Use `create(DeleteFamilyRoleRequestSchema)` to create a new message.
+ */
+export const DeleteFamilyRoleRequestSchema: GenMessage<DeleteFamilyRoleRequest> = /*@__PURE__*/
+  messageDesc(file_family, 13);
 
 /**
  * @generated from message shw.FamilyRole
@@ -215,7 +298,7 @@ export type FamilyRole = Message<"shw.FamilyRole"> & {
   description: string;
 
   /**
-   * @generated from field: uint64 familyId = 4;
+   * @generated from field: uint64 family_id = 4;
    */
   familyId: bigint;
 };
@@ -225,24 +308,7 @@ export type FamilyRole = Message<"shw.FamilyRole"> & {
  * Use `create(FamilyRoleSchema)` to create a new message.
  */
 export const FamilyRoleSchema: GenMessage<FamilyRole> = /*@__PURE__*/
-  messageDesc(file_family, 8);
-
-/**
- * @generated from message shw.FamilyRoleResponse
- */
-export type FamilyRoleResponse = Message<"shw.FamilyRoleResponse"> & {
-  /**
-   * @generated from field: repeated shw.FamilyRole familyRole = 1;
-   */
-  familyRole: FamilyRole[];
-};
-
-/**
- * Describes the message shw.FamilyRoleResponse.
- * Use `create(FamilyRoleResponseSchema)` to create a new message.
- */
-export const FamilyRoleResponseSchema: GenMessage<FamilyRoleResponse> = /*@__PURE__*/
-  messageDesc(file_family, 9);
+  messageDesc(file_family, 14);
 
 /**
  * @generated from service shw.FamilyService
@@ -253,15 +319,15 @@ export const FamilyService: GenService<{
    */
   getFamily: {
     methodKind: "unary";
-    input: typeof FamilyRequestSchema;
-    output: typeof FamilyResponseSchema;
+    input: typeof GetFamilyRequestSchema;
+    output: typeof GetFamilyResponseSchema;
   },
   /**
    * @generated from rpc shw.FamilyService.CreateFamily
    */
   createFamily: {
     methodKind: "unary";
-    input: typeof FamilySchema;
+    input: typeof CreateFamilyRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -269,7 +335,7 @@ export const FamilyService: GenService<{
    */
   updateFamily: {
     methodKind: "unary";
-    input: typeof FamilySchema;
+    input: typeof UpdateFamilyRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -277,7 +343,7 @@ export const FamilyService: GenService<{
    */
   deleteFamily: {
     methodKind: "unary";
-    input: typeof FamilySchema;
+    input: typeof DeleteFamilyRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
@@ -288,38 +354,53 @@ export const FamilyService: GenService<{
     input: typeof AddFamilyMemberRequestSchema;
     output: typeof CommonResponseSchema;
   },
+}> = /*@__PURE__*/
+  serviceDesc(file_family, 0);
+
+/**
+ * @generated from service shw.FamilyRoleService
+ */
+export const FamilyRoleService: GenService<{
   /**
-   * @generated from rpc shw.FamilyService.GetFamilyRole
+   * @generated from rpc shw.FamilyRoleService.ListFamilyRoles
+   */
+  listFamilyRoles: {
+    methodKind: "unary";
+    input: typeof ListFamilyRolesRequestSchema;
+    output: typeof ListFamilyRolesResponseSchema;
+  },
+  /**
+   * @generated from rpc shw.FamilyRoleService.GetFamilyRole
    */
   getFamilyRole: {
     methodKind: "unary";
-    input: typeof FamilyRequestSchema;
-    output: typeof FamilyRoleResponseSchema;
+    input: typeof GetFamilyRoleRequestSchema;
+    output: typeof GetFamilyRoleResponseSchema;
   },
   /**
-   * @generated from rpc shw.FamilyService.CreateFamilyRole
+   * @generated from rpc shw.FamilyRoleService.CreateFamilyRole
    */
   createFamilyRole: {
     methodKind: "unary";
-    input: typeof FamilyRoleSchema;
+    input: typeof CreateFamilyRoleRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
-   * @generated from rpc shw.FamilyService.UpdateFamilyRole
+   * @generated from rpc shw.FamilyRoleService.UpdateFamilyRole
    */
   updateFamilyRole: {
     methodKind: "unary";
-    input: typeof FamilyRoleSchema;
+    input: typeof UpdateFamilyRoleRequestSchema;
     output: typeof CommonResponseSchema;
   },
   /**
-   * @generated from rpc shw.FamilyService.DeleteFamilyRole
+   * @generated from rpc shw.FamilyRoleService.DeleteFamilyRole
    */
   deleteFamilyRole: {
     methodKind: "unary";
-    input: typeof FamilyRoleRequestSchema;
+    input: typeof DeleteFamilyRoleRequestSchema;
     output: typeof CommonResponseSchema;
   },
 }> = /*@__PURE__*/
-  serviceDesc(file_family, 0);
+  serviceDesc(file_family, 1);
 
