@@ -34,7 +34,7 @@ const HouseworkTemplateForm = (props: {defaultData?: Record<string, any>}) => {
 
     const onSubmit = async (inputData: HouseworkFormValues) => {
        let postData: Record<string, any> = {
-            familyId: commonInfo.familyId,
+            familyId: commonInfo.family_id,
             title: inputData.title,
             detail: inputData.detail,
        }

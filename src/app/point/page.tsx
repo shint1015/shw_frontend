@@ -13,8 +13,7 @@ const Page = () => {
     const createDataTable = async () => {
 
         if (data && Object.keys(data).length == 0) {
-            const res = await HouseworkPoint.getListByFamilyId(commonInfo.familyId);
-            console.log(res.data);
+            const res = await HouseworkPoint.getListByFamilyId(commonInfo.family_id);
             setData(res.data.points);
             return <DataTable data={res.data.points} />;
         } else {

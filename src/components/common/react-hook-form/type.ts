@@ -2,12 +2,12 @@ import {Dayjs} from "dayjs";
 
 export type HouseworkFormValues = {
     id: string
-    familyId: string
+    family_id: string
     title: string
     detail: string
-    workUser: Record<string, any>
-    startedAt: Dayjs | null
-    endedAt: Dayjs | null
+    work_user: Record<string, any>
+    started_at: Dayjs | null
+    ended_at: Dayjs | null
 }
 
 enum ScheduleRepeatType {
@@ -18,18 +18,18 @@ enum ScheduleRepeatType {
 
 export type HouseworkScheduleFormValues = {
     id: string
-    isActive: boolean
-    familyId: string
+    is_active: boolean
+    family_id: string
     title: string
     detail: string
-    workUser: Record<string, any>
-    scheduleStartedAt: Dayjs | null
-    scheduleEndedAt: Dayjs | null
-    remindMinuteBefore: number | null
-    scheduleRepeatType: ScheduleRepeatType
+    asignee: Record<string, any>
+    schedule_started_at: Dayjs | null
+    schedule_ended_at: Dayjs | null
+    remind_minute_before: number | null
+    schedule_repeat_type: ScheduleRepeatType
     weekdays: number[] | null
-    weekOfMonth: number[] | null
-    weekdayInMonth: number[] | null
+    week_of_month: number[] | null
+    weekday_in_month: number[] | null
 }
 
 export type HouseworkTemplateFormValues = {

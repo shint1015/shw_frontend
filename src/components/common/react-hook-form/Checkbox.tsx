@@ -1,48 +1,44 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import {Control, Controller} from "react-hook-form";
-import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
+import {Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Radio, RadioGroup, Select} from "@mui/material";
+
 
 type InputType = string | number
 
-interface RHFRadioProps {
+interface RHFCheckboxProps {
     name: string;
     values: {[key: InputType]: string};
     validateRules: {[key: string]: any};
     labels: {id: string, label: string};
     control: Control | any;
-    defaultValue?: InputType;
+    defaultValue?: InputType[];
 }
 
-export const RHFRadio = (props: RHFRadioProps) => {
+export const RHFCheckbox = (props: RHFCheckboxProps) => {
     const { name, values, validateRules, labels, control, defaultValue = [] } = props
     useEffect(() => {}, [defaultValue]);
+
     return (
         <Controller
             name={name}
             control={control}
             rules={validateRules}
-            defaultValue={defaultValue}
+
             render ={({ field, fieldState }) => (
                 <FormControl error={fieldState.invalid}>
                     <FormLabel id={labels.id}>{labels.label}</FormLabel>
-                    <RadioGroup
-                        aria-labelledby={labels.id}
-                        value={field.value}
-                        name={name}
-                        defaultValue={defaultValue}
-                    >
+                    <FormGroup aria-label="position" row>
                         {Object.keys(values).map((key) => (
                             <FormControlLabel
                                 key={key}
-                                control={<Radio/>}
+                                control={<Checkbox checked={defaultValue.includes(key)} />}
                                 label={values[key]}
                                 {...field}
                             />
                         ))}
-                    </RadioGroup>
+                    </FormGroup>
                 </FormControl>
             )}
         />
-    );
+    )
 }
-export default RHFRadio;

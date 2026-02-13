@@ -10,15 +10,9 @@ interface RHFTextFieldProps {
     defaultValue?: string;
 }
 
-export const RHFTextField: React.FC<RHFTextFieldProps> = ({
-    name,
-    labelName,
-    control,
-    validateRules,
-    defaultValue,
-}) => {
-    useEffect(() => {
-    }, [defaultValue]);
+export const RHFTextField = (props: RHFTextFieldProps) => {
+    const { name, labelName, control, validateRules, defaultValue = [] } = props
+    useEffect(() => {}, [defaultValue]);
     return (
         <Controller
             name={name}

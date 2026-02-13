@@ -36,10 +36,10 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
         work_user_id: {
             required: '担当を選択してください',
         },
-        startedAt: {
+        started_at: {
             required: '開始日時を入力してください',
         },
-        endedAt: {
+        ended_at: {
             required: '終了日時を入力してください',
         },
     }
@@ -47,13 +47,13 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
         title: {id: "title", label: "家事名"},
         detail: {id: "detail", label: "詳細"},
         work_user_id: {id: "work_user_id", label: "担当"},
-        startedAt: {id: "startedAt", label: "開始日時"},
-        endedAt: {id: "endedAt", label: "終了日時"},
+        started_at: {id: "started_at", label: "開始日時"},
+        ended_at: {id: "ended_at", label: "終了日時"},
     }
 
     const onSubmit: SubmitHandler<Inputs> = async (inputData: Inputs) => {
         let postData: Record<string, any> = {
-            familyId: commonInfo.familyId,
+            familyId: commonInfo.family_id,
             title: inputData.title,
             detail: inputData.detail,
             startedAt: inputData.started_at.unix(),
@@ -107,7 +107,7 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
             <FormControl className={"form_control_common"} fullWidth>
                 <RHFSelect
                     name={"work_user_id"}
-                    values={commonInfo?.workUsers}
+                    values={commonInfo?.work_users}
                     validateRules={validateRules}
                     labels={labels.work_user_id}
                     control={control}
@@ -119,20 +119,20 @@ const HouseworkForm = (props: {defaultData?: Record<string, any>}) => {
                 <div className={"controller_date_common"}>
                     <RHFDatetime
                         name={'started_at'}
-                        labels={labels.startedAt}
+                        labels={labels.started_at}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data?.startedAt ?? null}
+                        defaultValue={data?.started_at ?? null}
                     />
                 </div>
                 {/*終了日時*/}
                 <div className={"controller_date_common"}>
                     <RHFDatetime
                         name={'ended_at'}
-                        labels={labels.endedAt}
+                        labels={labels.ended_at}
                         control={control}
                         validateRules={validateRules}
-                        defaultValue={data?.endedAt ?? null}
+                        defaultValue={data?.ended_at ?? null}
                     />
                 </div>
             </FormControl>
